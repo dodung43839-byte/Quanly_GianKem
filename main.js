@@ -1,183 +1,246 @@
-// ==========================================================
-// KHỞI TẠO
-// ==========================================================
+// ==========================================
+// LẤY CÁC ĐỐI TƯỢNG HTML
+// ==========================================
+
+const txtTimKiem = document.getElementById("txtTimKiem");
+const listbox = document.getElementById("listbox");
+const bangHoaDon = document.querySelector("#bangHoaDon tbody");
+
+const btnXoa = document.getElementById("btnXoa");
+const btnXoaHet = document.getElementById("btnXoaHet");
+const btnLuu = document.getElementById("btnLuu");
+const btnXuatPDF = document.getElementById("btnXuatPDF");
 
 
-// Bảng danh mục hàng
-const bangDanhMuc =
-    document.getElementById("bangDanhMuc");
+// ==========================================
+// BIẾN DỮ LIỆU
+// ==========================================
+
+let duLieuNguon = [];
+let duLieuDVT = [];
+
+let dongDangChon = null;
 
 
-// Bảng hóa đơn
-const bangHoaDon =
-    document.getElementById("bangHoaDon");
+// ==========================================
+// HÀM ĐỊNH DẠNG SỐ
+// ==========================================
+
+// Làm tròn + phân cách hàng nghìn
+function dinhDangSo(so) {
+
+    so = Number(so) || 0;
+
+    so = Math.round(so);
+
+    return so.toLocaleString("vi-VN");
+}
 
 
-// Tbody của bảng hóa đơn
-const tbodyHoaDon =
-    bangHoaDon.querySelector("tbody");
+// ==========================================
+// HÀM LẤY SỐ TỪ CHUỖI
+// ==========================================
+
+function laySo(chuoi) {
+
+    if (chuoi === null || chuoi === undefined) {
+        return 0;
+    }
+
+    return Number(
+        String(chuoi).replace(/[^\d-]/g, "")
+    ) || 0;
+}
 
 
-// Ô tìm kiếm
-const txtTimKiem =
-    document.getElementById("txtTimKiem");
+// ==========================================
+// ĐỌC Nguon.json + DVT.json
+// ==========================================
+
+Promise.all([
+
+    fetch("Nguon.json")
+        .then(function(response) {
+
+            if (!response.ok) {
+                throw new Error("Không đọc được Nguon.json");
+            }
+
+            return response.json();
+
+        }),
+
+    fetch("DVT.json")
+        .then(function(response) {
+
+            if (!response.ok) {
+                throw new Error("Không đọc được DVT.json");
+            }
+
+            return response.json();
+
+        })
+
+])
+
+.then(function(duLieu) {
+
+    // Dữ liệu hàng
+    duLieuNguon = duLieu[0];
+
+    // Dữ liệu đơn vị tính + giá
+    duLieuDVT = duLieu[1];
+
+    // Hiển thị Listbox
+    hienThiListbox();
+
+    
+})
+
+.catch(function(loi) {
+
+    console.error(loi);
+
+    listbox.innerHTML =
+        "Không đọc được dữ liệu JSON";
+
+});
 
 
-// Thông tin hàng đang chọn
-const maHangHienTai =
-    document.getElementById("maHang");
+// ==========================================
+// HIỂN THỊ LISTBOX
+// ==========================================
 
-const tenHangHienTai =
-    document.getElementById("tenHang");
+function hienThiListbox() {
 
-const donViTinhHienTai =
-    document.getElementById("donViTinh");
-
-const giaBanHienTai =
-    document.getElementById("giaBan");
+    listbox.innerHTML = "";
 
 
-// Tổng tiền
-const tongTien =
-    document.getElementById("tongTien");
+    duLieuNguon.forEach(function(hang) {
+
+        const dong =
+            document.createElement("div");
 
 
-// Các nút
-const btnXoa =
-    document.getElementById("btnXoa");
-
-const btnXoaHet =
-    document.getElementById("btnXoaHet");
-
-const btnLuu =
-    document.getElementById("btnLuu");
-
-const btnXuatPDF =
-    document.getElementById("btnXuatPDF");
+        dong.className = "hang";
 
 
-// Dòng đang chọn trong bảng hóa đơn
-let dongHoaDonDangChon = null;
+        // Hiển thị tên hàng
+        dong.textContent =
+            hang.TenHang;
 
 
-// ==========================================================
-// 1. CLICK VÀO DANH MỤC HÀNG
-// ==========================================================
-//
-// Đây chính là phần tương đương:
-//
-// Private Sub ListBox1_Click()
-//
-// trong VBA.
-// ==========================================================
+        // Lưu mã sản phẩm
+        dong.dataset.maSP =
+            hang.MaSP;
 
 
-const cacDongDanhMuc =
-    bangDanhMuc.querySelectorAll("tbody tr");
+        // ==================================
+        // CLICK LISTBOX
+        // ==================================
+
+        dong.addEventListener("click", function() {
+
+            const maSP =
+                this.dataset.maSP;
 
 
-cacDongDanhMuc.forEach(function (dong) {
-
-
-    dong.addEventListener("click", function () {
-
-
-        // ----------------------------------------------
-        // Bỏ chọn dòng cũ
-        // ----------------------------------------------
-
-        cacDongDanhMuc.forEach(function (dongKhac) {
-
-            dongKhac.classList.remove("selected");
+            themHangVaoHoaDon(maSP);
 
         });
 
 
-        // ----------------------------------------------
-        // Chọn dòng vừa click
-        // ----------------------------------------------
+        listbox.appendChild(dong);
 
-        dong.classList.add("selected");
+    });
+
+}
 
 
-        // ----------------------------------------------
-        // Lấy dữ liệu từ dòng HTML
-        // ----------------------------------------------
+// ==========================================
+// TÌM KIẾM HÀNG
+// ==========================================
 
-        const maHang =
-            dong.dataset.ma;
+txtTimKiem.addEventListener("input", function() {
+
+    const tuKhoa =
+        this.value
+            .toLowerCase()
+            .trim();
+
+
+    const cacHang =
+        document.querySelectorAll(".hang");
+
+
+    cacHang.forEach(function(hang) {
 
         const tenHang =
-            dong.dataset.ten;
-
-        const donViTinh =
-            dong.dataset.dvt;
-
-        const giaBan =
-            Number(dong.dataset.gia);
+            hang.textContent.toLowerCase();
 
 
-        // ----------------------------------------------
-        // Hiển thị hàng đang chọn
-        // ----------------------------------------------
+        if (tenHang.includes(tuKhoa)) {
 
-        maHangHienTai.textContent =
-            maHang;
+            hang.style.display = "";
 
-        tenHangHienTai.textContent =
-            tenHang;
+        } else {
 
-        donViTinhHienTai.textContent =
-            donViTinh;
+            hang.style.display = "none";
 
-        giaBanHienTai.textContent =
-            dinhDangTien(giaBan);
-
-
-        // ----------------------------------------------
-        // Đổ ngay vào đơn hàng
-        // ----------------------------------------------
-
-        themVaoDonHang(
-            maHang,
-            tenHang,
-            donViTinh,
-            giaBan
-        );
+        }
 
     });
 
 });
 
 
-// ==========================================================
-// 2. THÊM HÀNG VÀO ĐƠN HÀNG
-// ==========================================================
+// ==========================================
+// THÊM HÀNG VÀO BẢNG
+// ==========================================
+
+function themHangVaoHoaDon(maSP) {
 
 
-function themVaoDonHang(
-    maHang,
-    tenHang,
-    donViTinh,
-    giaBan
-) {
+    // --------------------------------------
+    // TÌM HÀNG TRONG Nguon.json
+    // --------------------------------------
+
+    const hangNguon =
+        duLieuNguon.find(function(hang) {
+
+            return hang.MaSP === maSP;
+
+        });
 
 
-    // ----------------------------------------------
-    // Kiểm tra hàng đã có chưa
-    // ----------------------------------------------
+    if (!hangNguon) {
+
+        alert(
+            "Không tìm thấy mã hàng: " + maSP
+        );
+
+        return;
+    }
+
+
+    // --------------------------------------
+    // KIỂM TRA HÀNG ĐÃ CÓ CHƯA
+    // --------------------------------------
 
     const cacDong =
-        tbodyHoaDon.querySelectorAll("tr");
+        bangHoaDon.querySelectorAll("tr");
 
 
     let dongDaCo = null;
 
 
-    cacDong.forEach(function (dong) {
+    cacDong.forEach(function(dong) {
+
+        const maTrongBang =
+            dong.cells[1].textContent.trim();
 
 
-        if (dong.dataset.ma === maHang) {
+        if (maTrongBang === maSP) {
 
             dongDaCo = dong;
 
@@ -186,85 +249,166 @@ function themVaoDonHang(
     });
 
 
-    // ==================================================
-    // TRƯỜNG HỢP 1:
-    // Hàng đã có → tăng số lượng
-    // ==================================================
+    // ======================================
+    // NẾU ĐÃ CÓ
+    // CHỈ TĂNG SỐ LƯỢNG +1
+    // ======================================
 
-    if (dongDaCo !== null) {
-
+    if (dongDaCo) {
 
         const inputSoLuong =
-            dongDaCo.querySelector(".so-luong");
+            dongDaCo.cells[5]
+                .querySelector("input");
+
+
+        let soLuong =
+            Number(inputSoLuong.value) || 0;
 
 
         inputSoLuong.value =
-            Number(inputSoLuong.value) + 1;
+            soLuong + 1;
 
 
-        tinhThanhTien(dongDaCo);
+        dongDangChon = dongDaCo;
 
 
-        chonDongHoaDon(dongDaCo);
+        chonDong(dongDaCo);
+
+
+        tinhThanhTienDong(dongDaCo);
 
 
         return;
-
     }
 
 
-    // ==================================================
-    // TRƯỜNG HỢP 2:
-    // Hàng chưa có → tạo dòng mới
-    // ==================================================
+    // ======================================
+    // HÀNG CHƯA CÓ
+    // TẠO DÒNG MỚI
+    // ======================================
+
+    const tenHang =
+        hangNguon.TenHang;
 
 
-    // Tạo <tr>
-    const dongMoi =
+    // --------------------------------------
+    // LẤY DANH SÁCH ĐVT
+    // --------------------------------------
+
+    const danhSachDVT =
+        duLieuDVT.filter(function(dvt) {
+
+            return dvt.MaSP === maSP;
+
+        });
+
+
+    // --------------------------------------
+    // TẠO DÒNG
+    // --------------------------------------
+
+    const dong =
         document.createElement("tr");
 
 
-    // Lưu mã hàng vào data-ma
-    dongMoi.dataset.ma =
-        maHang;
-
-
-    // ----------------------------------------------
-    // Cột STT
-    // ----------------------------------------------
+    // ======================================
+    // CỘT 1 - STT
+    // ======================================
 
     const oSTT =
         document.createElement("td");
 
-    oSTT.textContent =
-        "";
+    dong.appendChild(oSTT);
 
 
-    // ----------------------------------------------
-    // Cột tên hàng
-    // ----------------------------------------------
+    // ======================================
+    // CỘT 2 - MÃ HÀNG
+    // ======================================
+
+    const oMaSP =
+        document.createElement("td");
+
+    oMaSP.textContent =
+        maSP;
+
+    dong.appendChild(oMaSP);
+
+
+    // ======================================
+    // CỘT 3 - TÊN HÀNG
+    // ======================================
 
     const oTenHang =
         document.createElement("td");
 
-    oTenHang.textContent =
+
+    const inputTenHang =
+        document.createElement("input");
+
+
+    inputTenHang.type = "text";
+
+    inputTenHang.value =
         tenHang;
 
 
-    // ----------------------------------------------
-    // Cột ĐVT
-    // ----------------------------------------------
+    inputTenHang.style.width = "100%";
 
-    const oDonViTinh =
+    inputTenHang.style.boxSizing =
+        "border-box";
+
+
+    oTenHang.appendChild(inputTenHang);
+
+    dong.appendChild(oTenHang);
+
+
+    // ======================================
+    // CỘT 4 - ĐVT
+    // ======================================
+
+    const oDVT =
         document.createElement("td");
 
-    oDonViTinh.textContent =
-        donViTinh;
+
+    const selectDVT =
+        document.createElement("select");
 
 
-    // ----------------------------------------------
-    // Cột đơn giá
-    // ----------------------------------------------
+    selectDVT.style.width = "100%";
+
+
+    // --------------------------------------
+    // THÊM CÁC ĐVT
+    // --------------------------------------
+
+    danhSachDVT.forEach(function(dvt) {
+
+        const option =
+            document.createElement("option");
+
+
+        option.value =
+            dvt.DonViTinh;
+
+
+        option.textContent =
+            dvt.DonViTinh;
+
+
+        selectDVT.appendChild(option);
+
+    });
+
+
+    oDVT.appendChild(selectDVT);
+
+    dong.appendChild(oDVT);
+
+
+    // ======================================
+    // CỘT 5 - ĐƠN GIÁ
+    // ======================================
 
     const oDonGia =
         document.createElement("td");
@@ -274,27 +418,51 @@ function themVaoDonHang(
         document.createElement("input");
 
 
-    inputDonGia.type =
-        "number";
+    inputDonGia.type = "text";
 
-    inputDonGia.min =
-        "0";
-
-    inputDonGia.value =
-        giaBan;
-
-    inputDonGia.className =
-        "don-gia";
+    inputDonGia.inputMode = "numeric";
 
 
-    oDonGia.appendChild(
-        inputDonGia
-    );
+    inputDonGia.style.width = "100%";
+
+    inputDonGia.style.boxSizing =
+        "border-box";
+
+    inputDonGia.style.textAlign =
+        "right";
 
 
-    // ----------------------------------------------
-    // Cột số lượng
-    // ----------------------------------------------
+    // --------------------------------------
+    // LẤY GIÁ GIASX
+    // CỦA ĐVT ĐẦU TIÊN
+    // --------------------------------------
+
+    if (danhSachDVT.length > 0) {
+
+        const dvtDauTien =
+            danhSachDVT[0];
+
+
+        inputDonGia.value =
+            dinhDangSo(
+                dvtDauTien.GiaSX
+            );
+
+    } else {
+
+        inputDonGia.value = "0";
+
+    }
+
+
+    oDonGia.appendChild(inputDonGia);
+
+    dong.appendChild(oDonGia);
+
+
+    // ======================================
+    // CỘT 6 - SỐ LƯỢNG
+    // ======================================
 
     const oSoLuong =
         document.createElement("td");
@@ -304,305 +472,199 @@ function themVaoDonHang(
         document.createElement("input");
 
 
-    inputSoLuong.type =
-        "number";
+    inputSoLuong.type = "number";
 
-    inputSoLuong.min =
-        "1";
+    inputSoLuong.value = 1;
 
-    inputSoLuong.value =
-        "1";
+    inputSoLuong.min = 0;
 
-    inputSoLuong.className =
-        "so-luong";
+    inputSoLuong.step = "1";
 
 
-    oSoLuong.appendChild(
-        inputSoLuong
-    );
+    inputSoLuong.style.width = "100%";
+
+    inputSoLuong.style.boxSizing =
+        "border-box";
+
+    inputSoLuong.style.textAlign =
+        "right";
 
 
-    // ----------------------------------------------
-    // Cột thành tiền
-    // ----------------------------------------------
+    oSoLuong.appendChild(inputSoLuong);
+
+    dong.appendChild(oSoLuong);
+
+
+    // ======================================
+    // CỘT 7 - THÀNH TIỀN
+    // ======================================
 
     const oThanhTien =
         document.createElement("td");
 
 
-    oThanhTien.className =
-        "thanh-tien";
+    const spanThanhTien =
+        document.createElement("span");
 
 
-    // ----------------------------------------------
-    // Ghép các <td> vào <tr>
-    // ----------------------------------------------
-
-    dongMoi.appendChild(oSTT);
-
-    dongMoi.appendChild(oTenHang);
-
-    dongMoi.appendChild(oDonViTinh);
-
-    dongMoi.appendChild(oDonGia);
-
-    dongMoi.appendChild(oSoLuong);
-
-    dongMoi.appendChild(oThanhTien);
+    spanThanhTien.textContent =
+        "0";
 
 
-    // ----------------------------------------------
-    // Đưa <tr> vào tbody
-    // ----------------------------------------------
-
-    tbodyHoaDon.appendChild(
-        dongMoi
+    oThanhTien.appendChild(
+        spanThanhTien
     );
 
 
-    // ----------------------------------------------
-    // Click dòng hóa đơn
-    // ----------------------------------------------
-
-    dongMoi.addEventListener(
-        "click",
-        function () {
-
-            chonDongHoaDon(
-                dongMoi
-            );
-
-        }
-    );
+    dong.appendChild(oThanhTien);
 
 
-    // ----------------------------------------------
-    // Thay đổi số lượng
-    // ----------------------------------------------
-
-    inputSoLuong.addEventListener(
-        "input",
-        function () {
-
-            tinhThanhTien(
-                dongMoi
-            );
-
-        }
-    );
-
-
-    // ----------------------------------------------
-    // Thay đổi đơn giá
-    // ----------------------------------------------
+    // ======================================
+    // ĐỔI ĐƠN GIÁ
+    // ======================================
 
     inputDonGia.addEventListener(
         "input",
-        function () {
+        function() {
 
-            tinhThanhTien(
-                dongMoi
-            );
+            let gia =
+                laySo(this.value);
+
+
+            this.value =
+                dinhDangSo(gia);
+
+
+            tinhThanhTienDong(dong);
 
         }
     );
 
 
-    // ----------------------------------------------
-    // Tính tiền
-    // ----------------------------------------------
+    // ======================================
+    // ĐỔI SỐ LƯỢNG
+    // ======================================
 
-    tinhThanhTien(
-        dongMoi
+    inputSoLuong.addEventListener(
+        "input",
+        function() {
+
+            tinhThanhTienDong(dong);
+
+        }
     );
 
 
-    // ----------------------------------------------
-    // Đánh lại STT
-    // ----------------------------------------------
+    // ======================================
+    // ĐỔI ĐVT
+    // ======================================
 
-    danhLaiSTT();
+    selectDVT.addEventListener(
+        "change",
+        function() {
+
+            const dvtDuocChon =
+                danhSachDVT.find(function(dvt) {
+
+                    return dvt.DonViTinh ===
+                        selectDVT.value;
+
+                });
 
 
-    // ----------------------------------------------
+            if (dvtDuocChon) {
+
+                inputDonGia.value =
+                    dinhDangSo(
+                        dvtDuocChon.GiaSX
+                    );
+
+            }
+
+
+            tinhThanhTienDong(dong);
+
+        }
+    );
+
+
+    // ======================================
+    // CLICK CHỌN DÒNG
+    // ======================================
+
+    dong.addEventListener(
+        "click",
+        function() {
+
+            chonDong(dong);
+
+        }
+    );
+
+
+    // ======================================
+    // THÊM VÀO BẢNG
+    // ======================================
+
+    bangHoaDon.appendChild(dong);
+
+
+    // Cập nhật STT
+    capNhatSTT();
+
+
     // Chọn dòng vừa thêm
-    // ----------------------------------------------
+    chonDong(dong);
 
-    chonDongHoaDon(
-        dongMoi
-    );
+
+    // Tính tiền
+    tinhThanhTienDong(dong);
 
 }
 
 
-// ==========================================================
-// 3. CHỌN DÒNG HÓA ĐƠN
-// ==========================================================
+// ==========================================
+// CHỌN DÒNG
+// ==========================================
 
-
-function chonDongHoaDon(dong) {
-
-
-    const cacDong =
-        tbodyHoaDon.querySelectorAll("tr");
-
+function chonDong(dong) {
 
     // Bỏ chọn tất cả
+    const cacDong =
+        bangHoaDon.querySelectorAll("tr");
 
-    cacDong.forEach(function (dongKhac) {
 
-        dongKhac.classList.remove(
-            "selected"
+    cacDong.forEach(function(item) {
+
+        item.classList.remove(
+            "dong-duoc-chon"
         );
 
     });
 
 
     // Chọn dòng hiện tại
-
     dong.classList.add(
-        "selected"
+        "dong-duoc-chon"
     );
 
 
-    // Lưu dòng đang chọn
-
-    dongHoaDonDangChon =
-        dong;
+    dongDangChon = dong;
 
 }
 
 
-// ==========================================================
-// 4. TÍNH THÀNH TIỀN
-// ==========================================================
+// ==========================================
+// CẬP NHẬT STT
+// ==========================================
 
-
-function tinhThanhTien(dong) {
-
-
-    const inputSoLuong =
-        dong.querySelector(
-            ".so-luong"
-        );
-
-
-    const inputDonGia =
-        dong.querySelector(
-            ".don-gia"
-        );
-
-
-    let soLuong =
-        Number(inputSoLuong.value);
-
-
-    let donGia =
-        Number(inputDonGia.value);
-
-
-    // Không cho số lượng âm
-
-    if (soLuong < 0) {
-
-        soLuong = 0;
-
-        inputSoLuong.value = 0;
-
-    }
-
-
-    // Không cho đơn giá âm
-
-    if (donGia < 0) {
-
-        donGia = 0;
-
-        inputDonGia.value = 0;
-
-    }
-
-
-    const thanhTien =
-        soLuong * donGia;
-
-
-    dong.querySelector(
-        ".thanh-tien"
-    ).textContent =
-        dinhDangTien(thanhTien);
-
-
-    // Tính lại tổng
-
-    tinhTongTien();
-
-}
-
-
-// ==========================================================
-// 5. TÍNH TỔNG TIỀN
-// ==========================================================
-
-
-function tinhTongTien() {
-
+function capNhatSTT() {
 
     const cacDong =
-        tbodyHoaDon.querySelectorAll("tr");
+        bangHoaDon.querySelectorAll("tr");
 
 
-    let tong = 0;
-
-
-    cacDong.forEach(function (dong) {
-
-
-        const soLuong =
-            Number(
-                dong.querySelector(
-                    ".so-luong"
-                ).value
-            );
-
-
-        const donGia =
-            Number(
-                dong.querySelector(
-                    ".don-gia"
-                ).value
-            );
-
-
-        tong +=
-            soLuong * donGia;
-
-    });
-
-
-    tongTien.textContent =
-        dinhDangTien(tong);
-
-}
-
-
-// ==========================================================
-// 6. ĐÁNH LẠI SỐ THỨ TỰ
-// ==========================================================
-
-
-function danhLaiSTT() {
-
-
-    const cacDong =
-        tbodyHoaDon.querySelectorAll("tr");
-
-
-    cacDong.forEach(function (
-        dong,
-        index
-    ) {
-
+    cacDong.forEach(function(dong, index) {
 
         dong.cells[0].textContent =
             index + 1;
@@ -612,230 +674,193 @@ function danhLaiSTT() {
 }
 
 
-// ==========================================================
-// 7. XÓA DÒNG
-// ==========================================================
+// ==========================================
+// TÍNH THÀNH TIỀN MỘT DÒNG
+// ==========================================
+
+function tinhThanhTienDong(dong) {
+
+    const inputDonGia =
+        dong.cells[4]
+            .querySelector("input");
 
 
-btnXoa.addEventListener(
-    "click",
-    function () {
+    const inputSoLuong =
+        dong.cells[5]
+            .querySelector("input");
 
 
-        if (
-            dongHoaDonDangChon === null
-        ) {
-
-            alert(
-                "Bạn chưa chọn dòng cần xóa!"
-            );
-
-            return;
-
-        }
+    const spanThanhTien =
+        dong.cells[6]
+            .querySelector("span");
 
 
-        dongHoaDonDangChon.remove();
+    const donGia =
+        laySo(inputDonGia.value);
 
 
-        dongHoaDonDangChon =
-            null;
+    const soLuong =
+        Number(inputSoLuong.value) || 0;
 
 
-        danhLaiSTT();
-
-
-        tinhTongTien();
-
-    }
-);
-
-
-// ==========================================================
-// 8. XÓA HẾT
-// ==========================================================
-
-
-btnXoaHet.addEventListener(
-    "click",
-    function () {
-
-
-        if (
-            tbodyHoaDon.children.length === 0
-        ) {
-
-            return;
-
-        }
-
-
-        const xacNhan =
-            confirm(
-                "Bạn có chắc muốn xóa toàn bộ đơn hàng?"
-            );
-
-
-        if (!xacNhan) {
-
-            return;
-
-        }
-
-
-        tbodyHoaDon.innerHTML =
-            "";
-
-
-        dongHoaDonDangChon =
-            null;
-
-
-        tinhTongTien();
-
-    }
-);
-
-
-// ==========================================================
-// 9. NÚT LƯU ĐƠN HÀNG
-// ==========================================================
-
-
-btnLuu.addEventListener(
-    "click",
-    function () {
-
-
-        const soDong =
-            tbodyHoaDon.querySelectorAll(
-                "tr"
-            ).length;
-
-
-        if (soDong === 0) {
-
-            alert(
-                "Đơn hàng chưa có sản phẩm!"
-            );
-
-            return;
-
-        }
-
-
-        alert(
-            "Đơn hàng đã sẵn sàng để lưu!"
+    const thanhTien =
+        Math.round(
+            donGia * soLuong
         );
 
-    }
-);
+
+    spanThanhTien.textContent =
+        dinhDangSo(thanhTien);
 
 
-// ==========================================================
-// 10. TÌM KIẾM HÀNG
-// ==========================================================
-
-
-txtTimKiem.addEventListener(
-    "input",
-    function () {
-
-
-        const tuKhoa =
-            txtTimKiem.value
-                .toLowerCase()
-                .trim();
-
-
-        const cacDong =
-            bangDanhMuc.querySelectorAll(
-                "tbody tr"
-            );
-
-
-        cacDong.forEach(function (dong) {
-
-
-            const tenHang =
-                dong.dataset.ten
-                    .toLowerCase();
-
-
-            if (
-                tenHang.includes(tuKhoa)
-            ) {
-
-                dong.style.display =
-                    "";
-
-            } else {
-
-                dong.style.display =
-                    "none";
-
-            }
-
-        });
-
-    }
-);
-
-
-// ==========================================================
-// 11. XUẤT PDF
-// ==========================================================
-//
-// Không cần thư viện PDF ở bước này.
-//
-// window.print() mở chức năng in của trình duyệt.
-// CSS @media print trong HTML sẽ quyết định
-// phần nào được đưa vào PDF.
-// ==========================================================
-
-
-btnXuatPDF.addEventListener(
-    "click",
-    function () {
-
-
-        // Kiểm tra đơn hàng
-
-        const cacDong =
-            tbodyHoaDon.querySelectorAll(
-                "tr"
-            );
-
-
-        if (cacDong.length === 0) {
-
-            alert(
-                "Đơn hàng chưa có sản phẩm!"
-            );
-
-            return;
-
-        }
-
-
-        // Mở hộp thoại in
-
-        window.print();
-
-    }
-);
-
-
-// ==========================================================
-// 12. ĐỊNH DẠNG TIỀN
-// ==========================================================
-
-
-function dinhDangTien(soTien) {
-
-
-    return new Intl.NumberFormat(
-        "vi-VN"
-    ).format(soTien);
+    // Tính tổng
+    tinhTongTien();
 
 }
+
+
+// ==========================================
+// TÍNH TỔNG TIỀN HÀNG
+// ==========================================
+
+function tinhTongTien() {
+
+    let tongTien = 0;
+
+
+    const cacDong =
+        bangHoaDon.querySelectorAll("tr");
+
+
+    cacDong.forEach(function(dong) {
+
+        const thanhTien =
+            laySo(
+                dong.cells[6].textContent
+            );
+
+
+        tongTien += thanhTien;
+
+    });
+
+
+    document.getElementById(
+        "tongTien"
+    ).textContent =
+        dinhDangSo(tongTien);
+
+
+    tinhTongThanhToan();
+
+}
+
+
+// ==========================================
+// TÍNH THUẾ + TỔNG THANH TOÁN
+// ==========================================
+
+function tinhTongThanhToan() {
+
+    const tongTien =
+        laySo(
+            document.getElementById(
+                "tongTien"
+            ).textContent
+        );
+
+
+    const thue =
+        Number(
+            document.getElementById(
+                "thueGTGT"
+            ).value
+        ) || 0;
+
+
+    const tienThue =
+        Math.round(
+            tongTien * thue / 100
+        );
+
+
+    const tongThanhToan =
+        tongTien + tienThue;
+
+
+    document.getElementById(
+        "tienThue"
+    ).textContent =
+        dinhDangSo(tienThue);
+
+
+    document.getElementById(
+        "tongThanhToan"
+    ).textContent =
+        dinhDangSo(tongThanhToan);
+capNhatTienBangChu();
+}
+
+
+// ==========================================
+// THAY ĐỔI THUẾ
+// ==========================================
+
+document.getElementById(
+    "thueGTGT"
+).addEventListener(
+    "input",
+    tinhTongThanhToan
+);
+// ==========================================
+// TỰ ĐỘNG CHUYỂN TÊN KHÁCH HÀNG THÀNH IN HOA
+// ==========================================
+
+const tenKhachHang = document.getElementById("tenKhachHang");
+
+tenKhachHang.addEventListener("input", function() {
+
+    this.value = this.value.toLocaleUpperCase("vi-VN");
+
+});
+// ==========================================
+// ĐỊA CHỈ - VIẾT HOA CHỮ CÁI ĐẦU MỖI TỪ
+// ==========================================
+
+const diaChi = document.getElementById("diaChi");
+
+diaChi.addEventListener("input", function() {
+
+    this.value = this.value.toLocaleLowerCase("vi-VN")
+        .replace(/(^|\s)\S/g, function(chu) {
+            return chu.toLocaleUpperCase("vi-VN");
+        });
+
+});
+
+
+function capNhatTienBangChu() {
+
+    const tongTien = document.getElementById("tongThanhToan");
+    const tienBangChu = document.getElementById("tienBangChu");
+
+    if (!tongTien || !tienBangChu) return;
+
+    const soTien = Number(
+        tongTien.textContent.replace(/[^\d-]/g, "")
+    );
+
+    let chu = docSoThanhChu(soTien);
+
+    chu = chu.toLocaleLowerCase("vi-VN");
+
+    chu = chu.charAt(0).toLocaleUpperCase("vi-VN") + chu.slice(1);
+
+    tienBangChu.value = chu;
+}
+
+
+
+
+// ==========================================
+
