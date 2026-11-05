@@ -1,0 +1,1267 @@
+/* =====================================================
+   CÀI ĐẶT CHUNG
+   ===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+
+  font-family: "Times New Roman", Times, serif, sans-serif;
+
+  background-color: #f2f2f2;
+}
+
+/* =====================================================
+   KHUNG CHÍNH
+   LISTBOX TRÊN
+   BÁO GIÁ DƯỚI
+   ===================================================== */
+
+.main-container {
+  width: 100%;
+
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  padding: 20px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 20px;
+}
+
+/* =====================================================
+   PHẦN 1: DANH MỤC HÀNG
+   ===================================================== */
+
+.danh-muc {
+  width: 100%;
+
+  border: 1px solid #555;
+
+  padding: 10px;
+
+  background-color: white;
+
+  border-radius: 6px;
+}
+
+/* =====================================================
+   TIÊU ĐỀ DANH MỤC
+   ===================================================== */
+
+.tieu-de {
+  width: 100%;
+
+  padding: 8px;
+
+  text-align: center;
+
+  font-size: 22px;
+
+  font-weight: bold;
+
+  background-color: darkblue;
+
+  color: #d9edf7;
+
+  margin-bottom: 10px;
+}
+
+/* =====================================================
+   Ô TÌM KIẾM
+   ===================================================== */
+
+.tim-kiem {
+  width: 100%;
+
+  margin-bottom: 10px;
+}
+
+.tim-kiem label {
+  display: block;
+
+  font-weight: bold;
+
+  margin-bottom: 5px;
+}
+
+#txtTimKiem {
+  width: 100%;
+
+  height: 35px;
+
+  padding: 5px 8px;
+
+  border: 1px solid #888;
+
+  border-radius: 4px;
+
+  font-size: 15px;
+
+  outline: none;
+}
+
+#txtTimKiem:focus {
+  border-color: darkblue;
+}
+
+/* =====================================================
+   LISTBOX
+   ===================================================== */
+
+.listbox {
+  width: 100%;
+
+  height: 250px;
+
+  overflow-y: auto;
+
+  border: 1px solid #777;
+
+  background-color: white;
+
+  font-size: 18px;
+}
+
+/* =====================================================
+   TỪNG DÒNG HÀNG
+   ===================================================== */
+
+.hang {
+  padding: 10px;
+
+  border-bottom: 1px solid #ddd;
+
+  cursor: pointer;
+}
+
+.hang:hover {
+  background-color: #6d993a;
+
+  color: white;
+}
+
+/* =====================================================
+   PHẦN 2: BÁO GIÁ
+   ===================================================== */
+
+.right-panel {
+  width: 100%;
+
+  background-color: white;
+
+  border: 1px solid #d0d0d0;
+
+  border-radius: 8px;
+
+  padding: 20px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* =====================================================
+   VÙNG IN
+   ===================================================== */
+
+#printArea {
+  width: 96%;
+
+  background-color: white;
+}
+
+/* =====================================================
+   TÊN CÔNG TY
+   ===================================================== */
+
+/* Tên công ty được khai báo duy nhất ở phần LOGO - TÊN CÔNG TY - CON DẤU */
+
+/* =====================================================
+   THÔNG TIN CÔNG TY
+   ===================================================== */
+
+.company-info {
+  position: relative;
+  top: -25px;
+
+  text-align: left;
+  margin-top: 0;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 4px;
+
+  color: #333;
+  margin-left: 0;
+}
+
+/* =====================================================
+   THÔNG TIN KHÁCH HÀNG
+   ===================================================== */
+
+.customer-info {
+  width: 100%;
+
+  margin-top: 10px;
+
+  margin-bottom: 15px;
+
+  padding: 10px 0;
+}
+
+.customer-row {
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+
+  margin-bottom: 8px;
+}
+
+.customer-row label {
+  width: 130px;
+
+  min-width: 130px;
+
+  font-weight: bold;
+
+  font-size: 20px;
+}
+
+.customer-row input {
+  flex: 1;
+
+  width: 100%;
+
+  height: 34px;
+
+  padding: 5px 8px;
+
+  border: 1px solid #aaa;
+
+  border-radius: 4px;
+
+  font-size: 15px;
+
+  outline: none;
+}
+
+.customer-row input:focus {
+  border-color: #333;
+}
+/* =====================================================
+   THÔNG TIN KHÁCH HÀNG
+   ===================================================== */
+
+.customer-info {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  padding: 10px 0;
+}
+
+.customer-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.customer-row label {
+  width: 130px;
+  min-width: 130px;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.customer-row input {
+  flex: 1;
+  width: 80%;
+  height: 34px;
+  padding: 5px 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+
+  font-size: 14px; /* Cỡ chữ nhỏ hơn */
+  font-weight: bold; /* Chữ in đậm */
+  font-family: "Times New Roman", Times, serif; /* Kiểu chữ */
+
+  color: black;
+  outline: none;
+}
+
+.customer-row input:focus {
+  border-color: #333;
+}
+/* Ô SỐ ĐƠN HÀNG */
+#soDonHang {
+  flex: 0 0 220px !important;
+  width: 220px !important;
+  min-width: 0 !important;
+  font-size: 20px;
+}
+
+/* Ô NGÀY LẬP */
+#ngayLap {
+  flex: 0 0 200px !important;
+  width: 200px !important;
+  min-width: 0 !important;
+  font-size: 20px;
+}
+/* Điều chỉnh chiều dài ô nhập */
+.customer-row #tenKhachHang {
+  flex: 0 0 570px !important;
+  width: 570px !important;
+}
+
+.customer-row #diaChi {
+  flex: 0 0 570px !important;
+  width: 570px !important;
+}
+
+/* =====================================================
+   MÃ SỐ THUẾ + ĐIỆN THOẠI CÙNG MỘT HÀNG
+   ===================================================== */
+
+.customer-half {
+  width: 48%;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.customer-half label {
+  width: 130px;
+  min-width: 130px;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 20px;
+}
+
+.customer-half input {
+  flex: 1;
+  width: auto;
+  height: 34px;
+  box-sizing: border-box;
+}
+/* NGÀY LẬP VÀ ĐIỆN THOẠI SÁT VỚI Ô INPUT */
+
+.customer-row:first-child label[for="ngayLap"] {
+  margin-left: 20px;
+}
+
+.customer-row-half .customer-half:nth-child(2) label {
+  margin-left: 20px;
+}
+
+/* =====================================================
+   TIÊU ĐỀ BÁO GIÁ
+   ===================================================== */
+
+.document-title {
+  text-align: center;
+
+  font-size: 32px;
+
+  font-weight: bold;
+
+  margin-top: 20px;
+
+  margin-bottom: 15px;
+
+  text-transform: uppercase;
+}
+
+/* =====================================================
+   KHUNG BẢNG
+   ===================================================== */
+
+.invoice-wrapper {
+  width: 100%;
+
+  overflow-x: auto;
+}
+
+/* =====================================================
+   BẢNG HÓA ĐƠN
+   ===================================================== */
+
+#bangHoaDon {
+  width: 98%;
+
+  min-width: 800px;
+
+  border-collapse: collapse;
+
+  table-layout: fixed;
+
+  font-size: 14px;
+}
+
+#bangHoaDon th {
+  background-color: #eeeeee;
+
+  color: #000;
+
+  border: 1px solid #000;
+
+  padding: 8px 5px;
+
+  text-align: center !important;
+  vertical-align: middle;
+
+  font-weight: bold;
+}
+
+#bangHoaDon td {
+  border: 1px solid #000;
+
+  padding: 7px 5px;
+
+  text-align: center;
+
+  vertical-align: middle;
+
+  word-wrap: break-word;
+}
+
+#bangHoaDon tbody tr:hover {
+  background-color: #f3f3f3;
+
+  cursor: pointer;
+}
+/* =====================================================
+   CHIỀU RỘNG CỘT
+   ===================================================== */
+
+#bangHoaDon {
+  width: 98%;
+  min-width: 0;
+  table-layout: fixed;
+}
+
+/* CỘT 1 */
+#bangHoaDon th:nth-child(1),
+#bangHoaDon td:nth-child(1) {
+  width: 15px !important;
+}
+
+/* CỘT 2 */
+#bangHoaDon th:nth-child(2),
+#bangHoaDon td:nth-child(2) {
+  width: 25px !important;
+}
+
+/* CỘT 3 */
+#bangHoaDon th:nth-child(3),
+#bangHoaDon td:nth-child(3) {
+  width: 100px !important;
+  text-align: left;
+}
+
+/* CỘT 4 */
+#bangHoaDon th:nth-child(4),
+#bangHoaDon td:nth-child(4) {
+  width: 30px !important;
+}
+
+/* CỘT 5 */
+#bangHoaDon th:nth-child(5),
+#bangHoaDon td:nth-child(5) {
+  width: 40px !important;
+  text-align: right;
+}
+
+/* CỘT 6 */
+#bangHoaDon th:nth-child(6),
+#bangHoaDon td:nth-child(6) {
+  width: 20px !important;
+}
+
+/* CỘT 7 */
+#bangHoaDon th:nth-child(7),
+#bangHoaDon td:nth-child(7) {
+  width: 45px !important;
+  text-align: right;
+}
+
+/* =====================================================
+   TỔNG TIỀN
+   ===================================================== */
+
+.total-box {
+  width: 98%;
+  margin-top: 15px;
+  padding: 10px 30px 10px 0;
+  box-sizing: border-box;
+}
+
+.total-row {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: flex-end;
+
+  min-height: 38px;
+
+  gap: 7px;
+
+  padding: 5px 0;
+}
+
+.total-row > span {
+  white-space: nowrap;
+
+  font-size: 20px;
+}
+
+.total-row > span:first-child {
+  font-weight: bold;
+}
+
+.total-row strong {
+  min-width: 130px;
+
+  text-align: right;
+
+  font-size: 20px;
+
+  font-weight: bold;
+
+  white-space: nowrap;
+}
+
+/* =====================================================
+   THUẾ GTGT
+   ===================================================== */
+
+#thueGTGT {
+  width: 55px;
+
+  height: 32px;
+
+  padding: 4px;
+
+  text-align: center;
+
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #888;
+
+  border-radius: 4px;
+
+  outline: none;
+}
+
+/* =====================================================
+   TỔNG THANH TOÁN
+   ===================================================== */
+
+.total-payment {
+  margin-top: 5px;
+
+  padding-top: 10px;
+
+  border-top: 2px solid #000;
+}
+
+.total-payment > span:first-child {
+  font-size: 20px;
+  font-weight: bold;
+  position: relative;
+  left: 40px;
+}
+
+.total-payment strong {
+  font-size: 20px;
+  margin-left: 20px;
+  min-width: 150px;
+}
+/* =====================================
+   SỐ TIỀN BẰNG CHỮ
+===================================== */
+
+/* SỐ TIỀN BẰNG CHỮ */
+.tien-bang-chu {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  box-sizing: border-box;
+  margin-top: 8px;
+}
+
+/* TIÊU ĐỀ LABEL */
+.tien-bang-chu label {
+  flex: 0 0 auto;
+  white-space: nowrap;
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+}
+
+/* Ô INPUT */
+#tienBangChu {
+  display: block;
+  flex: 0 0 540px;
+  width: 540px;
+  max-width: 100%;
+  height: 36px;
+
+  font-family: "Times New Roman", Times, serif;
+  font-size: 17px;
+  font-weight: bold;
+  color: #000;
+  text-transform: capitalize;
+  border: 1px solid #000;
+  border-radius: 3px;
+  background-color: #fff;
+
+  padding: 4px 8px;
+  box-sizing: border-box;
+  outline: none;
+}
+/* =====================================================
+   NÚT
+   ===================================================== */
+
+.buttons {
+  display: flex;
+
+  justify-content: center;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-top: 20px;
+
+  flex-wrap: wrap;
+}
+
+.buttons button {
+  min-width: 100px;
+
+  height: 38px;
+
+  padding: 5px 15px;
+
+  border: 1px solid #888;
+
+  border-radius: 5px;
+
+  background-color: #eeeeee;
+
+  color: #000;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background-color: #d9d9d9;
+}
+
+/* =====================================================
+   ĐIỆN THOẠI
+   ===================================================== */
+
+@media (max-width: 600px) {
+  /* Khung chính */
+
+  @page {
+    size: A4;
+    margin: 1mm 8mm 10mm 8mm;
+  }
+  .main-container {
+    width: 100%;
+
+    padding: 8px;
+
+    gap: 12px;
+  }
+
+  /* Danh mục */
+
+  .danh-muc {
+    width: 100%;
+
+    padding: 8px;
+  }
+
+  .tieu-de {
+    font-size: 18px;
+
+    padding: 7px;
+  }
+
+  #txtTimKiem {
+    height: 34px;
+
+    font-size: 14px;
+  }
+
+  /* Listbox */
+
+  .listbox {
+    height: 220px;
+
+    font-size: 16px;
+  }
+
+  .hang {
+    padding: 9px;
+  }
+
+  /* Báo giá */
+
+  .right-panel {
+    width: 100%;
+
+    padding: 10px;
+
+    border-radius: 5px;
+
+    box-shadow: none;
+  }
+
+  /* Công ty */
+
+  .company-info {
+    font-size: 13px;
+
+    line-height: 1.4;
+  }
+
+  /* Khách hàng */
+
+  .customer-row {
+    align-items: center;
+
+    margin-bottom: 7px;
+  }
+
+  .customer-row label {
+    width: 100px;
+
+    min-width: 100px;
+
+    font-size: 12px;
+  }
+
+  .customer-row input {
+    height: 32px;
+
+    font-size: 13px;
+
+    min-width: 0;
+  }
+
+  /* Tiêu đề */
+
+  .document-title {
+    font-size: 19px;
+
+    margin-top: 15px;
+
+    margin-bottom: 12px;
+  }
+
+  /* Bảng */
+
+  .invoice-wrapper {
+    width: 100%;
+
+    overflow-x: auto;
+  }
+
+  #bangHoaDon {
+    min-width: 800px;
+
+    font-size: 12px;
+  }
+
+  #bangHoaDon th,
+  #bangHoaDon td {
+    padding: 6px 4px;
+  }
+
+  /* Tổng tiền */
+
+  .total-row {
+    gap: 4px;
+
+    font-size: 12px;
+  }
+
+  .total-row > span {
+    font-size: 12px;
+  }
+
+  .total-row strong {
+    min-width: 90px;
+
+    font-size: 13px;
+  }
+
+  #thueGTGT {
+    width: 45px;
+
+    height: 29px;
+
+    font-size: 13px;
+  }
+
+  .total-payment > span:first-child {
+    font-size: 14px;
+  }
+
+  .total-payment strong {
+    min-width: 100px;
+
+    font-size: 15px;
+  }
+
+  /* Nút */
+
+  .buttons {
+    gap: 6px;
+
+    margin-top: 12px;
+  }
+
+  .buttons button {
+    min-width: 75px;
+
+    height: 34px;
+
+    padding: 4px 8px;
+
+    font-size: 12px;
+  }
+}
+
+/* =====================================================
+   IN / XUẤT PDF
+   ===================================================== */
+
+@media print {
+  body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Ẩn toàn bộ nội dung khi in */
+  body * {
+    visibility: hidden;
+  }
+
+  /* Chỉ hiển thị báo giá trang 1 và điều kiện trang 2 */
+  #printArea,
+  #printArea *,
+  .terms-page,
+  .terms-page * {
+    visibility: visible;
+  }
+
+  /* TRANG 1: BÁO GIÁ */
+  #printArea {
+    position: absolute;
+    left: 1mm;
+    top: 0;
+    width: 96%;
+    padding-top: 6px;
+    padding-right: 2px;
+    padding-bottom: 6px;
+    padding-left: 4px;
+  }
+
+  /* Logo và con dấu khi in PDF */
+  .company-logo,
+  .company-stamp {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Khung báo giá */
+  .right-panel {
+    width: 98%;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+    /* Khung báo giá */
+    .right-panel {
+      width: 100%;
+      max-width: none;
+      margin: 0;
+      padding: 0;
+      border: none;
+      box-shadow: none;
+    }
+  }
+
+  /* TRANG 2: ĐIỀU KIỆN BÁO GIÁ */
+  .terms-page {
+    display: block !important;
+    position: relative !important;
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+
+    break-before: page !important;
+    page-break-before: always !important;
+
+    background-color: white;
+    color: #000;
+  }
+
+  /* Ẩn các nút */
+  .buttons {
+    display: none !important;
+  }
+
+  /* Bảng hóa đơn */
+  .invoice-wrapper {
+    overflow: visible !important;
+  }
+
+  #bangHoaDon {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Ô nhập liệu */
+  .customer-row input {
+    border: none;
+    background: transparent;
+  }
+}
+
+@media print {
+  /* Giữ nguyên toàn bộ khung thông tin khách hàng */
+  .customer-info {
+    width: 100% !important;
+    margin-top: 10px !important;
+    margin-bottom: 15px !important;
+    padding: 10px 0 !important;
+  }
+
+  /* Giữ nguyên từng dòng */
+  .customer-row {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Giữ nguyên nhãn */
+  .customer-row label {
+    font-weight: bold !important;
+    font-size: 20px !important;
+  }
+
+  /* Giữ nguyên ô nhập */
+  .customer-row input,
+  .customer-half input {
+    height: 34px !important;
+    padding: 5px 8px !important;
+
+    border: 1px solid #aaa !important;
+    border-radius: 4px !important;
+
+    background: white !important;
+    color: #000 !important;
+
+    box-sizing: border-box !important;
+    box-shadow: none !important;
+
+    font-size: 15px !important;
+  }
+
+  /* Mã số thuế + Điện thoại vẫn cùng hàng */
+  .customer-row-half {
+    display: flex !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+
+  .customer-half {
+    width: 50% !important;
+
+    display: flex !important;
+    align-items: center !important;
+
+    box-sizing: border-box !important;
+  }
+
+  .customer-half label {
+    width: 130px !important;
+    min-width: 130px !important;
+
+    font-weight: bold !important;
+    white-space: nowrap !important;
+
+    margin: 0 !important;
+  }
+
+  .customer-half input {
+    flex: 1 !important;
+    width: auto !important;
+  }
+}
+/* =====================================================
+   LOGO - TÊN CÔNG TY - CON DẤU
+   ===================================================== */
+
+.company-header {
+  position: relative;
+  width: 100%;
+  min-height: 80px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Giữ nguyên khoảng trống cho logo và con dấu */
+  padding: 5px 110px;
+  box-sizing: border-box;
+}
+
+/* =====================================================
+   TÊN CÔNG TY
+   - Chỉ phần tên công ty được kéo sang trái
+   - Chiếm khoảng 1/2 chiều ngang
+   - Tên dài sẽ tự xuống dòng
+   ===================================================== */
+
+.company-header .company-name {
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 60%;
+
+  text-align: left;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+
+  line-height: 1.3;
+  text-transform: uppercase;
+
+  margin: 0;
+  padding: 0;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.company-header .company-name-en {
+  position: absolute;
+
+  right: 0;
+  top: 0;
+
+  width: 40%;
+  box-sizing: border-box;
+
+  text-align: center;
+
+  font-size: 20px;
+  font-weight: bold;
+  color: #000;
+
+  line-height: 1.3;
+  text-transform: capitalize;
+
+  margin: 0;
+  padding: 0 5px;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* =====================================================
+   LOGO BÊN TRÁI - MÁY TÍNH
+   ===================================================== */
+
+.company-logo {
+  position: absolute;
+
+  left: 20px;
+  top: 180%;
+
+  transform: translateY(-50%);
+
+  width: 140px;
+  height: 100px;
+
+  object-fit: contain;
+}
+
+/* =====================================================
+   CON DẤU BÊN PHẢI - MÁY TÍNH
+   ===================================================== */
+
+.company-stamp {
+  position: absolute;
+
+  right: 40px;
+  top: 160%;
+
+  transform: translateY(-50%);
+
+  width: 110px;
+  height: 110px;
+
+  object-fit: contain;
+}
+
+/* =====================================================
+   ĐIỆN THOẠI
+   ===================================================== */
+
+@media (max-width: 600px) {
+  .company-header {
+    min-height: 65px;
+
+    /* Giữ khoảng trống cho logo và con dấu */
+    padding-left: 65px;
+    padding-right: 65px;
+  }
+
+  /* Tên công ty trên điện thoại */
+  .company-header .company-name {
+    width: 50%;
+
+    font-size: 15px;
+    line-height: 1.3;
+
+    /* Kéo riêng tên công ty sang trái */
+    margin-left: -65px;
+  }
+
+  /* Logo trên điện thoại */
+  .company-logo {
+    left: 5px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+  }
+
+  /* Con dấu trên điện thoại */
+  .company-stamp {
+    right: 5px;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+  }
+}
+/* HỘP DANH SÁCH BÁO GIÁ */
+#hopDuLieuDaLuu {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* TIÊU ĐỀ */
+#hopDuLieuDaLuu h3 {
+  margin: 5px 0 8px 0;
+  text-align: center;
+  background-color: coral;
+  color: #d9edf7;
+  padding: 13px 0; /* Tăng chiều cao nền */
+  width: 100%; /* Nền rộng hết chiều ngang */
+  box-sizing: border-box;
+  font-size: 22px; /* Cỡ chữ */
+  font-weight: bold;
+}
+
+/* HÀNG TIÊU ĐỀ */
+.dong-tieu-de {
+  display: grid;
+  grid-template-columns: 20% 40% 25% 15%;
+  align-items: center;
+  font-weight: bold;
+  padding: 8px;
+  border-bottom: 1px solid #999;
+  box-sizing: border-box;
+}
+
+/* CÁC DÒNG DỮ LIỆU */
+.dong-du-lieu-da-luu {
+  display: grid !important;
+  grid-template-columns: 20% 40% 25% 15% !important;
+  align-items: center;
+  gap: 0 !important;
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+/* NÚT TẢI BÁO GIÁ */
+/* CHỈ ĐỔI MÀU NÚT TẢI */
+#hopDuLieuDaLuu .dong-du-lieu-da-luu button:first-child {
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Khi rê chuột vào nút TẢI */
+#hopDuLieuDaLuu .dong-du-lieu-da-luu button:first-child:hover {
+  background-color: #0b70c5;
+}
+@media print {
+  .right-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .invoice-wrapper {
+    width: 100% !important;
+    overflow: visible !important;
+    box-sizing: border-box !important;
+  }
+
+  #bangHoaDon {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    table-layout: fixed !important;
+    box-sizing: border-box !important;
+  }
+}
