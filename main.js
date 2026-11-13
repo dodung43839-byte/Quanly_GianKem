@@ -1141,3 +1141,78 @@ try {
     khoiTaoHopDong();
   }
 })();
+// =====================================================
+// NÚT CHỨNG NHẬN XUẤT XƯỞNG - ĐẶT TRONG main.js
+// Gắn với nút có id="btnChungNhanXuatXuong" trong index.html
+// =====================================================
+
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("btnChungNhanXuatXuong");
+  if (!btn) return;
+
+  btn.addEventListener("click", function () {
+    const tbody = document.querySelector("#bangHoaDon tbody");
+    if (!tbody) {
+      alert("Không tìm thấy bảng báo giá!");
+      return;
+    }
+
+    const danhSachHang = [];
+    Array.from(tbody.querySelectorAll("tr")).forEach(function (dong) {
+      const o = dong.cells;
+      if (!o || o.length < 6) return;
+
+      function layGiaTri(viTri) {
+        const input = o[viTri].querySelector("input, select, textarea");
+        return input ? input.value.trim() : o[viTri].innerText.trim();
+      }
+
+      const tenHang = layGiaTri(2);
+      const dvt = layGiaTri(3);
+      const soLuong = layGiaTri(5);
+      if (tenHang) danhSachHang.push({ tenHang, dvt, soLuong });
+    });
+
+    if (!danhSachHang.length) {
+      alert("Bảng báo giá chưa có hàng hóa!");
+      return;
+    }
+
+    sessionStorage.setItem("duLieuPhieuXuatXuong", JSON.stringify(danhSachHang));
+
+    const khachHang = document.getElementById("tenKhachHang");
+    const diaChi = document.getElementById("diaChi");
+    const dienThoai = document.getElementById("dienThoai");
+
+    sessionStorage.setItem("khachHangPhieuXuatXuong", khachHang?.value.trim() || "");
+    sessionStorage.setItem("diaChiPhieuXuatXuong", diaChi?.value.trim() || "");
+    sessionStorage.setItem("dienThoaiPhieuXuatXuong", dienThoai?.value.trim() || "");
+
+    const iframeCu = document.getElementById("iframeChungNhanXuatXuong");
+    if (iframeCu) iframeCu.remove();
+
+    const iframe = document.createElement("iframe");
+    iframe.id = "iframeChungNhanXuatXuong";
+    Object.assign(iframe.style, {
+      position: "fixed", left: "0", top: "0", width: "100%", height: "100%",
+      border: "0", background: "#fff", zIndex: "999999", display: "block"
+    });
+    document.body.appendChild(iframe);
+
+    function xuLyThongBao(event) {
+      if (event.origin !== window.location.origin) return;
+      if (event.data?.type === "chungNhanXuatXuongDaXuat") {
+        window.removeEventListener("message", xuLyThongBao);
+        iframe.style.display = "none";
+        setTimeout(function () {
+          if (iframe.parentNode) iframe.remove();
+        }, 1000);
+        btn.disabled = false;
+      }
+    }
+
+    window.addEventListener("message", xuLyThongBao);
+    btn.disabled = true;
+    iframe.src = "./Xuat-Xuong/xuatxuong.html";
+  });
+});
