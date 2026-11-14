@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Biên bản thanh lý hợp đồng</title>
+    <link rel="stylesheet" href="./thanhly.css" />
+  </head>
+  <body>
+    <div class="toolbar no-print">
+      <button type="button" id="btnLuuPDF">LƯU PDF</button>
+      <button type="button" id="btnIn">IN BIÊN BẢN</button>
+      <button type="button" id="btnQuayLai">QUAY LẠI</button>
+    </div>
+
+    <main class="page" id="bienBanThanhLy">
+      <header class="quoc-hieu">
+        <div class="quoc-hieu-chinh">CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM</div>
+        <div class="quoc-hieu-phu">Độc lập - Tự do - Hạnh phúc</div>
+        <div class="duong-ke"></div>
+        <img src="../images/logo.png" alt="Logo công ty" class="logo-thanh-ly" />
+      </header>
+
+      <h1>BIÊN BẢN THANH LÝ HỢP ĐỒNG</h1>
+
+      <section class="can-cu">
+        <p>
+          - Căn cứ Phiếu Báo Giá, ngày
+          <span id="ngayBaoGia" class="editable" contenteditable="true"
+            >...</span
+          >
+        </p>
+        <p>
+          - Căn cứ Hợp Đồng ký, ngày
+          <span id="ngayHopDong" class="editable" contenteditable="true"
+            >...</span
+          >
+        </p>
+      </section>
+
+      <p class="ngay-hom-nay">
+        Hôm nay, ngày
+        <span id="ngayHienTai" class="editable" contenteditable="true"></span>,
+        chúng tôi gồm có:
+      </p>
+
+      <section class="ben">
+        <h2>I- BÊN MUA: <small>(Gọi tắt là bên A)</small></h2>
+        <div class="dong-dai-dien">
+          <strong
+            >Người đại diện (Ông/Bà):
+            <span id="tenDaiDienA" class="editable" contenteditable="true"
+              >NGUYỄN QUỐC AN</span
+            ></strong
+          >
+          <strong
+            >Chức vụ:
+            <span id="chucVuA" class="editable" contenteditable="true"
+              >Giám đốc</span
+            ></strong
+          >
+        </div>
+        <p class="ten-cong-ty" id="tenKhachHang">CÔNG TY KHÁCH HÀNG</p>
+        <p>
+          <strong>Địa chỉ (Address):</strong>
+          <span id="diaChi" class="editable" contenteditable="true"></span>
+        </p>
+        <p>
+          <strong>Mã số thuế (Tax code):</strong>
+          <span id="maSoThue" class="editable" contenteditable="true"></span>
+        </p>
+        <p>
+          <strong>Điện thoại (Tel):</strong>
+          <span id="dienThoai" class="editable" contenteditable="true"></span>
+        </p>
+      </section>
+
+      <section class="ben ben-b">
+        <h2>II- BÊN BÁN: <small>(Gọi tắt là bên B)</small></h2>
+        <div class="dong-dai-dien">
+          <strong
+            >Người Đại Diện (Ông/Bà):
+            <span class="editable" contenteditable="true"
+              >ĐỖ ANH DŨNG</span
+            ></strong
+          >
+          <strong
+            >Chức Vụ:
+            <span class="editable" contenteditable="true"
+              >Giám Đốc</span
+            ></strong
+          >
+        </div>
+        <p class="ten-cong-ty">CÔNG TY CỔ PHẦN THIẾT BỊ XÂY DỰNG ĐÔNG DƯƠNG</p>
+        <p>
+          <strong>Địa chỉ (Address):</strong> 20B Đại Lộ Bình Dương, Tổ 10, Khu
+          Phố Đông Nhì, Phường Lái Thiêu, TP.HCM
+        </p>
+        <p><strong>Mã số thuế (Tax code):</strong> 3702 433 881</p>
+        <p><strong>Điện thoại (Tel):</strong> 0986.007.646</p>
+      </section>
+
+      <section class="dieu-khoan">
+        <h3>ĐIỀU 1: NỘI DUNG</h3>
+        <p>
+          - Sau khi thực hiện hợp đồng ký kết ngày
+          <span id="ngayHopDongNoiDung" class="editable" contenteditable="true"
+            >...</span
+          >, ngày
+          <span
+            id="ngayThanhLyNoiDung"
+            class="editable"
+            contenteditable="true"
+          ></span>
+          hai bên thống nhất thanh lý hợp đồng với nội dung như sau:
+        </p>
+        <p>
+          - Đối chiếu theo báo giá và số lượng đơn hàng do bên mua đặt, bên B đã
+          giao đủ số lượng hàng hóa cho bên A theo như đơn đặt hàng mà bên A đã
+          yêu cầu.
+        </p>
+        <p>
+          - Đối chiếu theo số tài khoản ngân hàng bên bán:
+          <strong>Số tài khoản: 313 868</strong>
+        </p>
+        <p>Mở tại: Ngân hàng Á Châu ACB, Chi nhánh Tân Chánh Hiệp, TP.HCM</p>
+        <p>
+          Bên mua đã thanh toán đầy đủ số tiền hàng. Thuế, cho bên bán đúng như
+          bên mua đã đặt hàng.
+        </p>
+
+        <h3>ĐIỀU 2: HIỆU LỰC</h3>
+        <p>
+          - Kể từ ngày
+          <span id="ngayHieuLuc" class="editable" contenteditable="true"></span>
+          mọi vấn đề liên quan đến trách nhiệm, quyền lợi hay thỏa thuận có
+          trong hợp đồng sẽ không còn hiệu lực đối với cả hai bên khi đã được
+          hai bên ký biên bản này.
+        </p>
+        <p>
+          - Do vậy từ nay hai bên không còn trách nhiệm, hay quyền lợi liên quan
+          đến hợp đồng đã ký ngày
+          <span id="ngayHopDongHieuLuc" class="editable" contenteditable="true"
+            >...</span
+          >.
+        </p>
+        <p>
+          - Biên bản này có hiệu lực kể từ ngày ký và được lập thành 02 bản mỗi
+          bên giữ 01 bản và có giá trị pháp lý như nhau.
+        </p>
+      </section>
+
+      <section class="chu-ky">
+        <div>
+          <h2>ĐẠI DIỆN BÊN A</h2>
+          <em>(Ký, đóng dấu, ghi rõ họ tên)</em>
+        </div>
+        <div>
+          <h2>ĐẠI DIỆN BÊN B</h2>
+          <em>(Ký, đóng dấu, ghi rõ họ tên)</em>
+        </div>
+      </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="./thanhly.js"></script>
+  </body>
+</html>
