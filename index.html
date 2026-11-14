@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quản lý đơn hàng</title>
+  <link rel="stylesheet" href="trangchu.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="title-bar">
+      <div class="brand-mark">ĐD</div>
+      <div>
+        <div class="title-main">QUẢN LÝ ĐƠN HÀNG</div>
+        <div class="title-sub">HỆ THỐNG QUẢN LÝ KINH DOANH</div>
+      </div>
+    </header>
+
+    <main class="main">
+      <section class="dashboard">
+        <div class="clock-panel">
+          <div class="section-label">THỜI GIAN HIỆN TẠI</div>
+          <div class="clock-box">
+            <div class="clock">
+              <span class="number n12">12</span>
+              <span class="number n3">3</span>
+              <span class="number n6">6</span>
+              <span class="number n9">9</span>
+              <div class="clock-display">
+                <div id="thuHienTai" class="clock-day">Thứ Hai</div>
+                <div id="gioHienTai" class="clock-time">00:00:00</div>
+                <div id="ngayHienTai" class="clock-date">01-01-2026</div>
+              </div>
+            </div>
+          </div>
+          <div class="clock-caption">ĐỒNG HỒ HỆ THỐNG</div>
+        </div>
+
+        <section class="functions-panel">
+          <div class="panel-heading">
+            <div>
+              <div class="section-label">TRUNG TÂM ĐIỀU KHIỂN</div>
+              <h1>Chức năng quản lý</h1>
+            </div>
+            <div class="panel-note">Chọn chức năng để bắt đầu</div>
+          </div>
+
+          <nav class="menu-list" aria-label="Menu chức năng">
+      <!-- ....................... NÚT ĐƠN HÀNG ........................ -->  
+          <button type="button" id="menuDonHang" class="menu-button active">
+  <span class="menu-icon">01</span><span>Báo Giá</span><span class="menu-arrow">›</span>
+</button>
+            
+        <!-- ....................... NÚT MUA HÀNG ........................ -->  
+      
+<button type="button" id="menuXuatKho" class="menu-button">
+  <span class="menu-icon">02</span>
+  <span>Mua Hàng</span>
+  <span class="menu-arrow">›</span>
+</button>
+            
+        <!-- ....................... NÚT ĐƠN HÀNG ........................ -->          
+           
+        
+        
+        
+        
+        <button type="button" class="menu-button">
+              <span class="menu-icon">02</span><span>Bán Hàng</span><span class="menu-arrow">›</span>
+            </button>
+            <button type="button" class="menu-button yellow">
+              <span class="menu-icon">03</span><span>Phí Vận Hành</span><span class="menu-arrow">›</span>
+            </button>
+            <button type="button" class="menu-button yellow">
+              <span class="menu-icon">04</span><span>Bảng Công</span><span class="menu-arrow">›</span>
+            </button>
+            <button type="button" class="menu-button yellow">
+              <span class="menu-icon">05</span><span>Tồn Kho</span><span class="menu-arrow">›</span>
+            </button>
+            <button type="button" class="menu-button yellow">
+              <span class="menu-icon">06</span><span>Tài Chính</span><span class="menu-arrow">›</span>
+            </button>
+            <button type="button" class="menu-button yellow">
+              <span class="menu-icon">07</span><span>Thuế GTGT</span><span class="menu-arrow">›</span>
+            </button>
+            <button type="button" class="menu-button yellow">
+              <span class="menu-icon">08</span><span>Báo Cáo</span><span class="menu-arrow">›</span>
+            </button>
+          </nav>
+        </section>
+      </section>
+
+      <section class="business-section">
+        <div class="business-title">KẾT QUẢ KINH DOANH</div>
+        <div class="business-placeholder">Khu vực hiển thị kết quả kinh doanh</div>
+      </section>
+    </main>
+  </div>
+  <script src="trangchu.js"></script>
+</body>
+</html>

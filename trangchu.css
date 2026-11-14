@@ -1,0 +1,408 @@
+/* =====================================================
+   GIAO DIỆN QUẢN LÝ ĐƠN HÀNG
+   Desktop: bố cục dashboard gọn, cân đối.
+   Mobile: tự chuyển thành bố cục dọc.
+   ===================================================== */
+
+* { box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Times New Roman", Times, serif;
+  color: #182b2a;
+  background: #edf1f2;
+  overflow-x: hidden;
+}
+
+.app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+.title-bar {
+  min-height: 76px;
+  padding: 12px max(24px, calc((100% - 1320px) / 2));
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: #fff;
+  background: linear-gradient(110deg, #003f3d, #08736c);
+  box-shadow: 0 3px 12px rgba(0,0,0,.16);
+}
+
+.brand-mark {
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  display: grid;
+  place-items: center;
+  border: 2px solid rgba(255,255,255,.8);
+  border-radius: 12px;
+  font: bold 17px Georgia, serif;
+  letter-spacing: -1px;
+}
+
+.title-main {
+  font-size: 21px;
+  font-weight: bold;
+  letter-spacing: .7px;
+}
+
+.title-sub {
+  margin-top: 3px;
+  color: #c7e3df;
+  font: 11px Arial, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.main {
+  width: min(1320px, calc(100% - 48px));
+  margin: 28px auto 40px;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 310px minmax(0, 1fr);
+  gap: 24px;
+  align-items: stretch;
+}
+
+.clock-panel,
+.functions-panel,
+.business-section {
+  background: #fff;
+  border: 1px solid #d9e2e1;
+  border-radius: 14px;
+  box-shadow: 0 5px 18px rgba(24, 55, 52, .07);
+}
+
+.clock-panel {
+  padding: 20px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-label {
+  color: #66817e;
+  font: bold 11px Arial, sans-serif;
+  letter-spacing: 1.3px;
+}
+
+.clock-panel > .section-label {
+  align-self: flex-start;
+  margin: 1px 0 12px 2px;
+}
+
+.clock-box {
+  width: 100%;
+  max-width: 255px;
+  height: 225px;
+  padding: 7px;
+  border: 1px solid #d7dfdc;
+  border-radius: 12px;
+  background: #f7f8f4;
+}
+
+.clock {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border: 7px solid #243b39;
+  border-radius: 25%;
+  background: #eee1c7;
+  box-shadow: inset 0 0 0 4px #a99d87;
+}
+
+.number {
+  position: absolute;
+  z-index: 1;
+  color: #182b2a;
+  font: bold 27px Georgia, serif;
+  line-height: 1;
+}
+.n12 { top: 2px; left: 44%; }
+.n3  { top: 42%; right: 4%; }
+.n6  { bottom: 0; left: 45%; }
+.n9  { top: 42%; left: 4%; }
+
+.clock-display {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 82%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.clock-day {
+  width: 100%;
+  padding: 3px 1px;
+  color: #123f78;
+  background: #eee1c7;
+  font-size: 24px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.clock-time {
+  width: 86%;
+  margin: 2px 0;
+  padding: 5px 1px;
+  border-radius: 5px;
+  color: #fff;
+  background: #00504e;
+  font: bold 22px Arial, sans-serif;
+  white-space: nowrap;
+}
+
+.clock-date {
+  width: 100%;
+  padding: 3px 1px;
+  color: #9a2525;
+  background: #eee1c7;
+  font-size: 19px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.clock-caption {
+  margin-top: 12px;
+  color: #7a8d8b;
+  font: bold 10px Arial, sans-serif;
+  letter-spacing: 1.5px;
+}
+
+.functions-panel {
+  padding: 22px 24px 24px;
+}
+
+.panel-heading {
+  min-height: 55px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.panel-heading h1 {
+  margin: 5px 0 0;
+  color: #173d3a;
+  font-size: 25px;
+}
+
+.panel-note {
+  padding-bottom: 3px;
+  color: #849391;
+  font-size: 14px;
+}
+
+.menu-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.menu-button {
+  min-width: 0;
+  min-height: 66px;
+  padding: 9px 13px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border: 1px solid #d9e5e2;
+  border-radius: 9px;
+  background: #f8fbfa;
+  color: #20413e;
+  cursor: pointer;
+  font: bold 18px Georgia, "Times New Roman", serif;
+  text-align: left;
+  transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+}
+
+.menu-button:hover {
+  transform: translateY(-2px);
+  border-color: #75aaa2;
+  background: #eef7f5;
+  box-shadow: 0 5px 12px rgba(0, 80, 78, .10);
+}
+
+.menu-button.active {
+  border-color: #00635d;
+  background: #e4f2ef;
+  color: #004d48;
+}
+
+.menu-button.yellow {
+  background: #fffdf4;
+  border-color: #e8dfbd;
+}
+
+.menu-button.yellow:hover {
+  background: #fff8df;
+  border-color: #cbb76a;
+}
+
+.menu-icon {
+  width: 38px;
+  height: 38px;
+  flex: 0 0 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #fff;
+  background: #00635d;
+  font: bold 13px Arial, sans-serif;
+}
+
+.menu-button.yellow .menu-icon {
+  background: #82701d;
+}
+
+.menu-button span:nth-child(2) {
+  min-width: 0;
+  flex: 1;
+}
+
+.menu-arrow {
+  color: #8aa19e;
+  font: 28px Arial, sans-serif;
+  line-height: 1;
+}
+
+.business-section {
+  margin-top: 24px;
+  overflow: hidden;
+}
+
+.business-title {
+  padding: 13px 18px;
+  color: #fff;
+  background: #174f4b;
+  font: bold 16px Georgia, "Times New Roman", serif;
+  letter-spacing: .5px;
+}
+
+.business-placeholder {
+  min-height: 100px;
+  padding: 25px;
+  color: #9aa9a7;
+  background: #fff;
+  font-size: 15px;
+  text-align: center;
+}
+
+/* MÁY TÍNH BẢNG */
+@media (max-width: 900px) {
+  .main {
+    width: calc(100% - 28px);
+    margin-top: 18px;
+  }
+  .dashboard {
+    grid-template-columns: 260px minmax(0, 1fr);
+    gap: 14px;
+  }
+  .functions-panel { padding: 18px; }
+  .menu-button { font-size: 16px; }
+  .menu-icon {
+    width: 33px;
+    height: 33px;
+    flex-basis: 33px;
+  }
+}
+
+/* ĐIỆN THOẠI */
+@media (max-width: 650px) {
+  .title-bar {
+    min-height: 58px;
+    padding: 8px 14px;
+  }
+  .brand-mark {
+    width: 39px;
+    height: 39px;
+    flex-basis: 39px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+  .title-main { font-size: 16px; }
+  .title-sub {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  .main {
+    width: calc(100% - 20px);
+    margin: 12px auto 24px;
+  }
+  .dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .clock-panel {
+    padding: 12px;
+  }
+  .clock-panel > .section-label {
+    align-self: center;
+    margin: 0 0 8px;
+  }
+  .clock-box {
+    width: min(100%, 300px);
+    height: clamp(185px, 58vw, 215px);
+  }
+  .clock-day { font-size: clamp(21px, 6vw, 25px); }
+  .clock-time { font-size: clamp(19px, 5.5vw, 22px); }
+  .clock-date { font-size: clamp(17px, 5vw, 20px); }
+  .functions-panel { padding: 15px 12px; }
+  .panel-heading {
+    min-height: 0;
+    margin-bottom: 13px;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .panel-heading h1 { font-size: 21px; }
+  .panel-note { font-size: 12px; }
+  .menu-list { gap: 8px; }
+  .menu-button {
+    min-height: 52px;
+    padding: 6px 8px;
+    gap: 7px;
+    border-radius: 7px;
+    font-size: clamp(13px, 3.7vw, 16px);
+  }
+  .menu-icon {
+    width: 29px;
+    height: 29px;
+    flex-basis: 29px;
+    border-radius: 6px;
+    font-size: 11px;
+  }
+  .menu-arrow { font-size: 22px; }
+  .business-section { margin-top: 12px; }
+  .business-title { font-size: 14px; }
+}
+
+@media (max-width: 360px) {
+  .menu-button {
+    gap: 5px;
+    padding: 5px 6px;
+    font-size: 12px;
+  }
+  .menu-icon {
+    width: 25px;
+    height: 25px;
+    flex-basis: 25px;
+    font-size: 10px;
+  }
+}
