@@ -1,0 +1,310 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 16px;
+  background: #e9e9e9;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 16px;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin: 0 auto 14px;
+}
+
+.toolbar button {
+  border: 0;
+  border-radius: 4px;
+  padding: 10px 17px;
+  background: #245b91;
+  color: #fff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  padding: 12mm 18mm 15mm;
+  background: #fff;
+  box-shadow: 0 1px 8px #bbb;
+  line-height: 1.4;
+}
+
+.quoc-hieu {
+  text-align: center;
+  font-weight: bold;
+}
+
+.quoc-hieu-chinh {
+  font-size: 19px;
+}
+
+.quoc-hieu-phu {
+  margin-top: 2px;
+  font-size: 16px;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.duong-ke {
+  width: 125px;
+  margin: 2px auto 10px;
+  border-top: 1px solid #000;
+}
+
+h1 {
+  margin: 8px 0 8px;
+  text-align: center;
+  font-size: 25px;
+  line-height: 1.5;
+}
+
+.can-cu {
+  margin: 0 0 5px;
+  font-style: italic;
+}
+
+.can-cu p {
+  margin: 1px 0;
+}
+
+.ngay-hom-nay {
+  margin: 6px 0 7px;
+  font-size: 18px;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.ben {
+  margin-top: 5px;
+}
+
+.ben h2 {
+  margin: 5px 0 1px;
+  font-size: 22px;
+  text-decoration: underline;
+}
+
+.ben h2 small {
+  font-size: 15px;
+  font-style: italic;
+  text-decoration: none;
+}
+
+.dong-dai-dien {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 1px 0 5px;
+  font-size: 18px;
+}
+
+.dong-dai-dien strong:last-child {
+  white-space: nowrap;
+}
+
+.ben p {
+  margin: 2px 0;
+}
+
+.ten-cong-ty {
+  margin: 5px 0 3px !important;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.dieu-khoan {
+  margin-top: 4px;
+}
+
+.dieu-khoan h3 {
+  margin: 5px 0 1px;
+  font-size: 13px;
+  text-decoration: underline;
+}
+
+.dieu-khoan p {
+  margin: 1px 0;
+  text-indent: 10px;
+  text-align: justify;
+}
+
+.chu-ky {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 18px;
+  text-align: center;
+}
+
+.chu-ky > div {
+  width: 50%;
+}
+
+.chu-ky h2 {
+  margin: 0 0 1px;
+  font-size: 15px;
+}
+
+.chu-ky em {
+  font-size: 10px;
+}
+
+.editable {
+  min-width: 12px;
+  outline: none;
+  cursor: text;
+}
+
+.editable:focus {
+  background: #fff7d6;
+  box-shadow: 0 0 0 1px #d7b84b;
+}
+
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+    font-size: 13px;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    padding: 12mm 18mm 15mm;
+    box-shadow: none;
+  }
+
+  .editable:focus {
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    padding: 7px;
+    font-size: 12px;
+  }
+
+  .page {
+    width: 100%;
+    min-height: auto;
+    padding: 18px 14px 24px;
+    overflow-wrap: anywhere;
+  }
+
+  .quoc-hieu-chinh {
+    font-size: 13px;
+  }
+
+  h1 {
+    font-size: clamp(17px, 4.8vw, 21px);
+  }
+
+  .ngay-hom-nay {
+    font-size: 14px;
+  }
+
+  .ben h2 {
+    font-size: 15px;
+  }
+
+  .dong-dai-dien {
+    flex-wrap: wrap;
+    font-size: 12px;
+  }
+
+  .chu-ky {
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .chu-ky h2 {
+    font-size: 13px;
+  }
+}
+.quoc-hieu {
+  position: relative;
+}
+
+.logo-thanh-ly {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  top: -10px;
+  left: 0px;
+  right: auto;
+  object-fit: contain;
+}
+
+/* =====================================================
+   KHUNG A4 RIÊNG KHI XUẤT PDF (cả điện thoại và máy tính)
+   ===================================================== */
+.page.pdf-export {
+  width: 210mm !important;
+  max-width: none !important;
+  min-height: 297mm !important;
+  margin: 0 !important;
+  padding: 12mm 18mm 15mm !important;
+  overflow: visible !important;
+  box-sizing: border-box !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  font-size: 13px !important;
+  line-height: 1.4 !important;
+}
+
+.page.pdf-export .quoc-hieu-chinh {
+  font-size: 19px !important;
+}
+
+.page.pdf-export h1 {
+  font-size: 25px !important;
+}
+
+.page.pdf-export .ngay-hom-nay {
+  font-size: 18px !important;
+}
+
+.page.pdf-export .ben h2 {
+  font-size: 22px !important;
+}
+
+.page.pdf-export .dong-dai-dien {
+  flex-wrap: nowrap !important;
+  font-size: 18px !important;
+}
+
+.page.pdf-export .chu-ky {
+  gap: 25px !important;
+  margin-top: 18px !important;
+}
+
+.page.pdf-export .chu-ky h2 {
+  font-size: 15px !important;
+}
