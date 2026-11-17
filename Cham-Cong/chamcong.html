@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bảng chấm công</title>
+  <link rel="stylesheet" href="chamcong.css">
+</head>
+<body>
+  <main class="app">
+    <header class="company">
+      <div class="company-name">CÔNG TY CỔ PHẦN THIẾT BỊ XÂY DỰNG ĐÔNG DƯƠNG</div>
+      <div class="company-phone">Điện Thoại : 0986.007.646</div>
+      <h1>BẢNG CHẤM CÔNG</h1>
+    </header>
+
+    <section class="entry-panel">
+      <div class="entry-grid">
+        <label class="field">
+          <span>Ngày Chấm Công :</span>
+          <input type="date" id="ngayChamCong">
+        </label>
+
+        <label class="field">
+          <span>Tháng xem :</span>
+          <input type="month" id="thangXem">
+        </label>
+
+        <label class="field">
+          <span>Loại Thợ :</span>
+          <select id="loaiTho">
+            <option value="Thợ Chính">Thợ Chính</option>
+            <option value="Thợ Phụ">Thợ Phụ</option>
+            <option value="Thợ Khoán">Thợ Khoán</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Tên Nhân Viên :</span>
+          <input id="tenNhanVien" list="danhSachTen" placeholder="Nhập tên nhân viên">
+          <datalist id="danhSachTen"></datalist>
+        </label>
+
+        <label class="field">
+          <span>Giờ Làm :</span>
+          <select id="caLam">
+            <option value="Ca Ngày">Ca Ngày</option>
+            <option value="Ca Đêm">Ca Đêm</option>
+          </select>
+        </label>
+
+        <label class="field wage-field">
+          <span>Giá Công / 1 giờ :</span>
+          <input id="giaCong" type="text" inputmode="numeric" autocomplete="off" placeholder="Nhập giá công">
+        </label>
+
+        <label class="field">
+          <span>Số giờ làm :</span>
+          <input id="soGioLam" type="number" min="0" step="0.5" value="8">
+        </label>
+      </div>
+
+      <div class="entry-actions">
+        <button id="btnLuu" class="btn btn-save">LƯU CHẤM CÔNG</button>
+        <button id="btnLamMoi" class="btn btn-light">LÀM MỚI Ô NHẬP</button>
+        <span id="thongBao" role="status"></span>
+      </div>
+    </section>
+
+    <section class="table-wrap">
+      <div class="table-heading">
+        <strong>Chi Tiết Chấm Công</strong>
+        <span id="ngayDangXem"></span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>STT</th>
+            <th>Ngày Lập</th>
+            <th>Tên Nhân Viên</th>
+            <th>Loại Thợ</th>
+            <th>Ca</th>
+            <th>Giá Công</th>
+            <th>Giờ Làm</th>
+            <th>Thành Tiền</th>
+            <th class="no-print">Xóa</th>
+          </tr>
+        </thead>
+        <tbody id="bangChamCong">
+          <tr><td colspan="9" class="empty">Chưa có dữ liệu chấm công trong ngày này.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="table-wrap advance-history-wrap">
+      <div class="table-heading">
+        <strong>Lịch Sử Ứng Tiền</strong>
+        <span id="thangUngDangXem"></span>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>STT</th><th>Ngày Ứng</th><th>Tên Nhân Viên</th>
+            <th>Số Tiền Ứng</th><th>Ghi Chú</th><th class="no-print">Xóa</th>
+          </tr>
+        </thead>
+        <tbody id="bangUngTien">
+          <tr><td colspan="6" class="empty">Chưa có lần ứng tiền nào trong tháng này.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="payment-panel">
+      <div class="payment-title">TỔNG KẾT TIỀN CÔNG THEO THÁNG</div>
+      <div class="payment-grid">
+        <div class="summary-item total">
+          <label>Tổng tiền công</label>
+          <output id="tongTienCong">0 đ</output>
+        </div>
+        <div class="summary-item advance">
+          <label>Ghi nhận một lần ứng tiền</label>
+          <div class="advance-input-wrap">
+            <input id="tamUng" type="text" inputmode="numeric" autocomplete="off" value="" placeholder="Số tiền ứng">
+            <button id="btnLuuTamUng" class="btn btn-small">GHI ỨNG TIỀN</button>
+          </div>
+          <input id="ghiChuUng" class="advance-note" type="text" placeholder="Ghi chú lần ứng (không bắt buộc)">
+          <div class="advance-total">Tổng đã ứng tháng này: <strong id="tongTamUng">0 đ</strong></div>
+        </div>
+        <div class="summary-item remaining">
+          <label>Còn lại phải trả</label>
+          <output id="conLai">0 đ</output>
+        </div>
+      </div>
+      <p class="note">Bảng công và lịch sử ứng tiền được lọc theo đúng nhân viên và tháng đang chọn. Mỗi lần ứng được lưu thành một dòng riêng.</p>
+    </section>
+
+    <footer class="bottom-actions">
+      <button id="btnTaiLaiTheoTen" class="btn btn-light">TẢI THEO TÊN / THÁNG</button>
+      <button id="btnXuatPDF" class="btn btn-light">XUẤT PDF </button>
+    </footer>
+  </main>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="chamcong.js"></script>
+</body>
+</html>
