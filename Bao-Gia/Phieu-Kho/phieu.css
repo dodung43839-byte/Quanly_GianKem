@@ -1,0 +1,479 @@
+
+/* =====================================================
+   PHIẾU XUẤT KHO - CSS RIÊNG
+   ===================================================== */
+
+body {
+  margin: 0;
+  padding: 15px;
+  background: #eee;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#vungTaoPhieu,
+#vungTaoPhieu * {
+  box-sizing: border-box;
+}
+
+#vungTaoPhieu {
+  position: relative;
+  width: 190mm;
+  margin: 0 auto;
+  background: #fff;
+  color: #000;
+  z-index: 1;
+}
+
+#vungTaoPhieu .phieu {
+    width: 190mm;
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 3mm;
+    display: block !important;
+}
+
+/* =====================================================
+   NÚT CHỨC NĂNG
+   ===================================================== */
+
+.phieu-buttons {
+  width: 190mm;
+  margin: 0 auto 10px;
+  text-align: right;
+}
+
+.phieu-buttons button {
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* =====================================================
+   ĐẦU TRANG
+   ===================================================== */
+
+#vungTaoPhieu .dau-trang {
+  position: relative;
+  width: 100%;
+  height: 65mm;
+  min-height: 65mm;
+  border: none;
+  padding: 2mm;
+}
+
+/* THÔNG TIN CÔNG TY */
+
+#vungTaoPhieu .thong-tin-cty {
+  position: static;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+/* TÊN CÔNG TY TIẾNG VIỆT */
+
+#vungTaoPhieu .ten-cty {
+  position: absolute;
+  left: 3mm;
+  top: 2mm;
+  width: 46%;
+  text-align: left;
+  color: #a00000;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* ĐỊA CHỈ */
+
+#vungTaoPhieu .dia-chi-cty:nth-child(3) {
+  position: absolute;
+  left: 3mm;
+  top: 14mm;
+  width: 46%;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* ĐIỆN THOẠI */
+
+#vungTaoPhieu .dia-chi-cty:nth-child(4) {
+  position: absolute;
+  left: 3mm;
+  top: 19mm;
+  width: 46%;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/* LOGO */
+
+#vungTaoPhieu .logo {
+  position: absolute;
+  left: 7mm;
+  top: 23mm;
+  width: 35mm;
+  height: 35mm;
+  object-fit: contain;
+}
+
+/* TÊN CÔNG TY TIẾNG ANH */
+
+#vungTaoPhieu .ten-cty-en {
+  position: absolute;
+  left: 51%;
+  right: 3mm;
+  top: 2mm;
+  width: auto;
+  text-align:center;
+  font-style: italic;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+/* CON DẤU */
+
+#vungTaoPhieu .con-dau {
+  position: absolute;
+  right: 30mm;
+  top: 15mm;
+  width: 35mm;
+  height: 35mm;
+  object-fit: contain;
+}
+
+/* =====================================================
+   TIÊU ĐỀ PHIẾU
+   ===================================================== */
+
+#vungTaoPhieu .tieu-de-phieu {
+  text-align: center;
+  font-size: 35px;
+  font-weight: bold;
+  margin: -10mm 0 3mm;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3mm;
+}
+
+/* =====================================================
+   NGÀY LẬP
+   ===================================================== */
+
+#vungTaoPhieu .ngay-phieu {
+  text-align: center;
+  font-style: italic;
+  margin-top: -2mm;
+  font-size: 20px;
+   font-weight: bold;
+  border-bottom: none;
+  padding: 2mm;
+}
+
+/* =====================================================
+   QUYỂN SỐ - PHIẾU SỐ
+   ===================================================== */
+
+
+#vungTaoPhieu .so-phieu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-top: 1mm;
+    padding-right: 10mm;
+}
+
+#vungTaoPhieu .quyen-so,
+#vungTaoPhieu .phieu-so {
+    width: 160px;
+    margin: 0;
+    box-sizing: border-box;
+    text-align: right;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#vungTaoPhieu .quyen-so {
+    margin-bottom: 5px;
+    color: #000;
+}
+
+#vungTaoPhieu .phieu-so {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 3px;
+    color: red;
+}
+
+#soPhieuXuatKho {
+    display: inline-block;
+    width: 65px;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: bold;
+    color: red;
+    text-align: right;
+    vertical-align: baseline;
+    box-sizing: border-box;
+}
+
+/* ===================================================== */
+
+/* =====================================================
+   THÔNG TIN KHÁCH HÀNG
+   ===================================================== */
+
+#vungTaoPhieu .thong-tin-khach {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 100%;
+    margin: 3mm 0 0 0;
+    box-sizing: border-box;
+
+    border: 1px solid #000;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#vungTaoPhieu .thong-tin-khach div {
+    min-width: 0;
+    min-height: 9mm;
+    padding: 7px;
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+/* =====================================================
+   BẢNG HÀNG HÓA - 5 CỘT
+   KHÔNG CÓ TT, KHÔNG KẺ Ô
+   ===================================================== */
+
+/* =====================================================
+   BẢNG PHIẾU XUẤT KHO - KẺ Ô ĐẦY ĐỦ
+   ===================================================== */
+
+#vungTaoPhieu .bang-phieu {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    margin-top: 3mm;
+    margin-bottom: 0;
+    font-size: 11px;
+    border: 1px solid #000;
+}
+
+/* TIÊU ĐỀ CỘT */
+
+#vungTaoPhieu .bang-phieu th {
+    background: #28542b;
+    color: #fff;
+    border: 1px solid #000;
+    padding: 7px 3px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+/* CÁC Ô HÀNG HÓA */
+
+#vungTaoPhieu .bang-phieu td {
+    border: 1px solid #000;
+    padding: 5px 4px;
+    height: 11mm;
+    text-align: center;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+}
+
+/* TÊN HÀNG CĂN TRÁI */
+
+#vungTaoPhieu .bang-phieu td.ten-hang {
+    text-align: left;
+}
+
+/* CỘT BẰNG CHỮ CĂN TRÁI */
+
+#vungTaoPhieu .bang-phieu td.bang-chu {
+    text-align: left;
+    font-style: italic;
+  text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+/* ĐỘ RỘNG 5 CỘT */
+
+#vungTaoPhieu .cot-ten-hang {
+    width: 40%;
+}
+
+#vungTaoPhieu .cot-dvt {
+    width: 12%;
+}
+
+#vungTaoPhieu .cot-so-luong {
+    width: 10%;
+}
+
+#vungTaoPhieu .cot-thuc-nhan {
+    width: 15%;
+}
+
+#vungTaoPhieu .cot-bang-chu {
+    width: 28%;
+}
+
+
+/* =====================================================
+   GHI CHÚ - TỰ ĐỘNG ĐI THEO BẢNG
+   ===================================================== */
+
+#vungTaoPhieu .phieu {
+    display: block !important;
+    height: auto !important;
+    min-height: 0 !important;
+}
+
+#vungTaoPhieu .ghi-chu {
+    position: static !important;
+    display: block !important;
+
+    width: 100%;
+    max-width: 100%;
+    margin: 2mm 0 0 0 !important;
+    padding: 2mm 3mm;
+
+    height: auto !important;
+    min-height: 0 !important;
+
+    box-sizing: border-box;
+
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.5;
+
+    border: 1px solid #000;
+}
+
+#vungTaoPhieu .ghi-chu p {
+    margin: 1mm 0;
+    border-bottom: 1px dotted #000;
+}
+
+/* =====================================================
+   KÝ TÊN
+   ===================================================== */
+/* =====================================================
+   CHỮ KÝ - 3 CỘT CÙNG MỘT HÀNG
+   ===================================================== */
+
+#vungTaoPhieu .ky-ten {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+    margin: 5mm 0 0 0;
+    padding: 0;
+    text-align: center;
+    border: none;
+    box-sizing: border-box;
+}
+
+#vungTaoPhieu .ky-ten div {
+    width: 100%;
+    min-width: 0;
+    min-height: 35mm;
+    padding: 3mm 1mm;
+    text-align: center;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    box-sizing: border-box;
+}
+
+
+/* =====================================================
+   HÌNH ẢNH
+   ===================================================== */
+
+#vungTaoPhieu img {
+  display: block;
+}
+
+/* =====================================================
+   IN VÀ XUẤT PDF
+   ===================================================== */
+
+@media print {
+  body {
+    background: #fff;
+    padding: 0;
+  }
+
+  .phieu-buttons {
+    display: none !important;
+  }
+
+  #vungTaoPhieu {
+    margin: 0;
+  }
+}
+
+/* MÀN HÌNH ĐIỆN THOẠI */
+
+@media screen and (max-width: 700px) {
+  #vungTaoPhieu {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .phieu-buttons {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+/* CỘT 1 - TÊN HÀNG */
+#vungTaoPhieu .bang-phieu td:nth-child(1) {
+    font-size: 15px;
+    font-weight: bold;
+    color: #000;
+    text-align: left;
+}
+
+/* CỘT 2 - ĐVT */
+#vungTaoPhieu .bang-phieu td:nth-child(2) {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* CỘT 3 - SỐ LƯỢNG */
+#vungTaoPhieu .bang-phieu td:nth-child(3) {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* CỘT 4 - THỰC NHẬN */
+#vungTaoPhieu .bang-phieu td:nth-child(4) {
+    font-size: 16px;
+    font-weight: bold;
+    color: blue;
+    text-align: center;
+}
+
+/* CỘT 5 - BẰNG CHỮ */
+#vungTaoPhieu .bang-phieu td:nth-child(5) {
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-align:center;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bảng tồn kho sản phẩm</title>
+  <link rel="stylesheet" href="tonkho.css">
+</head>
+<body>
+  <main class="inventory-app">
+    <header class="page-header">
+      <div class="header-icon" aria-hidden="true">▦</div>
+      <div class="header-copy">
+        <p class="eyebrow">QUẢN LÝ KHO HÀNG</p>
+        <h1>BẢNG TỒN KHO SẢN PHẨM</h1>
+        <p class="subheading">Theo dõi số lượng nhập, xuất và giá trị hàng tồn</p>
+      </div>
+      <button id="btnTaiLai" class="refresh-btn" type="button" title="Tải lại dữ liệu">↻ <span>Tải lại</span></button>
+    </header>
+
+    <section class="toolbar panel">
+      <label class="search-box">
+        <span aria-hidden="true">⌕</span>
+        <input id="timKiem" type="search" placeholder="Tìm kiếm tên sản phẩm..." autocomplete="off">
+        <button id="xoaTimKiem" type="button" aria-label="Xóa tìm kiếm">×</button>
+      </label>
+      <div class="filter-note"><span class="live-dot"></span><span id="trangThai">Đang tải dữ liệu...</span></div>
+    </section>
+
+    <section class="summary-strip">
+      <article class="summary-card">
+        <div class="summary-label">Mặt hàng đã nhập</div>
+        <div class="summary-value" id="soMatHang">0</div>
+        <div class="summary-foot">Số sản phẩm có trong phiếu mua đã lưu</div>
+      </article>
+      <article class="summary-card">
+        <div class="summary-label">Tổng số lượng tồn</div>
+        <div class="summary-value" id="tongSoLuong">0</div>
+        <div class="summary-foot">Đã quy đổi về đơn vị tính đầu tiên</div>
+      </article>
+    </section>
+
+    <section class="panel inventory-panel">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">DANH SÁCH HÀNG HÓA</p>
+          <h2>Sản phẩm tồn kho</h2>
+        </div>
+        <span class="result-count" id="soKetQua">0 sản phẩm</span>
+      </div>
+      <div class="inventory-list" id="danhSachTonKho" aria-live="polite">
+        <div class="empty-state"><span class="empty-icon">▤</span><strong>Chưa có mặt hàng nhập kho</strong><span>Những sản phẩm chưa xuất hiện trong hóa đơn mua đã lưu sẽ không hiển thị ở đây.</span></div>
+      </div>
+    </section>
+
+    <section class="total-card">
+      <div class="total-top">
+        <div>
+          <p class="eyebrow">GIÁ TRỊ HÀNG TỒN KHO</p>
+          <h2>Tổng tiền hàng tồn</h2>
+        </div>
+        <div class="total-symbol">₫</div>
+      </div>
+      <div class="total-amount" id="tongTienTon">0 đ</div>
+      <p class="total-description">Cộng số lượng tồn đã quy đổi × giá mua gần nhất quy về đơn vị tính đầu tiên của từng mặt hàng.</p>
+    </section>
+
+    <footer class="page-footer">Dữ liệu được đọc trực tiếp từ hóa đơn mua và hóa đơn bán đã lưu trên thiết bị này.</footer>
+  </main>
+  <script src="tonkho.js"></script>
+</body>
+</html>

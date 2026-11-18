@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Chi phí vận hành doanh nghiệp</title>
+    <link rel="stylesheet" href="chiphi.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="page-header">
+        <div class="eyebrow">QUẢN TRỊ DOANH NGHIỆP</div>
+        <h1>CHI PHÍ VẬN HÀNH DOANH NGHIỆP</h1>
+        <p>Quản lý khoản chi · Lưu lịch sử · Theo dõi theo tháng</p>
+      </header>
+
+      <section class="panel">
+        <div class="section-heading">
+          <span>01</span>
+          <h2>Thông tin phiếu chi</h2>
+        </div>
+        <div class="form-grid">
+          <label class="field"
+            ><span>Ngày chi</span><input id="ngayChi" type="date"
+          /></label>
+          <label class="field"
+            ><span>Số phiếu</span><input id="soPhieu" type="text" readonly
+          /></label>
+          <label class="field"
+            ><span>Người chi</span>
+            <input
+              id="nguoiChi"
+              type="text"
+              list="dsNguoiChi"
+              placeholder="Nhập tên người chi"
+            />
+            <datalist id="dsNguoiChi"></datalist>
+          </label>
+          <label class="field"
+            ><span>Hình thức thanh toán</span>
+            <select id="hinhThuc">
+              <option value="Tiền mặt">Tiền mặt</option>
+              <option value="Chuyển khoản">Chuyển khoản</option>
+              <option value="C.Khoản / Tiền mặt">C.Khoản / Tiền mặt</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <section class="panel category-panel">
+        <div class="section-heading">
+          <span>02</span>
+          <h2>Chọn hạng mục doanh nghiệp phải chi</h2>
+        </div>
+        <p class="hint">
+          Chọn một hạng mục để tự động gọi lại thông tin đã lưu gần nhất. Bạn
+          vẫn có thể sửa nội dung và số tiền.
+        </p>
+        <div
+          id="danhSachHangMuc"
+          class="category-list"
+          role="radiogroup"
+          aria-label="Hạng mục chi"
+        ></div>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <span>03</span>
+          <h2>Nội dung khoản chi</h2>
+          <span id="trangThaiNho" class="memory-tag"
+            >Chưa có dữ liệu ghi nhớ</span
+          >
+        </div>
+        <div class="form-grid detail-grid">
+          <!-- =====================================================
+     SỐ TIỀN VÀ TỔNG TIỀN CHI
+===================================================== -->
+
+          <div class="form-grid detail-grid tien-row">
+            <label class="field">
+              <span>Số tiền (VNĐ)</span>
+              <input
+                id="soTien"
+                type="text"
+                inputmode="numeric"
+                placeholder="Nhập số tiền"
+                autocomplete="off"
+              />
+            </label>
+
+            <label class="field">
+              <span>TỔNG TIỀN CHI (VNĐ)</span>
+              <input id="tongChiHienThi" type="text" readonly value="0" />
+            </label>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button type="button" id="btnLuu" class="btn btn-primary">LƯU PHIẾU CHI</button>
+          <button type="button" id="btnLamMoi" class="btn btn-light">LÀM MỚI FORM</button>
+        </div>
+        <div
+          id="thongBao"
+          class="notice"
+          role="status"
+          aria-live="polite"
+        ></div>
+      </section>
+
+      <section class="panel history-panel">
+        <div class="history-top">
+          <div class="section-heading">
+            <span>04</span>
+            <h2>Lịch sử phiếu chi</h2>
+          </div>
+          <div class="filter-tools">
+            <label class="month-filter"
+              >Lọc tháng <input id="locThang" type="month"
+            /></label>
+            <button type="button" id="btnTatCa" class="btn btn-light btn-small">
+              Tất cả
+            </button>
+          </div>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Số phiếu</th>
+                <th>Ngày chi</th>
+                <th>Hạng mục</th>
+
+                <th>Người chi</th>
+                <th>Hình thức</th>
+                <th class="money">Số tiền</th>
+                <th class="no-print">Thao tác</th>
+              </tr>
+            </thead>
+            <tbody id="bangLichSu">
+              <tr>
+                <td colspan="7" class="empty">Chưa có phiếu chi nào.</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="5">TỔNG CHI</td>
+                <td id="tongChi" class="money">0</td>
+                <td class="no-print"></td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="bottom-actions">
+          <button id="btnXuatPDF" type="button" class="btn btn-primary">
+            XUẤT PDF
+          </button>
+        </div>
+      </section>
+      <footer>
+        dữ liệu được lưu trên trình duyệt của thiết bị này (IndexedDB).
+      </footer>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="chiphi.js"></script>
+  </body>
+</html>
