@@ -1,0 +1,757 @@
+/* =====================================================
+   1. CÀI ĐẶT CHUNG
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --ink: #17313a;
+  --deep: #073f40;
+  --teal: #0b6260;
+  --mint: #e8f3f1;
+  --line: #d6e1df;
+  --paper: #fff;
+  --muted: #64777b;
+  --gold: #d5b46a;
+  --red: #b43d36;
+}
+
+body {
+  margin: 0;
+  background: #edf2f1;
+  color: var(--ink);
+  font-family:'Times New Roman', Times, serif;
+  font-size: 17px;
+}
+
+/* =====================================================
+   2. KHUNG GIAO DIỆN CHÍNH
+===================================================== */
+
+.app {
+  width: min(1180px, calc(100% - 28px));
+  margin: 24px auto 40px;
+}
+
+/* =====================================================
+   3. TIÊU ĐỀ TRANG
+===================================================== */
+
+.page-header {
+  background: linear-gradient(120deg, #073f40, #0d6863);
+  color: #fff;
+  padding: 24px 28px;
+  border-radius: 16px 16px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header:after {
+  content: "";
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border: 1px solid #ffffff30;
+  border-radius: 50%;
+  right: 35px;
+  top: -120px;
+  box-shadow:
+    0 0 0 22px #ffffff0b,
+    0 0 0 48px #ffffff08;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #c6dfd9;
+  font-weight: 700;
+}
+
+h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(22px, 3.4vw, 34px);
+  margin: 9px 0 5px;
+  letter-spacing: 0.3px;
+}
+
+.page-header p {
+  margin: 0;
+  color: #d7e8e4;
+  font-size: 13px;
+}
+
+/* =====================================================
+   4. KHUNG NỘI DUNG (PANEL)
+===================================================== */
+
+.panel {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  padding: 20px 22px;
+  margin: 14px 0;
+  border-radius: 13px;
+  box-shadow: 0 5px 18px #163a3a0a;
+}
+
+/* =====================================================
+   5. TIÊU ĐỀ TỪNG KHU VỰC
+===================================================== */
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.section-heading > span:first-child {
+  display: grid;
+  place-items: center;
+  background: var(--mint);
+  color: var(--teal);
+  width: 29px;
+  height: 29px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.section-heading h2 {
+  font-size: 17px;
+  margin: 0;
+  color: var(--deep);
+}
+
+/* =====================================================
+   6. BỐ CỤC FORM VÀ Ô NHẬP LIỆU
+===================================================== */
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  min-width: 0;
+}
+
+.field > span,
+.month-filter {
+  font-size: 13px;
+  font-weight: 700;
+  color: #425b60;
+}
+
+input,
+select {
+  font: inherit;
+  color: var(--ink);
+  background: #fbfdfd;
+  border: 1px solid #cbd8d6;
+  border-radius: 8px;
+  padding: 11px 12px;
+  min-height: 42px;
+  width: 100%;
+  outline: none;
+  transition: 0.15s;
+}
+
+input:focus,
+select:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 3px #0b626018;
+}
+
+input[readonly] {
+  background: #f0f4f3;
+  color: #52696b;
+  font-weight: 700;
+}
+
+/* =====================================================
+   7. DANH MỤC CHI PHÍ
+===================================================== */
+
+.category-panel {
+  background: #fff;
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 13px;
+  margin: -6px 0 14px;
+}
+
+.category-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+}
+
+.category-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fbfdfd;
+  cursor: pointer;
+  min-height: 48px;
+  font-weight: 600;
+  transition: 0.15s;
+}
+
+.category-option:hover {
+  border-color: #7eb4ad;
+  background: #f2faf8;
+}
+
+.category-option.selected {
+  border-color: var(--teal);
+  background: #eaf6f3;
+  box-shadow: inset 0 0 0 1px var(--teal);
+  color: #064d4b;
+}
+
+.category-option input {
+  width: 17px;
+  height: 17px;
+  min-height: 0;
+  padding: 0;
+  accent-color: var(--teal);
+  flex: 0 0 auto;
+}
+
+.memory-tag {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* =====================================================
+   8. BỐ CỤC CHI TIẾT
+===================================================== */
+
+.detail-grid {
+  grid-template-columns: minmax(0, 2fr) minmax(180px, 1fr);
+}
+
+.field-wide {
+  grid-column: auto;
+}
+/* =====================================================
+   8.1. BỐ CỤC Ô SỐ TIỀN VÀ TỔNG TIỀN CHI
+===================================================== */
+
+.tien-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  align-items: end;
+}
+
+/* Ô TỔNG TIỀN CHI */
+#tongChiHienThi {
+  background: #e8f3f1;
+  color: #075c57;
+  font-size: 17px;
+  font-weight: 800;
+  text-align: right;
+  border: 1px solid #9bc5bc;
+}
+
+/* ĐIỆN THOẠI */
+@media (max-width: 720px) {
+  .tien-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  #tongChiHienThi {
+    font-size: 14px;
+  }
+}
+
+/* =====================================================
+   9. CÁC NÚT THAO TÁC
+===================================================== */
+
+.form-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 8px;
+  padding: 12px 18px;
+  font-weight: 800;
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  transition: 0.15s;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.04);
+}
+
+.btn-primary {
+  background: var(--teal);
+  color: white;
+}
+
+.btn-light {
+  background: #edf3f2;
+  color: #315255;
+  border: 1px solid #d7e2e0;
+}
+
+.btn-dark {
+  background: #173f43;
+  color: white;
+}
+
+.btn-small {
+  padding: 9px 13px;
+  font-size: 12px;
+}
+
+/* =====================================================
+   10. THÔNG BÁO
+===================================================== */
+
+.notice {
+  min-height: 18px;
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--teal);
+}
+
+.notice.error {
+  color: var(--red);
+}
+
+/* =====================================================
+   11. LỊCH SỬ VÀ LỌC THÁNG
+===================================================== */
+
+.history-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.month-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.month-filter input {
+  width: 155px;
+  min-height: 36px;
+  padding: 7px;
+}
+
+/* =====================================================
+ 
+/* =====================================================
+   12. BẢNG DỮ LIỆU - 7 CỘT
+===================================================== */
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+.history-panel table {
+  width: 100%;
+  min-width: 0;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+/* CHIA ĐỘ RỘNG 7 CỘT */
+
+.history-panel th:nth-child(1),
+.history-panel td:nth-child(1) {
+  width: 15%; /* Số phiếu */
+}
+
+.history-panel th:nth-child(2),
+.history-panel td:nth-child(2) {
+  width: 22%; /* Ngày chi */
+}
+
+.history-panel th:nth-child(3),
+.history-panel td:nth-child(3) {
+  width: 30%; /* Hạng mục chi */
+}
+
+.history-panel th:nth-child(4),
+.history-panel td:nth-child(4) {
+  width: 16%; /* Người chi */
+}
+
+.history-panel th:nth-child(5),
+.history-panel td:nth-child(5) {
+  width: 12%; /* Hình thức */
+}
+
+.history-panel th:nth-child(6),
+.history-panel td:nth-child(6) {
+  width: 18%; /* Số tiền */
+}
+
+.history-panel th:nth-child(7),
+.history-panel td:nth-child(7) {
+  width: 10%; /* Thao tác */
+}
+
+/* TIÊU ĐỀ CỘT */
+
+th {
+  background: #104c4a;
+  color: #fff;
+  text-align: left;
+  padding: 12px 10px;
+  white-space: nowrap;
+}
+
+/* NỘI DUNG Ô */
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #e7eeec;
+  vertical-align: top;
+  overflow-wrap: break-word;
+}
+
+/* MÀU DÒNG CHẴN */
+
+tbody tr:nth-child(even) {
+  background: #f7faf9;
+}
+
+/* HIỆU ỨNG DI CHUỘT */
+
+tbody tr:hover {
+  background: #edf7f5;
+}
+
+/* CỘT SỐ TIỀN */
+
+.money {
+  text-align: right;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* DÒNG TỔNG CỘNG */
+
+tfoot td {
+  background: #edf5f3;
+  font-weight: 800;
+  color: #174b49;
+  border-top: 2px solid #a9c9c3;
+}
+
+/* KHÔNG CÓ DỮ LIỆU */
+
+.empty {
+  text-align: center;
+  color: #829293;
+  padding: 24px;
+}
+
+/* =====================================================
+   13. NÚT XÓA TỪNG DÒNG
+===================================================== */
+
+.row-delete {
+  border: 1px solid #e6c7c4;
+  color: #a43c36;
+  background: #fff7f6;
+  border-radius: 6px;
+  padding: 6px 9px;
+  cursor: pointer;
+}
+
+/* =====================================================
+   14. CÁC NÚT CUỐI TRANG VÀ CHÂN TRANG
+===================================================== */
+
+.bottom-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+footer {
+  text-align: center;
+  color: #7c8d8d;
+  font-size: 12px;
+  padding: 8px;
+}
+
+/* =====================================================
+   15. GIAO DIỆN ĐIỆN THOẠI
+===================================================== */
+
+@media (max-width: 720px) {
+  .app {
+    width: calc(100% - 16px);
+    margin: 8px auto 24px;
+  }
+
+  .page-header {
+    padding: 20px 17px;
+  }
+
+  .panel {
+    padding: 16px 13px;
+  }
+
+  .form-grid,
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .category-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section-heading {
+    flex-wrap: wrap;
+  }
+
+  .memory-tag {
+    width: 100%;
+    margin-left: 39px;
+    margin-top: -8px;
+  }
+
+  .form-actions .btn,
+  .bottom-actions .btn {
+    flex: 1;
+    padding: 11px 8px;
+    font-size: 12px;
+  }
+
+  .history-top {
+    align-items: flex-start;
+  }
+
+  .filter-tools {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .month-filter {
+    flex: 1;
+  }
+
+  .month-filter input {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .table-wrap {
+    margin: 0 -2px;
+  }
+}
+
+/* =====================================================
+   16. ĐIỆN THOẠI MÀN HÌNH NHỎ
+===================================================== */
+
+@media (max-width: 420px) {
+  .category-list {
+    grid-template-columns: 1fr;
+  }
+
+  .bottom-actions {
+    flex-direction: column;
+  }
+
+  .bottom-actions .btn {
+    width: 100%;
+  }
+}
+
+/* =====================================================
+   19. SỬA BẢNG LỊCH SỬ CHI TRÊN ĐIỆN THOẠI
+===================================================== */
+
+@media screen and (max-width: 720px) {
+  /* Khung bảng cho phép vuốt ngang */
+  .table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Giữ chiều rộng bảng, không ép 7 cột */
+  .history-panel table {
+    width: 820px;
+    min-width: 820px;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  /* Không cho chữ bị xuống dòng từng ký tự */
+  .history-panel th,
+  .history-panel td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  /* Số phiếu */
+  .history-panel th:nth-child(1),
+  .history-panel td:nth-child(1) {
+    width: 90px;
+  }
+
+  /* Ngày chi */
+  .history-panel th:nth-child(2),
+  .history-panel td:nth-child(2) {
+    width: 110px;
+  }
+
+  /* Hạng mục chi */
+  .history-panel th:nth-child(3),
+  .history-panel td:nth-child(3) {
+    width: 180px;
+  }
+
+  /* Người chi */
+  .history-panel th:nth-child(4),
+  .history-panel td:nth-child(4) {
+    width: 110px;
+  }
+
+  /* Hình thức */
+  .history-panel th:nth-child(5),
+  .history-panel td:nth-child(5) {
+    width: 110px;
+  }
+
+  /* Số tiền */
+  .history-panel th:nth-child(6),
+  .history-panel td:nth-child(6) {
+    width: 140px;
+    text-align: right;
+  }
+
+  /* Thao tác */
+  .history-panel th:nth-child(7),
+  .history-panel td:nth-child(7) {
+    width: 80px;
+    text-align: center;
+  }
+}
+
+/* =====================================================
+   XUẤT PDF: vùng chụp được định dạng riêng trong JavaScript.
+   Các quy tắc dưới đây chỉ giữ giao diện màn hình ổn định.
+===================================================== */
+.pdf-field-value {
+  display: block;
+}
+
+/* BẢNG LỊCH SỬ TRÊN ĐIỆN THOẠI: vuốt ngang để xem đủ cột */
+@media screen and (max-width: 720px) {
+  .table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .history-panel table {
+    width: 820px;
+    min-width: 820px;
+    table-layout: fixed;
+    border-collapse: collapse;
+  }
+
+  .history-panel th,
+  .history-panel td {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .history-panel th:nth-child(1),
+  .history-panel td:nth-child(1) {
+    width: 90px;
+  }
+  .history-panel th:nth-child(2),
+  .history-panel td:nth-child(2) {
+    width: 110px;
+  }
+  .history-panel th:nth-child(3),
+  .history-panel td:nth-child(3) {
+    width: 180px;
+  }
+  .history-panel th:nth-child(4),
+  .history-panel td:nth-child(4) {
+    width: 110px;
+  }
+  .history-panel th:nth-child(5),
+  .history-panel td:nth-child(5) {
+    width: 110px;
+  }
+  .history-panel th:nth-child(6),
+  .history-panel td:nth-child(6) {
+    width: 140px;
+    text-align: right;
+  }
+  .history-panel th:nth-child(7),
+  .history-panel td:nth-child(7) {
+    width: 80px;
+    text-align: center;
+  }
+}
+#ngayChi {
+  font-weight: bold !important;
+font-size: 15px;
+}
+
+.field:has(#ngayChi) > span {
+  font-weight: bold !important;
+}
+#nguoiChi {
+  font-weight: bold !important;
+}
+
+.field:has(#nguoiChi) > span {
+  font-weight: bold !important;
+}

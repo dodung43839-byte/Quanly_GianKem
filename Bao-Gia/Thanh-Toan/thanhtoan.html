@@ -1,0 +1,209 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phiếu thanh toán</title>
+
+  <link rel="stylesheet" href="thanhtoan.css">
+
+  <!-- Thư viện xuất PDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+  <script src="thanhtoan.js" defer></script>
+</head>
+
+<body>
+
+  <div class="toolbar">
+    <button id="btnXuatPDF" type="button">XUẤT PDF</button>
+    <button type="button" onclick="window.print()">IN PHIẾU</button>
+  </div>
+
+  <main id="vungThanhToan">
+
+    <section class="phieu">
+
+      <!-- PHẦN ĐẦU PHIẾU -->
+      <header class="dau-phieu">
+
+        <div class="logo-wrap">
+          <img data-image="logo" alt="Logo công ty">
+        </div>
+
+        <div class="thong-tin-cong-ty">
+
+          <h1 data-field="tenCongTy">
+            CÔNG TY CỔ PHẦN THIẾT BỊ XÂY DỰNG ĐÔNG DƯƠNG
+          </h1>
+
+          <p class="ten-en" data-field="tenCongTyEN">
+            Dong Duong Construction Equipment Joint Stock Company
+          </p>
+
+          <p data-field="diaChiCongTy">
+            ĐỊA CHỈ : 145 Tây Thạnh, Phường Tây Thạnh, TP.HCM
+          </p>
+
+          <p data-field="dienThoaiCongTy">
+            ĐIỆN THOẠI : 0986.007.646 (Hà Thị Thủy)
+          </p>
+
+        </div>
+      </header>
+
+      <!-- TIÊU ĐỀ PHIẾU -->
+      <div class="tieu-de">
+
+        <h2>ĐỀ NGHỊ THANH TOÁN</h2>
+
+        <p>
+          Số Đơn Hàng :
+          <strong data-field="soDonHang"></strong>
+        </p>
+
+        <p data-field="ngayLap"></p>
+
+      </div>
+
+      <!-- THÔNG TIN KHÁCH HÀNG -->
+    <!-- THÔNG TIN KHÁCH HÀNG -->
+<section class="thong-tin-khach">
+
+    <p>
+        <strong>✦ Kính Gửi :</strong>
+        <span data-field="khachHang"></span>
+    </p>
+
+    <p>
+        <strong>✦ Địa chỉ:</strong>
+        <span data-field="diaChi"></span>
+    </p>
+
+    <p>
+        <strong>✦ Điện thoại:</strong>
+        <span data-field="dienThoai"></span>
+    </p>
+
+  <p class="can-cu">
+  - Căn cứ: Phiếu Báo Giá, Ngày <span id="ngayBaoGia"></span>
+</p>
+
+<p class="can-cu">
+  - Căn cứ: Hợp Đồng Ký, Ngày <span id="ngayHopDong"></span>
+</p>
+
+        <p class="noi-dung-thanh-toan">
+          ✦ Nay đơn vị chúng tôi đề nghị Quý công ty thanh toán tiền mua hàng có nội dung như sau:
+        </p>
+
+      </section>
+
+      <!-- BẢNG HÀNG HÓA -->
+      <section class="bang-hang">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Tên hàng hóa</th>
+              <th>ĐVT</th>
+              <th>Số lượng</th>
+              <th>Đơn giá</th>
+              <th>Thành tiền</th>
+            </tr>
+          </thead>
+
+          <tbody data-role="danhSachHang"></tbody>
+
+        </table>
+
+      </section>
+
+      <!-- PHẦN TỔNG KẾT TIỀN -->
+      <section class="tong-ket">
+
+        <div class="dong-tien">
+          <span>Tổng số tiền hàng:</span>
+          <strong data-field="tongTienHang"></strong>
+        </div>
+
+        <div class="dong-tien">
+          <span>Tiền thuế VAT:</span>
+          <strong data-field="tienVAT"></strong>
+        </div>
+
+        <div class="dong-tien tong-cong">
+          <span>Tổng số tiền thanh toán:</span>
+          <strong data-field="tongThanhToan"></strong>
+        </div>
+
+        <div class="dong-tien tam-ung">
+          <label for="tienTamUng">Tạm Ứng:</label>
+
+          <input
+            id="tienTamUng"
+            type="text"
+            inputmode="numeric"
+            autocomplete="off"
+            placeholder="Nhập số tiền tạm ứng"
+          >
+        </div>
+
+        <div class="dong-tien con-lai">
+          <span>Số tiền còn lại phải thu:</span>
+          <strong data-field="tienConLai"></strong>
+        </div>
+
+      </section>
+
+      <!-- THÔNG TIN THANH TOÁN NGÂN HÀNG -->
+      <div class="thong-tin-chuyen-khoan">
+
+        <p class="de-nghi-thanh-toan">
+          Đề nghị quý công ty thanh toán trước 100% số tiền trên để chúng tôi tiến hành giao hàng theo đúng thỏa thuận của 2 bên.
+        </p>
+
+        <p>
+          <strong>- Tên Tài Khoản:</strong>
+        </p>
+
+        <p class="ten-tai-khoan">
+          CÔNG TY CỔ PHẦN THIẾT BỊ XÂY DỰNG ĐÔNG DƯƠNG
+        </p>
+
+        <p>
+          <strong>- Số Tài Khoản:</strong> 313 868
+        </p>
+
+        <p>
+          Mở tại: Ngân hàng Á Châu ACB, Chi nhánh An Sương, TP.HCM.
+        </p>
+
+      </div>
+
+      <!-- PHẦN CHỮ KÝ -->
+      <div class="chu-ky">
+
+        <div class="chu-ky-ben">
+          <strong>KHÁCH HÀNG</strong>
+          <span>(Ký, ghi rõ họ tên)</span>
+        </div>
+
+        <div class="chu-ky-ben ben-cong-ty">
+          <strong>ĐẠI DIỆN CÔNG TY</strong>
+          <span>(Ký, ghi rõ họ tên)</span>
+
+         
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+</body>
+</html>

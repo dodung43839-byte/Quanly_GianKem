@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Danh mục hàng</title>
+
+    <link rel="stylesheet" href="./baogia.css" />
+  </head>
+
+  <body>
+    <h1 class="tieu-de-trang">BÁO GIÁ ĐƠN HÀNG</h1>
+    <main class="main-container">
+      <!-- PHẦN 1: DANH MỤC HÀNG -->
+      <section class="danh-muc">
+        <div class="tieu-de">DANH MỤC HÀNG</div>
+
+        <div class="tim-kiem">
+          <label for="txtTimKiem">Tìm kiếm hàng:</label>
+          <input type="text" id="txtTimKiem" placeholder="Nhập tên hàng..." />
+        </div>
+
+        <div class="listbox" id="listbox">
+          <!-- JavaScript tự động thêm danh sách hàng -->
+        </div>
+      </section>
+
+      <!-- PHẦN 2: BÁO GIÁ -->
+      <section class="right-panel">
+        <!-- THÔNG TIN KHÁCH HÀNG -->
+        <div class="customer-info">
+          <div class="customer-row customer-row-order">
+            <label for="soDonHang">Số Đơn Hàng :</label>
+
+            <input type="text" id="soDonHang" value="SDH-0001" readonly />
+
+            <label for="ngayLap">Ngày :</label>
+
+            <input
+              type="text"
+              id="ngayLap"
+              placeholder="dd-mm-yyyy"
+              maxlength="10"
+            />
+          </div>
+
+          <div class="customer-row customer-row-clear">
+            <label for="tenKhachHang">Tên Khách Hàng :</label>
+
+            <div class="customer-input-group">
+              <input
+                type="text"
+                id="tenKhachHang"
+                placeholder="Quý Khách Hàng"
+              />
+            </div>
+          </div>
+
+          <div class="customer-row customer-row-clear">
+            <label for="diaChi">Địa Chỉ :</label>
+
+            <div class="customer-input-group">
+              <input type="text" id="diaChi" placeholder="TP.HCM" />
+            </div>
+          </div>
+
+          <!-- MÃ SỐ THUẾ VÀ ĐIỆN THOẠI -->
+          <div class="customer-row customer-row-half">
+            <div class="customer-half">
+              <label for="maSoThue">Mã Số Thuế :</label>
+
+              <input type="text" id="maSoThue" placeholder="Nhập mã số thuế" />
+            </div>
+
+            <div class="customer-half">
+              <label for="dienThoai">Điện thoại:</label>
+
+              <input
+                type="text"
+                id="dienThoai"
+                placeholder="Nhập số điện thoại"
+              />
+            </div>
+          </div>
+        </div>
+
+     <!-- BẢNG HÓA ĐƠN -->
+<div class="invoice-wrapper">
+  <table id="bangHoaDon">
+    <thead>
+      <tr>
+        <th>TT</th>
+        <th>Mã hàng</th>
+        <th>Tên hàng hóa</th>
+        <th>ĐVT</th>
+        <th>Đơn giá</th>
+        <th>SL</th>
+        <th>Thành tiền</th>
+        <th>Xóa</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- JavaScript tự động thêm sản phẩm -->
+    </tbody>
+  </table>
+</div>
+
+        <!-- TỔNG TIỀN -->
+        <div class="total-box">
+          <div class="total-row">
+            <span>Tổng tiền mua hàng:</span>
+
+            <strong id="tongTien">0</strong>
+
+            <span>VNĐ</span>
+          </div>
+
+          <!-- THUẾ GTGT -->
+          <div class="total-row">
+            <span>Thuế GTGT:</span>
+
+            <input
+              type="number"
+              id="thueGTGT"
+              value="10"
+              min="0"
+              max="100"
+              step="1"
+            />
+
+            <span>%</span>
+
+            <span>Tiền thuế:</span>
+
+            <strong id="tienThue">0</strong>
+
+            <span>VNĐ</span>
+          </div>
+
+          <!-- TỔNG THANH TOÁN -->
+          <div class="total-row total-payment">
+            <span>Tổng tiền thanh toán:</span>
+
+            <strong id="tongThanhToan">0</strong>
+
+            <span>VNĐ</span>
+          </div>
+        </div>
+
+        <!-- KẾT THÚC printArea -->
+
+        <!-- SỐ TIỀN BẰNG CHỮ -->
+        <div class="tien-bang-chu">
+          <label for="tienBangChu">Số tiền bằng chữ:</label>
+
+          <input type="text" id="tienBangChu" readonly />
+        </div>
+
+          <button type="button" id="btnLuu">LƯU LẠI ĐƠN HÀNG</button>
+        <!-- CÁC NÚT CHỨC NĂNG -->
+        <div class="button-group-title">CHỨC NĂNG ĐƠN HÀNG</div>
+
+        <div class="buttons action-buttons" aria-label="Các chức năng đơn hàng">
+          <button type="button" id="btnXuatPDF">BÁO GIÁ</button>
+
+          <button type="button" id="btnXuatKho">XUẤT KHO</button>
+
+          <button type="button" id="btnThanhToan">THANH TOÁN</button>
+
+          <button
+            type="button"
+            id="btnTamUng"
+            onclick="window.location.href = './Tam-Ung/tamung.html'"
+          >
+            TẠM ỨNG
+          </button>
+
+          <button type="button" id="btnHopDong">LẬP HỢP ĐỒNG</button>
+
+          <button type="button" id="btnChungNhanXuatXuong">XUẤT XƯỞNG</button>
+
+          <button type="button" id="btnThanhly">THANH LÝ HD</button>
+
+          <button type="button" id="btnThueGTGT">HÓA ĐƠN GTGT</button>
+        </div>
+
+        <!-- QUẢN LÝ DỮ LIỆU -->
+        <div class="button-group-title data-group-title">
+          QUẢN LÝ DỮ LIỆU BÁO GIÁ
+        </div>
+
+        <div class="buttons data-buttons" aria-label="Quản lý dữ liệu báo giá">
+          <button type="button" id="btnXoaHet">LẬP MỚI</button>
+
+  <button type="button" id="btnTaiDuLieu">XEM BẢNG DỮ LIỆU </button>
+
+          <button type="button" id="btnXoaDuLieuDB">XÓA DỮ LIỆU</button>
+        </div>
+
+        <!-- DANH SÁCH BÁO GIÁ ĐÃ LƯU -->
+        <div id="hopDuLieuDaLuu">
+          <h3>DANH SÁCH BÁO GIÁ ĐÃ LƯU</h3>
+
+          <div class="dong-tieu-de">
+            <span>SỐ ĐƠN HÀNG</span>
+
+            <span>TÊN KHÁCH HÀNG</span>
+
+            <span>NGÀY LƯU</span>
+
+            <span></span>
+          </div>
+
+          <!-- CHỈ GIỮ MỘT ID DANH SÁCH -->
+          <div id="listDuLieuDaLuu" class="list-du-lieu-da-luu">
+            <!-- JavaScript tự động đưa dữ liệu vào đây -->
+          </div>
+
+          <!-- CHỈ GIỮ MỘT ID THÔNG BÁO -->
+          <div id="thongBaoChuaCoDuLieu" class="thong-bao-chua-co-du-lieu">
+            Chưa có báo giá nào được lưu.
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- JAVASCRIPT -->
+    <script src="docso.js"></script>
+    <script src="main.js" defer></script>
+    <script src="main3.js" defer></script>
+  </body>
+</html>

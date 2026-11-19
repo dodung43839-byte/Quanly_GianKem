@@ -1,0 +1,1074 @@
+
+
+/* 1. CÀI ĐẶT CHUNG */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Times New Roman", Times, serif;
+  background-color: #f2f2f2;
+  color: #000;
+}
+
+.tieu-de-trang {
+  margin: 15px 0 1px;
+  text-align: center;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 28px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* 2. KHUNG CHÍNH */
+.main-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 3. DANH MỤC HÀNG */
+.danh-muc {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.tieu-de {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  background: darkblue;
+  color: #d9edf7;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.tim-kiem {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.tim-kiem label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#txtTimKiem {
+  width: 100%;
+  height: 35px;
+  padding: 5px 8px;
+  border: 1px solid #888;
+  border-radius: 4px;
+  outline: none;
+  font-family: inherit;
+  font-size: 15px;
+}
+
+#txtTimKiem:focus {
+  border-color: darkblue;
+}
+
+.listbox {
+  width: 100%;
+  height: 250px;
+  overflow-y: auto;
+  border: 1px solid #777;
+  background: #fff;
+  font-size: 18px;
+}
+
+.hang {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.hang:hover {
+  background: #6d993a;
+  color: #fff;
+}
+
+/* 4. KHUNG BÁO GIÁ */
+.right-panel {
+  width: 100%;
+  padding: 20px;
+  border: 1px solid #d0d0d0;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* 5. THÔNG TIN KHÁCH HÀNG */
+.customer-info {
+  width: 100%;
+  margin: 10px 0 15px;
+  padding: 10px 0;
+}
+
+.customer-row {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+.customer-row > label {
+  flex: 0 0 130px;
+  width: 130px;
+  min-width: 130px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.customer-row input {
+  flex: 1 1 auto;
+  width: 80%;
+  min-width: 0;
+  height: 34px;
+  padding: 5px 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  outline: none;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.customer-row input:focus {
+  border-color: #333;
+}
+
+#soDonHang {
+  flex: 0 0 220px;
+  width: 220px;
+  min-width: 0;
+  font-size: 20px;
+}
+
+#ngayLap {
+  flex: 0 0 200px;
+  width: 200px;
+  min-width: 0;
+  font-size: 20px;
+}
+
+#tenKhachHang,
+#diaChi {
+  flex: 1 1 auto;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+}
+
+.customer-row:first-child label[for="ngayLap"] {
+  margin-left: 20px;
+}
+
+.customer-row-half {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.customer-half {
+  display: flex;
+  align-items: center;
+  width: 48%;
+  min-width: 0;
+}
+
+.customer-half label {
+  flex: 0 0 130px;
+  width: 130px;
+  min-width: 130px;
+  margin: 0;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.customer-half input {
+  flex: 1 1 auto;
+  width: auto;
+  min-width: 0;
+  height: 34px;
+}
+
+.customer-row-half .customer-half:nth-child(2) label {
+  margin-left: 20px;
+}
+
+/* 6. BẢNG HÓA ĐƠN */
+.invoice-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#bangHoaDon {
+  width: 98%;
+  min-width: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 14px;
+}
+
+#bangHoaDon th {
+  padding: 8px 5px;
+  border: 1px solid #000;
+  background: #eee;
+  color: #000;
+  text-align: center !important;
+  vertical-align: middle;
+  font-weight: bold;
+}
+
+#bangHoaDon td {
+  padding: 7px 5px;
+  border: 1px solid #000;
+  text-align: center;
+  vertical-align: middle;
+  overflow-wrap: break-word;
+}
+
+#bangHoaDon tbody tr:hover {
+  background: #f3f3f3;
+  cursor: pointer;
+}
+/* CHIA ĐỀU VÀ CỐ ĐỊNH 8 CỘT */
+#bangHoaDon {
+  display: table;
+  width: 100%;
+  min-width: 700px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+#bangHoaDon thead {
+  display: table-header-group;
+}
+
+#bangHoaDon tbody {
+  display: table-row-group;
+}
+
+#bangHoaDon tr {
+  display: table-row;
+}
+
+#bangHoaDon th,
+#bangHoaDon td {
+  display: table-cell;
+  border: 1px solid #000;
+  padding: 7px 5px;
+  vertical-align: middle;
+  text-align: center;
+}
+
+/* Chiều rộng từng cột */
+#bangHoaDon th:nth-child(1),
+#bangHoaDon td:nth-child(1) { width: 5%; }
+
+#bangHoaDon th:nth-child(2),
+#bangHoaDon td:nth-child(2) { width: 12%; }
+
+#bangHoaDon th:nth-child(3),
+#bangHoaDon td:nth-child(3) { width: 27%; }
+
+#bangHoaDon th:nth-child(4),
+#bangHoaDon td:nth-child(4) { width: 9%; }
+
+#bangHoaDon th:nth-child(5),
+#bangHoaDon td:nth-child(5) { width: 16%; }
+
+#bangHoaDon th:nth-child(6),
+#bangHoaDon td:nth-child(6) { width: 8%; }
+
+#bangHoaDon th:nth-child(7),
+#bangHoaDon td:nth-child(7) { width: 15%; }
+
+#bangHoaDon th:nth-child(8),
+#bangHoaDon td:nth-child(8) { width: 8%; }
+
+
+
+/* 7. TỔNG TIỀN VÀ THUẾ */
+.total-box {
+  width: 98%;
+  margin-top: 15px;
+  padding: 10px 30px 10px 0;
+}
+
+.total-row {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  min-height: 38px;
+  padding: 5px 0;
+}
+
+.total-row > span {
+  white-space: nowrap;
+  font-size: 20px;
+}
+
+.total-row > span:first-child {
+  font-weight: bold;
+}
+
+.total-row strong {
+  min-width: 130px;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#thueGTGT {
+  width: 55px;
+  height: 32px;
+  padding: 4px;
+  border: 1px solid #888;
+  border-radius: 4px;
+  outline: none;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.total-payment {
+  margin-top: 5px;
+  padding-top: 10px;
+  border-top: 2px solid #000;
+}
+
+.total-payment > span:first-child {
+  position: relative;
+  left: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.total-payment strong {
+  display: inline-block;
+  min-width: 200px;
+  margin-left: 20px;
+  text-align: right;
+  font-size: 20px;
+}
+
+/* 8. SỐ TIỀN BẰNG CHỮ */
+.tien-bang-chu {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  margin: 12px 0;
+}
+
+.tien-bang-chu label {
+  flex: 0 0 auto;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#tienBangChu {
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  min-height: 35px;
+  padding: 6px 8px;
+  border: 1px solid #aaa;
+  border-radius: 4px;
+  background: #fff;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* 9. TIÊU ĐỀ NHÓM NÚT */
+.button-group-title {
+  width: 100%;
+  margin: 22px 0 9px;
+  padding: 9px 12px;
+  border-left: 5px solid #173b78;
+  border-radius: 4px;
+  background: #eaf0f8;
+  color: #173b78;
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.data-group-title {
+  margin-top: 18px;
+}
+
+/* 10. CÁC NÚT CHỨC NĂNG */
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.buttons button {
+  min-width: 100px;
+  height: 38px;
+  padding: 5px 15px;
+  border: 1px solid #888;
+  border-radius: 5px;
+  background: #eee;
+  color: #000;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.buttons button:hover {
+  background: #d9d9d9;
+}
+
+.buttons.action-buttons {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 9px;
+  width: 100%;
+  margin: 0 0 14px;
+  padding: 12px;
+  border: 1px solid #d5dce6;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.buttons.data-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 9px;
+  width: 100%;
+  margin: 0 0 14px;
+  padding: 12px;
+  border: 1px solid #d5dce6;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+
+.buttons.action-buttons button,
+.buttons.data-buttons button {
+  width: 100%;
+  min-width: 0;
+  min-height: 42px;
+  height: auto;
+  padding: 9px 6px;
+  border: 1px solid #aebbd0;
+  border-radius: 6px;
+  background: #173b78;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.2;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.buttons.action-buttons button:hover {
+  background: #24539a;
+}
+
+.buttons.data-buttons button {
+  border-color: #bdc9d8;
+  background: #e9eef5;
+  color: #172b4d;
+}
+
+.buttons.data-buttons button:hover {
+  background: #d8e2ef;
+}
+
+.buttons.data-buttons #btnXoaDuLieuDB {
+  border-color: #ddd0d0;
+  background: #fff7f7;
+  color: #a32626;
+}
+
+.buttons.data-buttons #btnXoaDuLieuDB:hover {
+  background: #ffe8e8;
+}
+
+/* 11. DANH SÁCH BÁO GIÁ ĐÃ LƯU */
+#hopDuLieuDaLuu {
+  width: 100%;
+  max-width: 100%;
+  margin-top: 18px;
+  overflow-x: auto;
+}
+
+#hopDuLieuDaLuu h3 {
+  margin: 0 0 10px;
+  padding: 10px;
+  border-bottom: 1px solid #d5dce6;
+  font-size: 20px;
+  text-align: center;
+}
+
+#hopDuLieuDaLuu .dong-tieu-de,
+#hopDuLieuDaLuu .dong-du-lieu-da-luu {
+  display: grid;
+  grid-template-columns: 20% 40% 25% 15%;
+  align-items: center;
+  gap: 0;
+  width: 100%;
+  min-width: 450px;
+  padding: 9px 6px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+#hopDuLieuDaLuu .dong-tieu-de {
+  background: #eaf0f8;
+  font-weight: bold;
+  text-align: center;
+}
+
+#hopDuLieuDaLuu .dong-du-lieu-da-luu {
+  background: #fff;
+}
+
+#hopDuLieuDaLuu .dong-du-lieu-da-luu:nth-child(even) {
+  background: #f7f8fa;
+}
+
+.thong-bao-chua-co-du-lieu {
+  padding: 12px;
+  color: #666;
+  text-align: center;
+  font-style: italic;
+}
+
+/* 12. GIAO DIỆN ĐIỆN THOẠI */
+@media screen and (max-width: 600px) {
+  .tieu-de-trang {
+    margin: 12px 0 1px;
+    padding: 0 6px;
+    font-size: 22px;
+  }
+
+  .main-container {
+    width: 100%;
+    gap: 12px;
+    padding: 8px;
+  }
+
+  .danh-muc {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .tieu-de {
+    padding: 7px;
+    font-size: 18px;
+  }
+
+  #txtTimKiem {
+    height: 34px;
+    font-size: 14px;
+  }
+
+  .listbox {
+    height: 220px;
+    font-size: 16px;
+  }
+
+  .hang {
+    padding: 9px;
+  }
+
+  .right-panel {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: none;
+  }
+
+  .customer-info {
+    width: 100%;
+    max-width: 100%;
+    padding: 5px 0;
+  }
+
+  .customer-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    gap: 6px;
+    margin: 2px 0;
+  }
+
+  .customer-row > label {
+    flex: 0 0 auto;
+    width: auto;
+    min-width: 0;
+    font-size: 13px;
+    font-weight: bold;
+    white-space: nowrap;
+  }
+
+  .customer-row input {
+    min-width: 0;
+    height: 36px;
+    font-size: 14px;
+  }
+
+  .customer-row-order {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr) 65px minmax(0, 1fr);
+    gap: 5px;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .customer-row-order label {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .customer-row-order input {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    margin: 0;
+    padding: 7px 4px;
+    font-size: 14px;
+  }
+
+  .customer-row-clear .customer-input-group {
+    flex: 1 1 auto;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .customer-row-clear .customer-input-group input {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    padding-right: 8px;
+  }
+
+  .customer-row-half {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .customer-row-half .customer-half {
+    display: grid;
+    grid-template-columns: 90px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 3px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .customer-row-half .customer-half label {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    white-space: nowrap;
+  }
+
+  .customer-row-half .customer-half input {
+    width: 100%;
+    min-width: 0;
+    height: 38px;
+    margin: 0;
+    padding: 5px 7px;
+    font-size: 14px;
+  }
+
+  .invoice-wrapper {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: auto;
+    overflow-y: visible;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  #bangHoaDon {
+    width: 100%;
+    min-width: 620px;
+    table-layout: auto;
+    border-collapse: collapse;
+  }
+
+  #bangHoaDon th,
+  #bangHoaDon td {
+    padding: 7px 5px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  #bangHoaDon input,
+  #bangHoaDon select,
+  #bangHoaDon textarea {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+    min-height: 35px;
+    padding: 5px;
+    font-size: 13px;
+  }
+
+  #bangHoaDon th:nth-child(1),
+  #bangHoaDon td:nth-child(1),
+  #bangHoaDon th:nth-child(2),
+  #bangHoaDon td:nth-child(2) {
+    display: none;
+  }
+
+  #bangHoaDon th:nth-child(3),
+  #bangHoaDon td:nth-child(3) {
+    width: 150px;
+    font-size: 16px;
+  }
+
+  #bangHoaDon th:nth-child(4),
+  #bangHoaDon td:nth-child(4) {
+    width: 50px;
+  }
+
+  #bangHoaDon th:nth-child(5),
+  #bangHoaDon td:nth-child(5) {
+    width: 60px;
+  }
+
+  #bangHoaDon th:nth-child(6),
+  #bangHoaDon td:nth-child(6) {
+    width: 40px;
+  }
+
+  #bangHoaDon th:nth-child(7),
+  #bangHoaDon td:nth-child(7) {
+    width: 60px;
+  }
+
+  .total-box {
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .total-row {
+    flex-wrap: wrap;
+    gap: 4px;
+    min-height: 32px;
+  }
+
+  .total-row > span {
+    font-size: 12px;
+  }
+
+  .total-row strong {
+    min-width: 90px;
+    font-size: 13px;
+  }
+
+  #thueGTGT {
+    width: 45px;
+    height: 29px;
+    font-size: 13px;
+  }
+
+  .total-payment > span:first-child {
+    left: 0;
+    font-size: 14px;
+  }
+
+  .total-payment strong {
+    min-width: 100px;
+    width: 100px;
+    margin-left: 0;
+    font-size: 15px;
+  }
+
+  .tien-bang-chu {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .tien-bang-chu label {
+    font-size: 14px;
+  }
+
+  #tienBangChu {
+    width: 100%;
+    min-height: 36px;
+    font-size: 14px;
+  }
+
+  .button-group-title {
+    margin-top: 16px;
+    font-size: 15px;
+  }
+
+
+/* 3 NÚT: TẢI DỮ LIỆU DÀI, 2 NÚT CÒN LẠI NGẮN */
+.buttons.data-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.buttons.data-buttons button {
+  width: 100%;
+  min-width: 0;
+  height: 45px;
+  font-size: 16px;
+}
+
+#btnTaiDuLieu {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+#btnXoaHet,
+#btnXoaDuLieuDB {
+  grid-column: auto;
+  grid-row: 2;
+}
+
+
+
+  #hopDuLieuDaLuu {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  #hopDuLieuDaLuu h3 {
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  #hopDuLieuDaLuu .dong-tieu-de,
+  #hopDuLieuDaLuu .dong-du-lieu-da-luu {
+    min-width: 450px;
+    grid-template-columns: 20% 40% 25% 15%;
+    padding: 7px 4px;
+    font-size: 12px;
+  }
+
+  /* NHÃN CHIẾM 1/4 CHIỀU NGANG, Ô NHẬP CHIẾM 3/4 CÒN LẠI */
+  .customer-info .customer-row.customer-row-clear {
+    display: grid !important;
+    grid-template-columns: 25% minmax(0, 1fr) !important;
+    align-items: center !important;
+    column-gap: 5px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 5px 0 !important;
+    padding: 0 !important;
+  }
+
+  .customer-info .customer-row.customer-row-clear > label {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    font-size: 13px !important;
+    line-height: 1.15 !important;
+  }
+
+  .customer-info .customer-row.customer-row-clear .customer-input-group {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .customer-info .customer-row.customer-row-clear input {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: 40px !important;
+    margin: 0 !important;
+    padding: 5px 7px !important;
+    font-size: 14px !important;
+  }
+
+  .customer-info .customer-row.customer-row-half {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 5px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .customer-info .customer-row.customer-row-half .customer-half {
+    display: grid !important;
+    grid-template-columns: 25% minmax(0, 1fr) !important;
+    align-items: center !important;
+    column-gap: 5px !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .customer-info .customer-row.customer-row-half .customer-half > label {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    white-space: normal !important;
+    overflow-wrap: anywhere !important;
+    font-size: 13px !important;
+    line-height: 1.15 !important;
+  }
+
+  .customer-info .customer-row.customer-row-half .customer-half > input {
+    display: block !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: 40px !important;
+    margin: 0 !important;
+    padding: 5px 7px !important;
+    font-size: 14px !important;
+  }
+
+}
+
+
+/* 13. IN / XUẤT PDF */
+@page {
+  size: A4;
+  margin: 8mm;
+}
+
+@media print {
+  html,
+  body {
+    width: 100%;
+    background: #fff;
+  }
+
+  .main-container {
+    max-width: none;
+    padding: 0;
+  }
+
+  .danh-muc,
+  .button-group-title,
+  .buttons,
+  #hopDuLieuDaLuu {
+    display: none !important;
+  }
+
+  .right-panel {
+    padding: 0;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .invoice-wrapper {
+    overflow: visible;
+  }
+
+  #bangHoaDon {
+    width: 100%;
+    min-width: 0;
+  }
+}
+.thanh-tien-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.thanh-tien-header button {
+  padding: 4px 7px;
+  font-size: 12px;
+  font-weight: bold;
+  color: white;
+  background: #dc3545;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+/* HAI NÚT XÓA HẾT VÀ LƯU BẰNG NHAU */
+.data-buttons {
+  display: flex;
+  width: 100%;
+  gap: 8px;
+}
+
+.data-buttons button {
+  flex: 1;
+  width: 50%;
+  height: 45px;
+  box-sizing: border-box;
+  font-size: 17px;
+  font-weight: bold;
+}
+/* NÚT LƯU TOÀN MÀN HÌNH */
+#btnLuu {
+  display: block;
+  width: 100% !important;
+  grid-column: 1 / -1 !important;
+  height: 50px !important;
+  background: #173b78 !important;
+  color: #fff !important;
+  font-size: 20px !important;
+  font-weight: bold !important;
+  border: none !important;
+  border-radius: 6px;
+}
+/* NÚT TẢI DỮ LIỆU: NỀN XANH, CHỮ TRẮNG */
+#btnTaiDuLieu {
+  background: #173b78 !important;
+  color: #ffffff !important;
+  font-size: 18px !important;
+  font-weight: bold !important;
+  border: none !important;
+}
