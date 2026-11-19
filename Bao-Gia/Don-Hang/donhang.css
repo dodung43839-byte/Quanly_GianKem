@@ -46,7 +46,7 @@ body {
   max-width: 45mm;
   max-height: 55mm;
   object-fit: contain;
-  top: -10mm;
+  top: 12mm;
 }
 .company {
   z-index: 1;
