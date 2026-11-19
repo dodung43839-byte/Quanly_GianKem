@@ -628,5 +628,5 @@ body {
 }
 /* ĐẨY LOGO LÊN TRÊN */
 .logo-box img {
-  transform: translateY(-3mm) !important;
+  transform: translateY(20mm) !important;
 }
