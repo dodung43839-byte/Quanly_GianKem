@@ -1,0 +1,628 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 14px;
+  background: #e9eef0;
+  color: #111;
+  font-family: "Times New Roman", Times, serif;
+}
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: #fff;
+  box-shadow: 0 2px 12px #0002;
+}
+.quote {
+  position: relative;
+  width: 210mm;
+  min-height: 297mm;
+  padding: 5mm 6mm 13mm;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fff 0%, #fff 78%, #f7fbfa 100%);
+  font-size: 10.5pt;
+}
+.header {
+  height: 36mm;
+  display: grid;
+  grid-template-columns: 27mm 1fr 50mm;
+  align-items: center;
+  gap: 3mm;
+  border-bottom: 1.2mm solid #08756f;
+  position: relative;
+  overflow: hidden;
+}
+.logo-box {
+  height: 26mm;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  left: 8mm;
+}
+.logo-box img {
+  max-width: 45mm;
+  max-height: 55mm;
+  object-fit: contain;
+  top: 10mm;
+}
+.company {
+  z-index: 1;
+  padding-left: 13mm;
+}
+.company h1 {
+  font-size: 14pt;
+  line-height: 1.05;
+  color: #064b48;
+  margin: 0 0 2mm;
+  font-weight: 800;
+}
+.company p {
+  font-size: 10pt;
+  line-height: 1.3;
+  margin: 1mm 0;
+}
+.construction-art {
+  height: 100%;
+  position: relative;
+  background: linear-gradient(
+    135deg,
+    transparent 20%,
+    #e5f0ee 20%,
+    #f8fbfa 70%
+  );
+  color: #8ba9a5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  opacity: 0.8;
+}
+.crane {
+  font-size: 35pt;
+  transform: rotate(-20deg);
+}
+.building {
+  font-size: 24pt;
+  line-height: 0.65;
+  color: #799c96;
+}
+.title-row {
+  height: 25mm;
+  display: grid;
+  grid-template-columns: 1fr 48mm;
+  align-items: center;
+  gap: 4mm;
+}
+.title-ribbon {
+  height: 16mm;
+  background: linear-gradient(110deg, #087b72, #00524f);
+  clip-path: polygon(10% 0, 100% 0, 91% 100%, 0 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+}
+.title-ribbon:before {
+  content: "";
+  position: absolute;
+  left: 4%;
+  width: 23mm;
+  height: 100%;
+  background: #ffca28;
+  clip-path: polygon(0 0, 100% 0, 78% 100%, 0 100%);
+}
+.title-ribbon span {
+  font-family: Georgia, serif;
+  font-weight: bold;
+  font-size: 27pt;
+  letter-spacing: 1px;
+  z-index: 1;
+  text-shadow: 0 1px 2px #003c38;
+}
+.quote-meta {
+  border: 1px solid #70a7a0;
+  border-radius: 3mm;
+  padding: 2mm;
+  font-size: 9pt;
+  line-height: 1.8;
+  background: #f8fcfb;
+}
+.quote-meta div {
+  display: flex;
+  justify-content: space-between;
+  gap: 2mm;
+}
+.intro {
+  padding: 0 2mm 2mm;
+  font-size: 9.5pt;
+  line-height: 1.35;
+}
+.intro p {
+  margin: 1mm 0;
+}
+.greeting {
+  color: #00635c;
+  font-style: italic;
+  font-size: 11pt;
+}
+.customer {
+  border: 1px solid #5d9a92;
+  border-radius: 2mm;
+  position: relative;
+  padding: 7mm 3mm 2mm;
+  margin: 1mm 0 3mm;
+  overflow: hidden;
+}
+.customer h2 {
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 0;
+  padding: 1.5mm 7mm 1.5mm 4mm;
+  color: #fff;
+  background: #08776f;
+  font-size: 10pt;
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 0 100%);
+}
+.customer-grid {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  gap: 1.5mm 5mm;
+  position: relative;
+  z-index: 1;
+}
+.customer-grid > div {
+  display: grid;
+  grid-template-columns: 7mm 25mm 4mm 1fr;
+  align-items: center;
+  min-height: 6mm;
+  font-size: 10pt;
+}
+.customer-grid span {
+  color: #08776f;
+}
+.customer-grid b {
+  font-weight: 700;
+}
+.customer-grid i {
+  font-style: normal;
+}
+.customer-grid strong {
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+.faint-crane {
+  position: absolute;
+  right: 4mm;
+  bottom: 0;
+  color: #b9cfcb;
+  font-size: 17pt;
+  opacity: 0.55;
+}
+.items {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.items th,
+.items td {
+  border: 1px solid #777;
+  padding: 2mm 1.5mm;
+}
+.items th {
+  background: #00625e;
+  color: #fff;
+  font-size: 9pt;
+  text-align: center;
+  height: 10mm;
+}
+.items td {
+  font-size: 9pt;
+  height: 8mm;
+}
+.items td:nth-child(1),
+.items td:nth-child(3),
+.items td:nth-child(5) {
+  text-align: center;
+}
+.items td:nth-child(4),
+.items td:nth-child(6) {
+  text-align: right;
+}
+.items .stt {
+  width: 7%;
+}
+.items .dvt {
+  width: 10%;
+}
+.items .price {
+  width: 17%;
+}
+.items .qty {
+  width: 13%;
+}
+.items .amount {
+  width: 20%;
+}
+.totals {
+  border: 1px solid #777;
+  border-top: 0;
+}
+.total-line {
+  display: grid;
+  grid-template-columns: 1fr 34%;
+  align-items: center;
+  min-height: 7mm;
+  padding: 1mm 2mm;
+  border-bottom: 1px solid #aaa;
+  font-size: 9.5pt;
+}
+.total-line b {
+  text-align: center;
+}
+.total-line strong {
+  text-align: right;
+}
+.vat-line {
+  grid-template-columns: 1fr 15% 1fr 30%;
+  gap: 1mm;
+}
+.vat-line b:first-child {
+  text-align: right;
+}
+.vat-line b:nth-of-type(2) {
+  text-align: center;
+}
+.vat-line strong:nth-of-type(1) {
+  text-align: center;
+  border: 1px solid #b5d0ca;
+  border-radius: 2mm;
+}
+.grand {
+  background: linear-gradient(90deg, #087b70, #ffda38);
+  color: #063f39;
+  font-size: 12pt;
+  font-weight: bold;
+  border: 0;
+  min-height: 9mm;
+}
+.grand b {
+  text-align: center;
+}
+.grand strong {
+  font-size: 13pt;
+}
+.words {
+  margin: 2mm 0 3mm;
+  padding: 2mm 3mm;
+  background: #e2f0ed;
+  border-radius: 2mm;
+  font-size: 9.5pt;
+  font-style: italic;
+}
+.words b {
+  font-style: normal;
+}
+.bottom {
+  display: grid;
+  grid-template-columns: 1.12fr 0.88fr;
+  gap: 4mm;
+  min-height: 44mm;
+}
+.notes h2 {
+  display: inline-block;
+  margin: 0 0 1mm;
+  padding: 1.5mm 7mm 1.5mm 3mm;
+  background: #ffca28;
+  color: #064f4a;
+  font-size: 10pt;
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+}
+.notes ul {
+  margin: 0;
+  padding-left: 6mm;
+  font-size: 8.7pt;
+  line-height: 1.4;
+  outline: none;
+}
+.notes li {
+  padding-left: 1mm;
+}
+.notes li:focus {
+  background: #fff5bf;
+  outline: 1px dashed #c99b00;
+}
+.hint {
+  font-size: 7pt;
+  color: #78908c;
+  margin: 1mm 0;
+}
+.signature {
+  text-align: center;
+  position: relative;
+  min-height: 44mm;
+  padding-top: 1mm;
+}
+.signature h3 {
+  font-size: 10pt;
+  line-height: 1.2;
+  margin: 0 0 2mm;
+}
+.signature > b {
+  font-size: 9pt;
+}
+.stamp {
+  position: absolute;
+  width: 33mm;
+  height: 33mm;
+  object-fit: contain;
+  left: 2mm;
+  top: 12mm;
+  opacity: 0.94;
+}
+.sign-line {
+  height: 20mm;
+  margin: 0 2mm 1mm 39mm;
+  border-bottom: 1px solid transparent;
+}
+.signature > strong {
+  display: block;
+  margin-left: 34mm;
+  font-size: 9pt;
+}
+.footer-wave {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 9mm;
+  background: #006d66;
+  clip-path: polygon(
+    0 45%,
+    22% 75%,
+    48% 58%,
+    72% 35%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+.footer-wave:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 2mm;
+  background: #f6c72e;
+  clip-path: polygon(
+    0 70%,
+    22% 100%,
+    48% 70%,
+    72% 40%,
+    100% 0,
+    100% 45%,
+    72% 85%,
+    48% 100%,
+    22% 100%,
+    0 100%
+  );
+}
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+@media print {
+  body {
+    padding: 0;
+    margin: 0;
+    background: #fff;
+  }
+  .page,
+  .quote {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    box-shadow: none;
+  }
+  .quote {
+    page-break-after: avoid;
+  }
+}
+@media screen and (max-width: 760px) {
+  body {
+    padding: 0;
+    overflow-x: auto;
+  }
+  .page {
+    margin: 0;
+  }
+}
+/* ĐẨY CON DẤU SANG PHẢI */
+.stamp {
+  position: relative;
+  left: -5mm;
+  top: 0mm;
+}
+.director-name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  top: 0mm;
+}
+/* THU HẸP KHOẢNG CÁCH CON DẤU VÀ CHỮ KÝ */
+.sign-line {
+  margin-top: -5mm !important;
+  margin-bottom: 2mm !important;
+}
+
+.director-name {
+  margin-top: -15mm !important;
+}
+/* TĂNG CỠ CHỮ PHẦN GHI CHÚ */
+.notes,
+.notes p,
+.notes li {
+  font-size: 11pt !important;
+  line-height: 1.4;
+}
+/* TĂNG CỠ CHỮ PHẦN TỔNG TIỀN */
+.totals {
+  font-size: 11pt !important;
+}
+
+.total-line {
+  font-size: 11pt !important;
+}
+
+.total-line b {
+  font-size: 11pt !important;
+}
+
+.total-line strong {
+  font-size: 12pt !important;
+}
+
+/* DÒNG TỔNG THANH TOÁN */
+.total-line.grand b,
+.total-line.grand strong {
+  font-size: 13pt !important;
+  font-weight: bold;
+}
+/* TĂNG CỠ CHỮ TIÊU ĐỀ BẢNG HÀNG HÓA */
+.items thead th {
+  font-size: 11pt !important;
+  font-weight: bold;
+  padding: 3mm 1mm;
+}
+/* THU NHỎ CON DẤU */
+.stamp {
+  width: 35mm !important;
+  height: 35mm !important;
+  object-fit: contain;
+}
+/* ĐẨY TÊN CÔNG TY XUỐNG DƯỚI */
+.company h1 {
+  position: relative;
+  top: 1mm;
+}
+/* TĂNG KHOẢNG CÁCH TRÊN DƯỚI THÔNG TIN KHÁCH HÀNG */
+.customer-grid > div {
+  padding-top: 2mm !important;
+  padding-bottom: 2mm !important;
+  line-height: 1.4 !important;
+}
+/* THU NHỎ CHỮ TÊN KHÁCH HÀNG */
+.customer-grid [data-field="tenKhachHang"] {
+  font-size: 8pt !important;
+  line-height: 1.2;
+}
+/* CHỈNH LẠI TỶ LỆ CÁC CỘT BẢNG HÀNG HÓA */
+.items {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* ĐỘ RỘNG TỪNG CỘT */
+.items th:nth-child(1),
+.items td:nth-child(1) {
+  width: 5%;
+}
+
+.items th:nth-child(2),
+.items td:nth-child(2) {
+  width: 45%;
+}
+
+.items th:nth-child(3),
+.items td:nth-child(3) {
+  width: 12%;
+}
+
+.items th:nth-child(4),
+.items td:nth-child(4) {
+  width: 13%;
+}
+
+.items th:nth-child(5),
+.items td:nth-child(5) {
+  width: 9%;
+}
+
+.items th:nth-child(6),
+.items td:nth-child(6) {
+  width: 19%;
+}
+
+/* TĂNG FONT CHỮ TIÊU ĐỀ */
+.items thead th {
+  font-size: 11pt !important;
+  font-weight: bold;
+  padding: 3mm 1mm;
+}
+
+/* TĂNG FONT CHỮ NỘI DUNG */
+.items tbody td {
+  font-size: 10pt !important;
+  padding: 2mm 1.5mm;
+}
+
+/* RIÊNG TÊN HÀNG HÓA */
+.items tbody td:nth-child(2) {
+  font-size: 12pt !important;
+  text-align: left;
+}
+
+/* GIỮ CHỮ ĐƠN GIÁ VÀ THÀNH TIỀN VỪA VẶN */
+.items tbody td:nth-child(4),
+.items tbody td:nth-child(6) {
+  font-size: 11pt !important;
+}
+/* CỘT SỐ LƯỢNG: CHỮ ĐẬM, CĂN GIỮA */
+.items tbody td:nth-child(5) {
+  font-size: 11pt !important;
+  font-weight: bold !important;
+  text-align: center !important;
+}
+
+/* TĂNG CHỮ PHẦN KÍNH GỬI */
+.greeting {
+  font-size: 12pt !important;
+  line-height: 1.5 !important;
+}
+
+/* TĂNG CHỮ LỜI GIỚI THIỆU */
+.intro {
+  font-size: 11pt !important;
+  line-height: 1.5 !important;
+  margin-top: 2mm !important;
+  margin-bottom: 3mm !important;
+}
+
+/* THU HẸP KHOẢNG CÁCH PHẦN ĐẦU */
+.greeting {
+  margin-top: 0 !important;
+  margin-bottom: -3mm !important;
+}
+
+.intro {
+  margin-top: -3mm !important;
+  margin-bottom: 2mm !important;
+  line-height: 1.3 !important;
+}
+
+.customer {
+  margin-top: 0 !important;
+}
+/* THU HẸP CHIỀU CAO TIÊU ĐỀ BẢNG */
+.items thead th {
+  padding-top: 1mm !important;
+  padding-bottom: 1mm !important;
+  line-height: 1.1 !important;
+}
