@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hóa đơn mua hàng</title>
+    <link rel="stylesheet" href="muahang.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="page-heading">
+        <div class="company-name">
+          CÔNG TY CỔ PHẦN THIẾT BỊ XÂY DỰNG ĐÔNG DƯƠNG
+        </div>
+        <div class="company-phone">Số điện thoại: 0986.007.646</div>
+           <div class="invoice-row">
+          <div class="invoice-box">
+            <label for="tuNgay">Từ ngày</label>
+            <input id="tuNgay" type="date" />
+          </div>
+
+          <div class="invoice-box">
+            <label for="denNgay">Đến ngày</label>
+            <input id="denNgay" type="date" />
+          </div>
+        </div>
+        
+        <h1>HÓA ĐƠN MUA HÀNG</h1>
+      </header>
+  
+      <section class="invoice-info" aria-label="Thông tin hóa đơn">
+        <label for="soHoaDon">Số hóa đơn</label>
+        <input id="soHoaDon" type="text" readonly />
+
+        <label for="ngayLap">Ngày lập</label>
+        <input id="ngayLap" type="date" />
+
+        <label for="nguoiBan">Người bán</label>
+        <input id="nguoiBan" type="text" placeholder="Nhập tên người bán" />
+
+        <label for="dienThoai">Điện thoại</label>
+        <input
+          id="dienThoai"
+          type="tel"
+          placeholder="Nhập điện thoại người bán"
+        />
+      </section>
+
+      <section class="panel catalog-panel">
+        <h2>DANH MỤC HÀNG HÓA</h2>
+        <input
+          id="txtTimKiem"
+          class="search-input"
+          type="search"
+          placeholder="Tìm tên hàng..."
+          autocomplete="off"
+        />
+        <div id="listbox" class="catalog-list" aria-label="Danh mục hàng hóa">
+          <p class="empty">Đang tải danh mục hàng hóa...</p>
+        </div>
+      </section>
+
+      <section class="panel detail-panel">
+        <h2>CHI TIẾT HÓA ĐƠN</h2>
+        <div class="table-scroll">
+          <table id="bangHoaDon">
+            <thead>
+              <tr>
+                <th>MH</th>
+                <th>Tên hàng</th>
+                <th>ĐVT</th>
+                <th>Số lượng</th>
+                <th>Đơn giá</th>
+                <th>Thành tiền</th>
+                <th>Xóa</th>
+              </tr>
+            </thead>
+            <tbody id="chiTietHoaDon">
+              <tr>
+                <td colspan="7" class="empty-cell">
+                  Chưa có hàng trong hóa đơn
+                </td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th colspan="5" class="total-label">TỔNG CỘNG</th>
+                <th id="tongCong">0</th>
+                <th></th>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+      </section>
+
+      <div class="nhom-nut-hoa-don">
+        <button id="btnLuu" type="button">LƯU HÓA ĐƠN</button>
+        <button id="btnXuatPDF" type="button">XUẤT PDF</button>
+      </div>
+
+      <section class="panel payment-panel">
+        <h2>THEO DÕI THANH TOÁN CHO NGƯỜI BÁN</h2>
+        <div class="payment-form">
+          <div class="payment-field">
+            <label for="ngayTra">Ngày trả tiền</label>
+            <input id="ngayTra" type="date" />
+          </div>
+          <div class="payment-field">
+            <label for="soTienTra">Số tiền trả (VNĐ)</label>
+            <input
+              id="soTienTra"
+              type="text"
+              inputmode="decimal"
+              placeholder="Nhập số tiền"
+            />
+          </div>
+          <div class="payment-field">
+            <label for="hinhThucTra">Hình thức trả</label>
+            <select id="hinhThucTra">
+              <option>Tiền mặt</option>
+              <option>Chuyển khoản</option>
+            </select>
+          </div>
+          <div class="payment-field payment-note">
+            <label for="noiDungTra">Nội dung trả tiền</label>
+            <input
+              id="noiDungTra"
+              type="text"
+              placeholder="Ví dụ: Thanh toán đợt 1"
+            />
+          </div>
+          <button id="btnThemTra" type="button">＋ GHI NHẬN TRẢ TIỀN</button>
+        </div>
+        <div class="payment-summary">
+          <div>
+            <span>Tổng tiền mua</span><strong id="tongTienMua">0 đ</strong>
+          </div>
+          <div>
+            <span>Đã trả người bán</span><strong id="tongDaTra">0 đ</strong>
+          </div>
+          <div class="payment-balance">
+            <span>CÒN PHẢI TRẢ</span><strong id="conPhaiTra">0 đ</strong>
+          </div>
+        </div>
+        <div class="table-scroll">
+          <table class="payment-table">
+            <thead>
+              <tr>
+                <th>STT</th>
+                <th>Ngày trả</th>
+                <th>Số tiền</th>
+                <th>Hình thức</th>
+                <th>Nội dung</th>
+                <th>Xóa</th>
+              </tr>
+            </thead>
+            <tbody id="danhSachThanhToan">
+              <tr>
+                <td colspan="6" class="empty-cell">
+                  Chưa ghi nhận lần trả tiền nào
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <div class="main-actions">
+        <button id="btnHienLuu" type="button" aria-expanded="false">
+          TẢI LẠI HÓA ĐƠN
+        </button>
+        <button id="btnIn" type="button">IN K80</button>
+      </div>
+  <button type="button" id="btnCongno">Tìm Công Nợ Người Bán</button>
+      <section id="khuVucDaLuu" class="saved-panel" hidden>
+        <h2>DANH SÁCH HÓA ĐƠN ĐÃ LƯU</h2>
+        <input
+          id="timSoHoaDonDaLuu"
+          class="search-input saved-search"
+          type="search"
+          placeholder="Tìm theo số hóa đơn mua..."
+          autocomplete="off"
+        />
+        <div class="saved-heading">
+          <span>SỐ HÓA ĐƠN</span>
+          <span>NGƯỜI BÁN</span>
+          <span>NGÀY LƯU</span>
+          <span>THAO TÁC</span>
+        </div>
+        <div id="danhSachDaLuu"></div>
+      </section>
+
+      <p
+        id="thongBao"
+        class="status-message"
+        role="status"
+        aria-live="polite"
+      ></p>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="muahang.js"></script>
+  </body>
+</html>
