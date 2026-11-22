@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#155eef" />
+    <title>Quản lý khách hàng</title>
+    <link rel="stylesheet" href="khachhang.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">
+            CÔNG TY THƯƠNG MẠI VÀ SẢN XUẤT THIẾT BỊ XÂY DỰNG
+          </p>
+          <h1>Quản lý khách hàng</h1>
+          <p class="sub">Lưu và theo dõi khách hàng ngay trên thiết bị này</p>
+        </div>
+        <div class="header-icon" aria-hidden="true">👥</div>
+      </header>
+
+      <section class="panel">
+        <div class="section-heading">
+          <h2>Thông tin khách hàng</h2>
+          <span class="local-tag">Lưu trên máy</span>
+        </div>
+        <form id="customerForm" autocomplete="on">
+          <input type="hidden" id="customerId" />
+          <label for="customerName"
+            >Tên khách hàng / doanh nghiệp <b>*</b></label
+          >
+          <input
+            id="customerName"
+            type="text"
+            placeholder="Nhập tên khách hàng"
+            required
+          />
+
+          <label for="customerAddress">Địa chỉ</label>
+          <textarea
+            id="customerAddress"
+            rows="2"
+            placeholder="Nhập địa chỉ"
+          ></textarea>
+
+          <label for="customerPhone">Số điện thoại <b>*</b></label>
+          <input
+            id="customerPhone"
+            type="tel"
+            inputmode="tel"
+            placeholder="Nhập số điện thoại"
+            required
+          />
+
+          <div class="two-col">
+            <div>
+              <label for="customerGroup">Phân loại nhóm khách hàng</label>
+              <select id="customerGroup">
+                <option value="Nhà thầu xây dựng">Nhà thầu xây dựng</option>
+                <option value="Công ty xây dựng">Công ty xây dựng</option>
+                <option value="Đơn vị cho thuê thiết bị">
+                  Đơn vị cho thuê thiết bị
+                </option>
+                <option value="Ban quản lý dự án">Ban quản lý dự án</option>
+                <option value="Bộ phận thu mua">Bộ phận thu mua</option>
+                <option value="Đại lý / Nhà phân phối">
+                  Đại lý / Nhà phân phối
+                </option>
+                <option value="Khác">Khác</option>
+              </select>
+            </div>
+            <div>
+              <label for="customerNeed">Nhu cầu khách hàng</label>
+              <select id="customerNeed">
+                <option value="Cần mua ngay">Cần mua ngay</option>
+                <option value="Có nhu cầu trong 1–3 tháng">
+                  Có nhu cầu trong 1–3 tháng
+                </option>
+                <option value="Đang tìm hiểu / tham khảo">
+                  Đang tìm hiểu / tham khảo
+                </option>
+                <option value="Đã mua / khách hàng cũ">
+                  Đã mua / khách hàng cũ
+                </option>
+                <option value="Chưa xác định">Chưa xác định</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="customerMessage">Mẫu tin nhắn / nội dung trao đổi</label>
+          <textarea
+            id="customerMessage"
+            rows="4"
+            placeholder="Ghi nội dung đã gửi hoặc mẫu tin nhắn chăm sóc khách hàng..."
+          ></textarea>
+          <label for="reminderDate">Ngày nhắc hẹn</label>
+          <input type="date" id="reminderDate" />
+          <div class="form-actions">
+            <button class="btn primary" type="submit" id="saveBtn">
+              Lưu khách hàng
+            </button>
+            <button class="btn secondary" type="button" id="newBtn">
+              Làm mới
+            </button>
+          </div>
+          <p class="hint">
+            Dấu * là thông tin bắt buộc. Dữ liệu được lưu bằng IndexedDB trong
+            trình duyệt.
+          </p>
+        </form>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading">
+          <h2>Danh sách khách hàng</h2>
+          <span class="count" id="customerCount">0 khách hàng</span>
+        </div>
+
+        <label for="groupFilter">Tải danh sách theo nhóm khách hàng</label>
+        <div class="filter-row">
+          <select id="groupFilter">
+            <option value="ALL">Tất cả</option>
+            <option value="Nhà thầu xây dựng">Nhà thầu xây dựng</option>
+            <option value="Công ty xây dựng">Công ty xây dựng</option>
+            <option value="Đơn vị cho thuê thiết bị">
+              Đơn vị cho thuê thiết bị
+            </option>
+            <option value="Ban quản lý dự án">Ban quản lý dự án</option>
+            <option value="Bộ phận thu mua">Bộ phận thu mua</option>
+            <option value="Đại lý / Nhà phân phối">
+              Đại lý / Nhà phân phối
+            </option>
+            <option value="Khác">Khác</option>
+          </select>
+          <button class="btn primary compact" type="button" id="loadBtn">
+            Tải danh sách
+          </button>
+        </div>
+
+        <p class="hint export-hint">
+          Xuất các khách hàng đang hiển thị theo bộ lọc nhóm ở trên. Mở file vừa
+          tải trên điện thoại rồi chọn thêm vào Danh bạ.
+        </p>
+        <div class="reminder-panel">
+          <h3>🔔 KHÁCH HÀNG ĐẾN HẸN</h3>
+          <div id="reminderList">
+            <p>Chưa có khách hàng đến hẹn.</p>
+          </div>
+        </div>
+        <label for="customerList">Chọn khách hàng để xem / sửa</label>
+        <div
+          id="customerList"
+          class="customer-list"
+          role="listbox"
+          aria-label="Danh sách khách hàng"
+        >
+          <div class="list-empty">Chưa có khách hàng</div>
+        </div>
+
+        <p class="hint">
+          Chọn một khách hàng trong danh sách để xem số điện thoại, sao chép, mở
+          Zalo hoặc gọi điện.
+        </p>
+        <div id="customerDetails" class="customer-details empty">
+          Chưa chọn khách hàng.
+        </div>
+      </section>
+      <div class="list-actions">
+        <button
+          class="btn export-btn full"
+          type="button"
+          id="exportContactsBtn"
+        >
+          Tải danh bạ về điện thoại
+        </button>
+        <button class="btn secondary" type="button" id="editBtn">
+          Đưa lên form sửa
+        </button>
+        <button class="btn danger-outline" type="button" id="deleteBtn">
+          Xóa khách đang chọn
+        </button>
+      </div>
+      <button class="btn danger full" type="button" id="deleteAllBtn">
+        Xóa toàn bộ dữ liệu
+      </button>
+
+      <footer>Quản lý khách hàng · Dữ liệu lưu cục bộ trên trình duyệt</footer>
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    </main>
+    <script src="khachhang.js"></script>
+  </body>
+</html>
