@@ -51,6 +51,7 @@ function heSoHopLe(row) {
   return Number.isFinite(n) && n > 0 ? n : null;
 }
 // SUA TIẾP
+
 async function moDatabaseMuaNeuCo() {
   return new Promise((resolve, reject) => {
     const req = indexedDB.open(DB_MUA);
@@ -87,13 +88,9 @@ async function moDatabaseMuaNeuCo() {
     };
 
     req.onerror = () => reject(req.error);
-
-    req.onupgradeneeded = () => {
-      req.transaction.abort();
-      reject(new Error("Chưa tìm thấy cơ sở dữ liệu mua hàng LuuMuaHang."));
-    };
   });
 }
+
 // KẾT THÚC
 
 function giaMuaMoiNhat(ma, dvt) {
