@@ -1,0 +1,2396 @@
+[
+  {
+    "Mã Thành Phẩm": "SP-23",
+    "Thành Phẩm": "Đầu Cút Rời Giàn Kẽm 12cm",
+    "Mã NL": "SP-62",
+    "Nguyên Liệu": "Thép Ống Kẽm 34*6m Đầu Cút Giàn",
+    "ĐVT": "Cây",
+    "Đ.Mức": "0.02",
+    "Giá nhập": "101000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-23",
+    "Thành Phẩm": "Đầu Cút Rời Giàn Kẽm 12cm",
+    "Mã NL": "SP-776",
+    "Nguyên Liệu": "Phụ Kiện 02-Long đền giàn chữ H",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "860"
+  },
+  {
+    "Mã Thành Phẩm": "SP-23",
+    "Thành Phẩm": "Đầu Cút Rời Giàn Kẽm 12cm",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-22",
+    "Thành Phẩm": "Đầu Cút Rời Giàn Kẽm 18cm ",
+    "Mã NL": "SP-62",
+    "Nguyên Liệu": "Thép Ống Kẽm 34*6m Đầu Cút Giàn",
+    "ĐVT": "Cây",
+    "Đ.Mức": "0.033333333",
+    "Giá nhập": "101000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-22",
+    "Thành Phẩm": "Đầu Cút Rời Giàn Kẽm 18cm ",
+    "Mã NL": "SP-776",
+    "Nguyên Liệu": "Phụ Kiện 02-Long đền giàn chữ H",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "860"
+  },
+  {
+    "Mã Thành Phẩm": "SP-22",
+    "Thành Phẩm": "Đầu Cút Rời Giàn Kẽm 18cm ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-741",
+    "Thành Phẩm": "Thang Giàn giáo kẽm ",
+    "Mã NL": "SP-744",
+    "Nguyên Liệu": "Mặt Bậc Thang Giàn Giáo Kẽm",
+    "ĐVT": "Cây",
+    "Đ.Mức": "7",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-741",
+    "Thành Phẩm": "Thang Giàn giáo kẽm ",
+    "Mã NL": "SP-747",
+    "Nguyên Liệu": "Móc Thang Giàn Giáo Kẽm",
+    "ĐVT": "Cây",
+    "Đ.Mức": "4",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-741",
+    "Thành Phẩm": "Thang Giàn giáo kẽm ",
+    "Mã NL": "SP-750",
+    "Nguyên Liệu": "Đầu Bít Thang Giàn Giáo Kẽm",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-741",
+    "Thành Phẩm": "Thang Giàn giáo kẽm ",
+    "Mã NL": "SP-745",
+    "Nguyên Liệu": "Hộp 25*50 Thang Giàn Giáo Kẽm",
+    "ĐVT": "Cây",
+    "Đ.Mức": "0.7416666666666",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-741",
+    "Thành Phẩm": "Thang Giàn giáo kẽm ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.01",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-741",
+    "Thành Phẩm": "Thang Giàn giáo kẽm ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.01",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-01",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.0 kg) Có Đầu",
+    "Mã NL": "SP-42",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*4.83m*1.6 ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "1",
+    "Giá nhập": "121142"
+  },
+  {
+    "Mã Thành Phẩm": "SP-01",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.0 kg) Có Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.7",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-01",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.0 kg) Có Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.006666667",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-01",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.0 kg) Có Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-01",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.0 kg) Có Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.015384615",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-01",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.0 kg) Có Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.0125",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-01",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.0 kg) Có Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-01",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.0 kg) Có Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-02",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10 kg) Có Đầu",
+    "Mã NL": "SP-43",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*4.83m*1.8",
+    "ĐVT": "Ống",
+    "Đ.Mức": "1",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-02",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10 kg) Có Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.7",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-02",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10 kg) Có Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.006666667",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-02",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10 kg) Có Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-02",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10 kg) Có Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.015384615",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-02",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10 kg) Có Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.0125",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-02",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10 kg) Có Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-02",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10 kg) Có Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-03",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 11 kg) Có Đầu",
+    "Mã NL": "SP-44",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*4.83m*2.0",
+    "ĐVT": "Ống",
+    "Đ.Mức": "1",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-03",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 11 kg) Có Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.7",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-03",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 11 kg) Có Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.006666667",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-03",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 11 kg) Có Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-03",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 11 kg) Có Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.015384615",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-03",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 11 kg) Có Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.0125",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-03",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 11 kg) Có Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-03",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 11 kg) Có Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-04",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Có Đầu",
+    "Mã NL": "SP-48",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*4.50m*1.6",
+    "ĐVT": "Ống",
+    "Đ.Mức": "1",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-04",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Có Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.633333333",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-04",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Có Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.006666667",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-04",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Có Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-04",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Có Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.015384615",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-04",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Có Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.011111111",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-04",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Có Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-04",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Có Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-05",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg ) Có Đầu",
+    "Mã NL": "SP-49",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*4.50m*1.8",
+    "ĐVT": "Ống",
+    "Đ.Mức": "1",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-05",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg ) Có Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.633333333",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-05",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg ) Có Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.006666667",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-05",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg ) Có Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-05",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg ) Có Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-05",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg ) Có Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-05",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg ) Có Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.015384615",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-05",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg ) Có Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.011111111",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-06",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 10.5 kg ) Có Đầu",
+    "Mã NL": "SP-50",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*4.50m*2.0",
+    "ĐVT": "Ống",
+    "Đ.Mức": "1",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-06",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 10.5 kg ) Có Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.633333333",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-06",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 10.5 kg ) Có Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.006666667",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-06",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 10.5 kg ) Có Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-06",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 10.5 kg ) Có Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.015384615",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-06",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 10.5 kg ) Có Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.011111111",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-06",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 10.5 kg ) Có Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-06",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 10.5 kg ) Có Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-07",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-45",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*4.63m*1.6 ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "1",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-07",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.7",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-07",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.013333333",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-07",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-07",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.015384615",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-07",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.011111111",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-07",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-07",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-08",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-46",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*4.63m*1.8",
+    "ĐVT": "Ống",
+    "Đ.Mức": "1",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-08",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.7",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-08",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.013333333",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-08",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-08",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.015384615",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-08",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.011111111",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-08",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-08",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-09",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10.5 kg) Ko Đầu",
+    "Mã NL": "SP-47",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*4.63m*2.0",
+    "ĐVT": "Ống",
+    "Đ.Mức": "1",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-09",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10.5 kg) Ko Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.7",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-09",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10.5 kg) Ko Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.013333333",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-09",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10.5 kg) Ko Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-09",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10.5 kg) Ko Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.061538462",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-09",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10.5 kg) Ko Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.011111111",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-09",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10.5 kg) Ko Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-09",
+    "Thành Phẩm": "Giàn Kẽm 1.7m - (TL : 10.5 kg) Ko Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-10",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 7.5 kg) Ko đầu",
+    "Mã NL": "SP-51",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*4.29m*1.6",
+    "ĐVT": "Ống",
+    "Đ.Mức": "1",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-10",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 7.5 kg) Ko đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.633333333",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-10",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 7.5 kg) Ko đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.013333333",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-10",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 7.5 kg) Ko đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-10",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 7.5 kg) Ko đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.015384615",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-10",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 7.5 kg) Ko đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.01",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-10",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 7.5 kg) Ko đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-10",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 7.5 kg) Ko đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-11",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-52",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*4.29m*1.8 ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "1",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-11",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.633333333",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-11",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.013333333",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-11",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-11",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.015384615",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-11",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.01",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-11",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-11",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-12",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-53",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*4.29m*2.0 ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "1",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-12",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.633333333",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-12",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.013333333",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-12",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-12",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.015384615",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-12",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.01",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-12",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-12",
+    "Thành Phẩm": "Giàn Kẽm 1.5m - (TL : 9.5 kg) Ko Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-13",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 6.5 kg) Ko Đầu",
+    "Mã NL": "SP-54",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*6.0m*1.6",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.6",
+    "Giá nhập": "161000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-13",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 6.5 kg) Ko Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-13",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 6.5 kg) Ko Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.013333333",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-13",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 6.5 kg) Ko Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-13",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 6.5 kg) Ko Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.011111111",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-13",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 6.5 kg) Ko Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.008333333",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-13",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 6.5 kg) Ko Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.000833333",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-13",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 6.5 kg) Ko Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-14",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 7.5 kg) Ko Đầu",
+    "Mã NL": "SP-55",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*6.0m*1.8",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.6",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-14",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 7.5 kg) Ko Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-14",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 7.5 kg) Ko Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.013333333",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-14",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 7.5 kg) Ko Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-14",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 7.5 kg) Ko Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.011111111",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-14",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 7.5 kg) Ko Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.008333333",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-14",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 7.5 kg) Ko Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-14",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 7.5 kg) Ko Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-15",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-56",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*6.0m*2.0",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.6",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-15",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-15",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.013333333",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-15",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-15",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.011111111",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-15",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.008333333",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-15",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-15",
+    "Thành Phẩm": "Giàn Kẽm 1.2m - (TL : 8.5 kg) Ko Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-16",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 5.0 kg) Ko Đầu",
+    "Mã NL": "SP-54",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*6.0m*1.6",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": "161000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-16",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 5.0 kg) Ko Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-16",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 5.0 kg) Ko Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.013333333",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-16",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 5.0 kg) Ko Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-16",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 5.0 kg) Ko Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.011111111",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-16",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 5.0 kg) Ko Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.007692308",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-16",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 5.0 kg) Ko Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-16",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 5.0 kg) Ko Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-17",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 6.0 kg) Ko Đầu",
+    "Mã NL": "SP-55",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*6.0m*1.8",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-17",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 6.0 kg) Ko Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-17",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 6.0 kg) Ko Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.013333333",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-17",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 6.0 kg) Ko Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-17",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 6.0 kg) Ko Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.011111111",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-17",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 6.0 kg) Ko Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.007692308",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-17",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 6.0 kg) Ko Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-17",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 6.0 kg) Ko Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-18",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 7.0 kg) Ko Đầu",
+    "Mã NL": "SP-56",
+    "Nguyên Liệu": "Thép Ống Kẽm 42*6.0m*2.0",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-18",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 7.0 kg) Ko Đầu",
+    "Mã NL": "SP-57",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": "58334"
+  },
+  {
+    "Mã Thành Phẩm": "SP-18",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 7.0 kg) Ko Đầu",
+    "Mã NL": "SP-63",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*Chống Xé Giàn",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.013333333",
+    "Giá nhập": "146000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-18",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 7.0 kg) Ko Đầu",
+    "Mã NL": "SP-775",
+    "Nguyên Liệu": "Phụ Kiện 01-Chốt giàn ",
+    "ĐVT": "Cái",
+    "Đ.Mức": "4",
+    "Giá nhập": "950"
+  },
+  {
+    "Mã Thành Phẩm": "SP-18",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 7.0 kg) Ko Đầu",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.011111111",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-18",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 7.0 kg) Ko Đầu",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.007692308",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-18",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 7.0 kg) Ko Đầu",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-18",
+    "Thành Phẩm": "Giàn Kẽm 0.9m - (TL : 7.0 kg) Ko Đầu",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-19",
+    "Thành Phẩm": "Chéo Giàn Kẽm 1.75m*1.0ly",
+    "Mã NL": "SP-59",
+    "Nguyên Liệu": "Thép Ống Kẽm 21*5.4m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.666666666",
+    "Giá nhập": "48000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-19",
+    "Thành Phẩm": "Chéo Giàn Kẽm 1.75m*1.0ly",
+    "Mã NL": "SP-786",
+    "Nguyên Liệu": "Phụ Kiện 12 -Tai ốp chéo các loại",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "262"
+  },
+  {
+    "Mã Thành Phẩm": "SP-19",
+    "Thành Phẩm": "Chéo Giàn Kẽm 1.75m*1.0ly",
+    "Mã NL": "SP-787",
+    "Nguyên Liệu": "Phụ Kiện 14-Đinh tán chéo",
+    "ĐVT": "Kg",
+    "Đ.Mức": "0.01",
+    "Giá nhập": "22000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-20",
+    "Thành Phẩm": "Chéo Giàn Kẽm 1.96m*1.0ly ",
+    "Mã NL": "SP-60",
+    "Nguyên Liệu": "Thép Ống Kẽm 21*6m*1.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.666666666",
+    "Giá nhập": "46088"
+  },
+  {
+    "Mã Thành Phẩm": "SP-20",
+    "Thành Phẩm": "Chéo Giàn Kẽm 1.96m*1.0ly ",
+    "Mã NL": "SP-786",
+    "Nguyên Liệu": "Phụ Kiện 12 -Tai ốp chéo các loại",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "262"
+  },
+  {
+    "Mã Thành Phẩm": "SP-20",
+    "Thành Phẩm": "Chéo Giàn Kẽm 1.96m*1.0ly ",
+    "Mã NL": "SP-787",
+    "Nguyên Liệu": "Phụ Kiện 14-Đinh tán chéo",
+    "ĐVT": "Kg",
+    "Đ.Mức": "0.01",
+    "Giá nhập": "22000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-21",
+    "Thành Phẩm": "Chéo Giàn Kẽm 1.96m*1.2ly ",
+    "Mã NL": "SP-58",
+    "Nguyên Liệu": "Thép Ống Kẽm 27*6m*1.2ly  ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.666666666",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-21",
+    "Thành Phẩm": "Chéo Giàn Kẽm 1.96m*1.2ly ",
+    "Mã NL": "SP-786",
+    "Nguyên Liệu": "Phụ Kiện 12 -Tai ốp chéo các loại",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "262"
+  },
+  {
+    "Mã Thành Phẩm": "SP-21",
+    "Thành Phẩm": "Chéo Giàn Kẽm 1.96m*1.2ly ",
+    "Mã NL": "SP-787",
+    "Nguyên Liệu": "Phụ Kiện 14-Đinh tán chéo",
+    "ĐVT": "Kg",
+    "Đ.Mức": "0.01",
+    "Giá nhập": "22000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-24",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.6ly ",
+    "Mã NL": "SP-70",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*1.6ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.25",
+    "Giá nhập": "256243"
+  },
+  {
+    "Mã Thành Phẩm": "SP-24",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.6ly ",
+    "Mã NL": "SP-67",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*6m*1.6ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.333333333",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-24",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.6ly ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.003333333",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-24",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.6ly ",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-24",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.6ly ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.0005",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-24",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.6ly ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.003333333",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-24",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.6ly ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-27",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.6ly  ",
+    "Mã NL": "SP-64",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*5m*1.6ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": "165549"
+  },
+  {
+    "Mã Thành Phẩm": "SP-27",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.6ly  ",
+    "Mã NL": "SP-70",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*1.6ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.25",
+    "Giá nhập": "256243"
+  },
+  {
+    "Mã Thành Phẩm": "SP-27",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.6ly  ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-27",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.6ly  ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.003333333",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-27",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.6ly  ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.01",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-27",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.6ly  ",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.0025",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-27",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.6ly  ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.003333333",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-25",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.8ly ",
+    "Mã NL": "SP-71",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*1.8ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.25",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-25",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.8ly ",
+    "Mã NL": "SP-68",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*6m*1.8ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.333333333",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-25",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.8ly ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-25",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.8ly ",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.001428571",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-25",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.8ly ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-25",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.8ly ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.003333333",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-25",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.8ly ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-26",
+    "Thành Phẩm": "Chống Kẽm 3.5mx2.0ly ",
+    "Mã NL": "SP-69",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*6m*2.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.333333333",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-26",
+    "Thành Phẩm": "Chống Kẽm 3.5mx2.0ly ",
+    "Mã NL": "SP-72",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*2.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.25",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-26",
+    "Thành Phẩm": "Chống Kẽm 3.5mx2.0ly ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-26",
+    "Thành Phẩm": "Chống Kẽm 3.5mx2.0ly ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-26",
+    "Thành Phẩm": "Chống Kẽm 3.5mx2.0ly ",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.001428571",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-26",
+    "Thành Phẩm": "Chống Kẽm 3.5mx2.0ly ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-26",
+    "Thành Phẩm": "Chống Kẽm 3.5mx2.0ly ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.003333333",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-28",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.8ly  ",
+    "Mã NL": "SP-65",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*5m*1.8ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-28",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.8ly  ",
+    "Mã NL": "SP-71",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*1.8ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.25",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-28",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.8ly  ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-28",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.8ly  ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-28",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.8ly  ",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.001428571",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-28",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.8ly  ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-28",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.8ly  ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.001428571",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-29",
+    "Thành Phẩm": "Chống Kẽm 4.0mx2.0ly  ",
+    "Mã NL": "SP-69",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*6m*2.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-29",
+    "Thành Phẩm": "Chống Kẽm 4.0mx2.0ly  ",
+    "Mã NL": "SP-72",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*2.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.25",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-29",
+    "Thành Phẩm": "Chống Kẽm 4.0mx2.0ly  ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-29",
+    "Thành Phẩm": "Chống Kẽm 4.0mx2.0ly  ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-29",
+    "Thành Phẩm": "Chống Kẽm 4.0mx2.0ly  ",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.001428571",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-29",
+    "Thành Phẩm": "Chống Kẽm 4.0mx2.0ly  ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-29",
+    "Thành Phẩm": "Chống Kẽm 4.0mx2.0ly  ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-30",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.6ly ",
+    "Mã NL": "SP-67",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*6m*1.6ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-30",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.6ly ",
+    "Mã NL": "SP-71",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*1.8ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.25",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-30",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.6ly ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-30",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.6ly ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-30",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.6ly ",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.001428571",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-30",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.6ly ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-30",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.6ly ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.003333333",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-31",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.8ly ",
+    "Mã NL": "SP-68",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*6m*1.8ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-31",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.8ly ",
+    "Mã NL": "SP-71",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*1.8ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.25",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-31",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.8ly ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-31",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.8ly ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-31",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.8ly ",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.001428571",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-31",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.8ly ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-31",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.8ly ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.003333333",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-32",
+    "Thành Phẩm": "Chống Kẽm 4.5mx2.0ly ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-32",
+    "Thành Phẩm": "Chống Kẽm 4.5mx2.0ly ",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.001428571",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-32",
+    "Thành Phẩm": "Chống Kẽm 4.5mx2.0ly ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-32",
+    "Thành Phẩm": "Chống Kẽm 4.5mx2.0ly ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.005",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-32",
+    "Thành Phẩm": "Chống Kẽm 4.5mx2.0ly ",
+    "Mã NL": "SP-69",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*6m*2.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-32",
+    "Thành Phẩm": "Chống Kẽm 4.5mx2.0ly ",
+    "Mã NL": "SP-72",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*2.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.25",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-32",
+    "Thành Phẩm": "Chống Kẽm 4.5mx2.0ly ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-33",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.6ly ",
+    "Mã NL": "SP-67",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*6m*1.6ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-33",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.6ly ",
+    "Mã NL": "SP-70",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*1.6ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.333333333",
+    "Giá nhập": "256243"
+  },
+  {
+    "Mã Thành Phẩm": "SP-33",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.6ly ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-33",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.6ly ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-33",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.6ly ",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.001428571",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-33",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.6ly ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-33",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.6ly ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.003333333",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-34",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.8ly ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-34",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.8ly ",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.001428571",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-34",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.8ly ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-34",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.8ly ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.003333333",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-34",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.8ly ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-34",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.8ly ",
+    "Mã NL": "SP-68",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*6m*1.8ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-34",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.8ly ",
+    "Mã NL": "SP-71",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*1.8ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.333333333",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-35",
+    "Thành Phẩm": "Chống Kẽm 5.0mx2.0ly ",
+    "Mã NL": "SP-72",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*2.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.333333333",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-35",
+    "Thành Phẩm": "Chống Kẽm 5.0mx2.0ly ",
+    "Mã NL": "SP-69",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*6m*2.0ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": ""
+  },
+  {
+    "Mã Thành Phẩm": "SP-35",
+    "Thành Phẩm": "Chống Kẽm 5.0mx2.0ly ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-35",
+    "Thành Phẩm": "Chống Kẽm 5.0mx2.0ly ",
+    "Mã NL": "SP-778",
+    "Nguyên Liệu": "Phụ Kiện 04-Dây hàn Co2",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.002",
+    "Giá nhập": "502000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-35",
+    "Thành Phẩm": "Chống Kẽm 5.0mx2.0ly ",
+    "Mã NL": "SP-779",
+    "Nguyên Liệu": "Phụ Kiện 05-Khí hàn CO2",
+    "ĐVT": "Bình",
+    "Đ.Mức": "0.001428571",
+    "Giá nhập": "230000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-35",
+    "Thành Phẩm": "Chống Kẽm 5.0mx2.0ly ",
+    "Mã NL": "SP-782",
+    "Nguyên Liệu": "Phụ Kiện 08-Sơn nhũ kẽm",
+    "ĐVT": "Thùng",
+    "Đ.Mức": "0.001",
+    "Giá nhập": "1100000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-35",
+    "Thành Phẩm": "Chống Kẽm 5.0mx2.0ly ",
+    "Mã NL": "SP-783",
+    "Nguyên Liệu": "Phụ Kiện 09-Dầu sơn",
+    "ĐVT": "Lít",
+    "Đ.Mức": "0.003333333",
+    "Giá nhập": "35000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-24",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.6ly ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-25",
+    "Thành Phẩm": "Chống Kẽm 3.5mx1.8ly ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-26",
+    "Thành Phẩm": "Chống Kẽm 3.5mx2.0ly ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-27",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.6ly  ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-28",
+    "Thành Phẩm": "Chống Kẽm 4.0mx1.8ly  ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-29",
+    "Thành Phẩm": "Chống Kẽm 4.0mx2.0ly  ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-30",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.6ly ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-31",
+    "Thành Phẩm": "Chống Kẽm 4.5mx1.8ly ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-32",
+    "Thành Phẩm": "Chống Kẽm 4.5mx2.0ly ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-33",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.6ly ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-34",
+    "Thành Phẩm": "Chống Kẽm 5.0mx1.8ly ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-35",
+    "Thành Phẩm": "Chống Kẽm 5.0mx2.0ly ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "2",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-36",
+    "Thành Phẩm": "Ruột Cây Chống Kẽm ",
+    "Mã NL": "SP-64",
+    "Nguyên Liệu": "Thép Ống Kẽm 49*5m*1.6ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.5",
+    "Giá nhập": "165549"
+  },
+  {
+    "Mã Thành Phẩm": "SP-36",
+    "Thành Phẩm": "Ruột Cây Chống Kẽm ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-37",
+    "Thành Phẩm": "Vỏ Cây Chống Kẽm ",
+    "Mã NL": "SP-41",
+    "Nguyên Liệu": "Đế Chống Kẽm-Chống Sơn 3.ly Mỏng",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "3800"
+  },
+  {
+    "Mã Thành Phẩm": "SP-37",
+    "Thành Phẩm": "Vỏ Cây Chống Kẽm ",
+    "Mã NL": "SP-39",
+    "Nguyên Liệu": "Ống Ren Chống Kẽm Chống Sơn",
+    "ĐVT": "Cái",
+    "Đ.Mức": "1",
+    "Giá nhập": "29000"
+  },
+  {
+    "Mã Thành Phẩm": "SP-37",
+    "Thành Phẩm": "Vỏ Cây Chống Kẽm ",
+    "Mã NL": "SP-70",
+    "Nguyên Liệu": "Thép Ống Kẽm 60*6m*1.6ly ",
+    "ĐVT": "Ống",
+    "Đ.Mức": "0.25",
+    "Giá nhập": "256243"
+  }
+]
