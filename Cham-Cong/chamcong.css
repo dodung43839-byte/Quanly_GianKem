@@ -696,3 +696,10 @@ td.money {
     min-width: 1020px;
   }
 }
+/* ĐỒNG BỘ CỠ CHỮ NGÀY LẬP VÀ THÁNG XEM */
+#ngayChamCong,
+#thangXem,
+#khoanNgay,
+#khoanThang {
+  font-size: 13px !important;
+}
