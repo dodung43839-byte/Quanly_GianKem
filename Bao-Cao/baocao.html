@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Báo cáo tài chính</title>
+    <link rel="stylesheet" href="baocao.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">QUẢN TRỊ DOANH NGHIỆP</div>
+          <h1>Doanh Thu &amp; Lợi Nhuận</h1>
+          <p class="subtitle">
+            Tổng quan hoạt động kinh doanh và tình hình công nợ
+          </p>
+        </div>
+        <div class="top-actions">
+          <span class="live-dot"></span><span>Dữ liệu báo cáo</span>
+          <button class="btn btn-light" id="btnBaoCaoQuyNam">
+            Báo cáo quý / năm
+          </button>
+        </div>
+      </header>
+
+      <section class="filter-card">
+        <div class="filter-title">
+          <span class="filter-icon">⌕</span>
+          <div>
+            <b>Kỳ báo cáo</b><small>Chọn khoảng thời gian cần xem</small>
+          </div>
+        </div>
+        <div class="filter-controls">
+          <label>Tháng<select id="thang"></select></label>
+          <label>Từ ngày<input type="date" id="tuNgay" /></label>
+          <label>Đến ngày<input type="date" id="denNgay" /></label>
+          <label
+            >Vốn chủ
+            <input
+              id="vonChu"
+              value=""
+              inputmode="numeric"
+              placeholder="Tự động tính"
+              readonly
+            />
+          </label>
+          <label
+            >Số dư TK đầu kỳ<input
+              id="taiKhoanDauKy"
+              value="0"
+              inputmode="numeric"
+          /></label>
+          <label
+            >Tiền mặt đầu kỳ<input
+              id="tienMatDauKy"
+              value="0"
+              inputmode="numeric"
+          /></label>
+        </div>
+      </section>
+
+      <section class="section-heading">
+        <div>
+          <h2>Tổng quan tài chính</h2>
+          <p>Các chỉ số chính trong kỳ báo cáo</p>
+        </div>
+        <span class="period-pill" id="periodLabel">Tháng hiện tại</span>
+      </section>
+
+      <section class="kpi-grid">
+        <article class="kpi-card revenue">
+          <div class="kpi-top">
+            <span>Doanh thu</span><span class="kpi-icon">↗</span>
+          </div>
+          <strong id="doanhThu"></strong><small>Doanh thu bán hàng</small>
+        </article>
+        <article class="kpi-card tax">
+          <div class="kpi-top">
+            <span>Thuế GTGT</span><span class="kpi-icon">％</span>
+          </div>
+          <strong id="thueGTGT"></strong><small>Thuế giá trị gia tăng</small>
+        </article>
+        <article class="kpi-card profit">
+          <div class="kpi-top">
+            <span>Lợi nhuận gộp</span><span class="kpi-icon">◆</span>
+          </div>
+          <strong id="loiNhuanTruocThue"></strong
+          ><small>Doanh thu trừ giá vốn hàng bán</small>
+        </article>
+        <article class="kpi-card net">
+          <div class="kpi-top">
+            <span>Lợi nhuận ròng</span><span class="kpi-icon">✓</span>
+          </div>
+          <strong id="loiNhuanRong"></strong
+          ><small>Sau khi trừ phí vận hành</small>
+        </article>
+      </section>
+
+      <section class="metric-strip">
+        <div><span>Tổng phí vận hành</span><b id="phiVanHanh"></b></div>
+        <div><span>Doanh thu hòa vốn</span><b id="doanhThuHoaVon"></b></div>
+        <div>
+          <span>Tỷ suất lợi nhuận ròng</span><b id="tySuatLoiNhuan"></b>
+        </div>
+        <div><span>Điểm hòa vốn</span><b id="diemHoaVon"></b></div>
+      </section>
+
+      <section class="section-heading lower-heading">
+        <div>
+         <h2 class="tieu-de-bao-cao">BÁO CÁO</h2>
+          <p>Theo dõi dòng tiền và các khoản phải thu, phải trả</p>
+        </div>
+      </section>
+
+      <section class="bottom-grid">
+        <article class="content-card finance-card">
+          <div class="card-heading">
+            <div>
+              <h3>TÀI CHÍNH CÔNG NỢ</h3>
+              <p>Số dư và nghĩa vụ thanh toán</p>
+            </div>
+            <span class="heading-icon">▤</span>
+          </div>
+          <div class="finance-list">
+            <div><span>Tài chính</span><b id="taiChinh"></b></div>
+            <div class="positive"><span>Nợ Nhập</span><b id="noNhaCC"></b></div>
+            <div class="warning">
+              <span>Khách Nợ</span><b id="khachHangNo"></b>
+            </div>
+            <div><span>Tài khoản</span><b id="taiKhoan"></b></div>
+            <div><span>Tiền mặt</span><b id="tienMat"></b></div>
+            <div><span>Tiền Lương</span><b id="congTho"></b></div>
+            <div><span>Tổng Ứng</span><b id="traLuong"></b></div>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <div class="card-heading">
+            <div>
+              <h3>NỢ NHÀ CUNG CẤP</h3>
+              <p>Công nợ người bán</p>
+            </div>
+            <span class="heading-icon orange">↙</span>
+          </div>
+          <div class="table-head">
+            <span>Tên nhà cung cấp</span><span>Số tiền nợ</span>
+          </div>
+          <div class="debt-list" id="dsNhaCungCap"></div>
+          <button class="btn btn-outline" id="btnInNoNCC">
+            In công nợ nhà cung cấp <span>↗</span>
+          </button>
+        </article>
+
+        <article class="content-card">
+          <div class="card-heading">
+            <div>
+              <h3>KHÁCH HÀNG NỢ</h3>
+              <p>Công nợ khách hàng</p>
+            </div>
+            <span class="heading-icon blue">↗</span>
+          </div>
+          <div class="table-head">
+            <span>Tên người mua</span><span>Số tiền nợ</span>
+          </div>
+          <div class="debt-list" id="dsNguoiMua"></div>
+          <button class="btn btn-outline" id="btnInNoNguoiMua">
+            In công nợ người mua <span>↗</span>
+          </button>
+        </article>
+      </section>
+      <footer>
+        HỆ THỐNG QUẢN LÝ KINH DOANH <span>•</span> BÁO CÁO TÀI CHÍNH
+      </footer>
+    </div>
+    <script src="baocao.js"></script>
+  </body>
+</html>
