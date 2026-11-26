@@ -138,10 +138,6 @@
           </button>
         </div>
 
-        <p class="hint export-hint">
-          Xuất các khách hàng đang hiển thị theo bộ lọc nhóm ở trên. Mở file vừa
-          tải trên điện thoại rồi chọn thêm vào Danh bạ.
-        </p>
         <div class="reminder-panel">
           <h3>🔔 KHÁCH HÀNG ĐẾN HẸN</h3>
           <div id="reminderList">
@@ -165,18 +161,13 @@
         <div id="customerDetails" class="customer-details empty">
           Chưa chọn khách hàng.
         </div>
-        <input type="file" id="chonAnhZalo" accept="image/*" multiple hidden style="display:none !important;" />
       </section>
       <div class="list-actions">
-        <button
-          class="btn export-btn full"
-          type="button"
-          id="exportContactsBtn"
-        >
-          Tải danh bạ về điện thoại
-        </button>
         <button class="btn secondary" type="button" id="editBtn">
           Đưa lên form sửa
+        </button>
+        <button class="btn danger-outline" type="button" id="deleteSelectedBtn">
+          🗑️ Xóa khách hàng đang chọn
         </button>
       </div>
 <footer>Quản lý khách hàng · Dữ liệu lưu cục bộ trên trình duyệt</footer>

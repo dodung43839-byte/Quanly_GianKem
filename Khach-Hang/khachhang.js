@@ -109,65 +109,6 @@
     return cleanPhone(phone).replace(/^\+/, "");
   }
 
-  // Xuất danh bạ theo định dạng vCard 3.0, tương thích phổ biến với iPhone và Android.
-  function escapeVCard(value) {
-    return String(value ?? "")
-      .replace(/\\/g, "\\\\")
-      .replace(/\r\n|\n|\r/g, "\\n")
-      .replace(/;/g, "\\;")
-      .replace(/,/g, "\\,");
-  }
-
-  function makeVCard(customer) {
-    const name = escapeVCard(customer.name || "Khách hàng");
-    const phone = cleanPhone(customer.phone);
-    const address = escapeVCard(customer.address || "");
-    const group = escapeVCard(customer.group || "");
-    const need = escapeVCard(customer.need || "");
-    const lines = [
-      "BEGIN:VCARD",
-      "VERSION:3.0",
-      `FN:${name}`,
-      `N:${name};;;;`,
-      `TEL;TYPE=CELL:${phone}`,
-    ];
-    if (address) lines.push(`ADR;TYPE=WORK:;;${address};;;;`);
-    if (group || need)
-      lines.push(`NOTE:${[group, need].filter(Boolean).join(" - ")}`);
-    lines.push("END:VCARD");
-    return lines.join("\r\n");
-  }
-
-  function downloadContactsVcf(customers) {
-    if (!customers.length) {
-      notify("Không có khách hàng trong nhóm đang chọn để xuất.");
-      return;
-    }
-    const vcardText = customers.map(makeVCard).join("\r\n");
-    const blob = new Blob(["\uFEFF", vcardText], {
-      type: "text/vcard;charset=utf-8",
-    });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    const filter = $("groupFilter").value;
-    const safeGroup =
-      filter === "ALL"
-        ? "tat-ca-khach-hang"
-        : filter
-            .toLowerCase()
-            .replace(/[^a-z0-9]+/g, "-")
-            .replace(/^-|-$/g, "");
-    link.href = url;
-    link.download = `danh-ba-${safeGroup || "khach-hang"}.vcf`;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    setTimeout(() => URL.revokeObjectURL(url), 1500);
-    notify(
-      `Đã tạo file danh bạ gồm ${customers.length} liên hệ. Mở file để nhập vào Danh bạ.`,
-    );
-  }
-
   function resetForm() {
     form.reset();
     fields.id.value = "";
@@ -336,13 +277,10 @@
       <div class="detail-actions">
         <button class="copy-btn" type="button" data-copy-phone>📋 Sao chép SĐT</button>
         <button class="zalo-btn" type="button" data-open-zalo>💬 Mở Zalo</button>
-        <button class="copy-message-btn" type="button" data-copy-message>📝 Sao chép tin nhắn</button>
-        <button class="btn danger-outline" type="button" data-delete-selected>🗑️ Xóa khách đang chọn</button>
-        <div class="detail-file-call-row" style="display:flex !important; flex-direction:row !important; flex-wrap:nowrap !important; gap:8px; width:100%; grid-column:1 / -1; align-items:stretch; box-sizing:border-box;">
-          <button class="zalo-btn" type="button" data-send-customer-images style="display:block; flex:1 1 0; width:50%; min-width:0; box-sizing:border-box;">🖼️ Chọn gửi ảnh Sản Phẩm</button>
+        <div class="detail-message-call-row" style="display:flex !important; flex-direction:row !important; flex-wrap:nowrap !important; gap:8px; width:100%; grid-column:1 / -1; align-items:stretch; box-sizing:border-box;">
+          <button class="copy-message-btn" type="button" data-copy-message style="display:block; flex:1 1 0; width:50%; min-width:0; box-sizing:border-box;">📝 Sao chép tin nhắn</button>
           <a class="call-btn" href="tel:${tel}" style="display:block; flex:1 1 0; width:50%; min-width:0; box-sizing:border-box; text-align:center;">📞 Gọi điện</a>
         </div>
-        <button class="zalo-btn" type="button" data-share-selected-images hidden style="display:none; width:100%; box-sizing:border-box;">📤 Gửi ảnh đã chọn qua Zalo</button>
       </div>`;
 
     box
@@ -357,18 +295,15 @@
       });
 
     box.querySelector("[data-open-zalo]").addEventListener("click", () => {
-      // Dùng số điện thoại của đúng khách đang hiển thị.
-      // Điều hướng ngay trong tab hiện tại để điện thoại có cơ hội
-      // chuyển liên kết zalo.me sang ứng dụng Zalo qua Universal Link.
       const phoneNumber = phoneForLink(customer.phone);
-
-      if (!phoneNumber) {
-        notify("Khách hàng chưa có số điện thoại hợp lệ.");
-        return;
-      }
-
-      const zaloUrl = `https://zalo.me/${encodeURIComponent(phoneNumber)}`;
-      window.location.assign(zaloUrl);
+      if (!phoneNumber)
+        return notify("Khách hàng chưa có số điện thoại hợp lệ.");
+      window.open(
+        `https://zalo.me/${encodeURIComponent(phoneNumber)}`,
+        "_blank",
+        "noopener,noreferrer",
+      );
+      notify("Đã yêu cầu mở Zalo theo số điện thoại khách hàng.");
     });
 
     box
@@ -415,145 +350,7 @@
   }
 
 
-  // Chọn ảnh trước, sau đó người dùng bấm nút Gửi ảnh.
-  // navigator.share() được gọi trực tiếp trong thao tác bấm nút để đáp ứng yêu cầu user gesture.
-  const imagePicker = $("chonAnhZalo");
-  let pendingImageCustomerId = "";
-  let selectedImageFiles = [];
-
-  if (imagePicker) {
-    imagePicker.addEventListener("change", () => {
-      const images = Array.from(imagePicker.files || []).filter(
-        (file) => file && file.type && file.type.startsWith("image/")
-      );
-
-      if (!images.length) {
-        selectedImageFiles = [];
-        pendingImageCustomerId = "";
-        notify("Chưa chọn ảnh. Bạn có thể bỏ qua, chương trình vẫn hoạt động bình thường.");
-        return;
-      }
-
-      const customer = visibleCustomers.find(
-        (item) => String(item.id) === selectedCustomerId
-      );
-      if (!customer) {
-        selectedImageFiles = [];
-        pendingImageCustomerId = "";
-        notify("Không xác định được khách hàng đang chọn. Đã bỏ qua.");
-        imagePicker.value = "";
-        return;
-      }
-
-      selectedImageFiles = images;
-      pendingImageCustomerId = String(customer.id);
-
-      const sendButton = $("customerDetails").querySelector("[data-share-selected-images]");
-      if (sendButton) {
-        sendButton.hidden = false;
-        sendButton.style.display = "block";
-        sendButton.textContent = `📤 Gửi ${images.length} ảnh qua Zalo`;
-      }
-      notify(`Đã chọn ${images.length} ảnh cho ${customer.name || "khách hàng"}. Bấm nút Gửi ảnh qua Zalo.`);
-      // Cho phép chọn lại đúng những ảnh đó ở lần tiếp theo.
-      imagePicker.value = "";
-    });
-  }
-
-  $("customerDetails").addEventListener("click", (event) => {
-    const button = event.target.closest("[data-send-customer-images]");
-    if (!button) return;
-
-    const customer = visibleCustomers.find(
-      (item) => String(item.id) === selectedCustomerId
-    );
-    if (!customer) {
-      notify("Bạn hãy chọn khách hàng trước.");
-      return;
-    }
-    if (!imagePicker) {
-      notify("Không tìm thấy bộ chọn ảnh. Bỏ qua, chương trình vẫn hoạt động bình thường.");
-      return;
-    }
-
-    // Bỏ trạng thái cũ khi đổi khách hàng để tránh gửi nhầm ảnh.
-    selectedImageFiles = [];
-    pendingImageCustomerId = String(customer.id);
-    const sendButton = $("customerDetails").querySelector("[data-share-selected-images]");
-    if (sendButton) {
-      sendButton.hidden = true;
-      sendButton.style.display = "none";
-    }
-
-    try {
-      imagePicker.value = "";
-      imagePicker.click();
-    } catch (error) {
-      console.warn("Không mở được bộ sưu tập ảnh:", error);
-      pendingImageCustomerId = "";
-      notify("Không mở được bộ sưu tập ảnh. Bỏ qua, chương trình vẫn hoạt động bình thường.");
-    }
-  });
-
-  $("customerDetails").addEventListener("click", async (event) => {
-    const button = event.target.closest("[data-share-selected-images]");
-    if (!button) return;
-
-    const customer = visibleCustomers.find(
-      (item) => String(item.id) === selectedCustomerId
-    );
-    if (!customer || String(customer.id) !== pendingImageCustomerId) {
-      notify("Khách hàng đã thay đổi. Hãy chọn ảnh lại cho đúng khách hàng.");
-      selectedImageFiles = [];
-      pendingImageCustomerId = "";
-      button.hidden = true;
-      button.style.display = "none";
-      return;
-    }
-
-    if (!selectedImageFiles.length) {
-      notify("Bạn chưa chọn ảnh.");
-      return;
-    }
-
-    if (
-      typeof navigator.share !== "function" ||
-      typeof navigator.canShare !== "function" ||
-      !navigator.canShare({ files: selectedImageFiles })
-    ) {
-      notify("Trình duyệt hoặc điện thoại không hỗ trợ chia sẻ ảnh. Bạn có thể bỏ qua; chương trình vẫn hoạt động bình thường.");
-      return;
-    }
-
-    const imagesToShare = selectedImageFiles.slice();
-    const customerLabel = `${customer.name || "Khách hàng"}${customer.phone ? " - " + customer.phone : ""}`;
-
-    try {
-      // Lệnh chia sẻ chạy trực tiếp trong lần chạm nút này.
-      await navigator.share({
-        files: imagesToShare,
-        title: `Ảnh gửi ${customer.name || "khách hàng"}`,
-        text: `Ảnh gửi khách hàng: ${customerLabel}`
-      });
-      notify("Đã mở bảng chia sẻ. Hãy chọn Zalo, kiểm tra đúng khách hàng rồi xác nhận gửi.");
-      selectedImageFiles = [];
-      pendingImageCustomerId = "";
-      button.hidden = true;
-      button.style.display = "none";
-    } catch (error) {
-      if (error && error.name === "AbortError") {
-        notify("Bạn đã đóng bảng chia sẻ. Ảnh vẫn được giữ lại để thử gửi lại.");
-      } else {
-        console.warn("Chia sẻ ảnh không thành công:", error);
-        notify("Không chia sẻ được ảnh. Ảnh vẫn được giữ lại để thử lại; chương trình vẫn hoạt động bình thường.");
-      }
-    }
-  });
-
-  $("customerDetails").addEventListener("click", async (event) => {
-    const button = event.target.closest("[data-delete-selected]");
-    if (!button) return;
-
+  $("deleteSelectedBtn").addEventListener("click", async () => {
     const id = selectedCustomerId;
     const customer = visibleCustomers.find((item) => String(item.id) === id);
     if (!customer) return notify("Bạn hãy chọn khách hàng cần xóa.");
@@ -599,19 +396,6 @@
   $("loadBtn").addEventListener("click", async () => {
     await refreshList();
     notify("Đã tải danh sách theo nhóm.");
-  });
-  $("exportContactsBtn").addEventListener("click", async () => {
-    try {
-      const all = await getAllCustomers();
-      const filter = $("groupFilter").value;
-      const filtered = all.filter(
-        (customer) => filter === "ALL" || customer.group === filter,
-      );
-      downloadContactsVcf(filtered);
-    } catch (error) {
-      console.error(error);
-      notify("Không thể tạo file danh bạ. Vui lòng thử lại.");
-    }
   });
   $("groupFilter").addEventListener("change", refreshList);
   $("customerList").addEventListener("click", (event) => {
