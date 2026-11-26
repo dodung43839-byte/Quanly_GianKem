@@ -357,15 +357,18 @@
       });
 
     box.querySelector("[data-open-zalo]").addEventListener("click", () => {
+      // Dùng số điện thoại của đúng khách đang hiển thị.
+      // Điều hướng ngay trong tab hiện tại để điện thoại có cơ hội
+      // chuyển liên kết zalo.me sang ứng dụng Zalo qua Universal Link.
       const phoneNumber = phoneForLink(customer.phone);
-      if (!phoneNumber)
-        return notify("Khách hàng chưa có số điện thoại hợp lệ.");
-      window.open(
-        `https://zalo.me/${encodeURIComponent(phoneNumber)}`,
-        "_blank",
-        "noopener,noreferrer",
-      );
-      notify("Đã yêu cầu mở Zalo theo số điện thoại khách hàng.");
+
+      if (!phoneNumber) {
+        notify("Khách hàng chưa có số điện thoại hợp lệ.");
+        return;
+      }
+
+      const zaloUrl = `https://zalo.me/${encodeURIComponent(phoneNumber)}`;
+      window.location.assign(zaloUrl);
     });
 
     box
