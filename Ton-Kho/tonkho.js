@@ -48,6 +48,33 @@ let danhSachDinhMuc = [];
 let canhBaoQuyDoiDinhMuc = [];
 let tuKhoaHienTai = "";
 
+// Các bảng tra cứu được dựng một lần, tránh .find() lặp trong 10.000+ dòng.
+let mapNguonTheoMa = new Map();
+let mapDVTTheoMaVaDonVi = new Map();
+let mapDVTGocTheoMa = new Map();
+
+function taoKhoaDVT(maSP, donViTinh) {
+  return chuanHoa(maSP) + "\u0000" + chuanHoa(donViTinh);
+}
+
+function taoChiMucTraCuu() {
+  mapNguonTheoMa = new Map();
+  for (const item of danhMucNguon) {
+    const key = chuanHoa(item.MaSP);
+    if (key && !mapNguonTheoMa.has(key)) mapNguonTheoMa.set(key, item);
+  }
+
+  mapDVTTheoMaVaDonVi = new Map();
+  mapDVTGocTheoMa = new Map();
+  for (const item of danhSachDVT) {
+    const maKey = chuanHoa(item.MaSP);
+    if (!maKey) continue;
+    const dvtKey = taoKhoaDVT(item.MaSP, item.DonViTinh);
+    if (!mapDVTTheoMaVaDonVi.has(dvtKey)) mapDVTTheoMaVaDonVi.set(dvtKey, item);
+    if (!mapDVTGocTheoMa.has(maKey)) mapDVTGocTheoMa.set(maKey, item);
+  }
+}
+
 const $ = (id) => document.getElementById(id);
 const chuanHoa = (v) =>
   String(v ?? "")
@@ -64,6 +91,26 @@ function docSo(v) {
   const s = String(v ?? "").trim().replace(/\s/g, "");
   if (!s) return 0;
   return Number(s.replace(/\./g, "").replace(/,/g, ".")) || 0;
+}
+
+// Định mức trong JSON dùng dấu chấm thập phân (ví dụ 0.7, 0.015).
+// Không dùng docSo() ở đây vì docSo() phục vụ số tiền kiểu Việt Nam và bỏ dấu chấm.
+function docSoDinhMuc(v) {
+  if (typeof v === "number") return Number.isFinite(v) ? v : 0;
+  const s = String(v ?? "").trim().replace(/\s/g, "");
+  if (!s) return 0;
+  const normalized = s.includes(",") && !s.includes(".") ? s.replace(/,/g, ".") : s;
+  const n = Number(normalized);
+  return Number.isFinite(n) ? n : 0;
+}
+
+function laNhomThanhPham(nhom) {
+  const s = String(nhom ?? "")
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .replace(/[\s_-]/g, "");
+  return s === "thanhpham" || s === "spcong";
 }
 
 async function taiJSON(path) {
@@ -126,15 +173,11 @@ function docStoreNeuDaTonTai(dbName, storeName) {
 }
 
 function timDVT(maSP, donViTinh) {
-  return danhSachDVT.find(
-    (x) =>
-      chuanHoa(x.MaSP) === chuanHoa(maSP) &&
-      chuanHoa(x.DonViTinh) === chuanHoa(donViTinh),
-  );
+  return mapDVTTheoMaVaDonVi.get(taoKhoaDVT(maSP, donViTinh));
 }
 
 function dvtGoc(maSP) {
-  return danhSachDVT.find((x) => chuanHoa(x.MaSP) === chuanHoa(maSP)) || null;
+  return mapDVTGocTheoMa.get(chuanHoa(maSP)) || null;
 }
 
 function heSoDVT(maSP, donViTinh, heSoDaLuu) {
@@ -146,7 +189,7 @@ function heSoDVT(maSP, donViTinh, heSoDaLuu) {
 }
 
 function tenTheoMa(maSP, tenDuPhong) {
-  const item = danhMucNguon.find((x) => chuanHoa(x.MaSP) === chuanHoa(maSP));
+  const item = mapNguonTheoMa.get(chuanHoa(maSP));
   return String(
     tenDuPhong || item?.TenHang || maSP || "Sản phẩm chưa có tên",
   ).trim();
@@ -177,7 +220,7 @@ function hopNhatDinhMuc(jsonRows, savedRows) {
       maNL: String(row["Mã NL"] || "").trim(),
       nguyenLieu: String(row["Nguyên Liệu"] || "").trim(),
       dvt: String(row["ĐVT"] || "").trim(),
-      dinhMuc: docSo(row["Đ.Mức"]),
+      dinhMuc: docSoDinhMuc(row["Đ.Mức"]),
     });
   });
   (savedRows || []).forEach((row) => {
@@ -343,63 +386,47 @@ async function napTonKho() {
     if (!ma || sl <= 0) return;
 
     // Chỉ tính các mã thuộc nhóm Thành phẩm trong Nguon.json.
-    const thongTinSP = danhMucNguon.find(
-      (x) => chuanHoa(x.MaSP) === chuanHoa(ma),
-    );
-    if (!thongTinSP || String(thongTinSP.Nhom || "").trim() !== "Thanh_Pham") {
-      return;
-    }
+    const thongTinSP = mapNguonTheoMa.get(chuanHoa(ma));
+    // Chấm khoán lưu số lượng theo sản phẩm đã chọn. Chỉ nhận nhóm thành phẩm
+    // giống danh sách mà màn hình Chấm khoán đang cho phép; nếu có định mức thì
+    // vẫn dùng định mức của chính mã thành phẩm đó để khấu trừ nguyên liệu.
+    const dinhMuc = dinhMucTheoMa.get(chuanHoa(ma));
+    if (!laNhomThanhPham(thongTinSP?.Nhom) && !dinhMuc) return;
 
     const sp = taoHoacLayMatHang(map, ma, dong.sanPham);
-    const factor = heSoDVT(ma, dong.donViTinh, dong.heSoQuyDoi);
-    const soLuongSanXuat = (sl * factor) / sp.heSoGoc;
+    const soLuongSanXuat = sl; // chỉ dùng ĐVT đầu tiên, không quy đổi đơn vị
     sp.tongSanXuat = (sp.tongSanXuat || 0) + soLuongSanXuat;
 
-    // Trừ nguyên liệu theo định mức trên 1 ĐVT gốc thành phẩm.
-    const dinhMuc = dinhMucTheoMa.get(chuanHoa(ma));
+    // Khấu hao = số lượng thành phẩm chấm khoán × định mức nguyên liệu.
+    // Định mức và tồn nguyên liệu đều tính theo ĐVT đầu tiên; không quy đổi DVT.
     (dinhMuc?.nguyenLieu || []).forEach((nl) => {
       const maNL = String(nl.maNL || "").trim();
-      const muc = docSo(nl.dinhMuc);
+      const muc = docSoDinhMuc(nl.dinhMuc);
       if (!maNL || muc <= 0) return;
 
-      const dongDVTNguyenLieu = timDVT(maNL, nl.dvt);
-      if (!dongDVTNguyenLieu) {
-        // DVT.json không có đúng nhãn ĐVT trong định mức: tạm tính 1:1
-        // theo ĐVT gốc và cảnh báo để người dùng kiểm tra dữ liệu nguồn.
-        const key = `${ma} → ${maNL} (${nl.dvt || "chưa có ĐVT"})`;
-        if (!canhBaoQuyDoiDinhMuc.includes(key)) {
-          canhBaoQuyDoiDinhMuc.push(key);
-        }
-      }
       const spNL = taoHoacLayMatHang(map, maNL, nl.nguyenLieu);
-      const heSoNL = heSoDVT(maNL, nl.dvt, null);
-      const slTieuHao = (soLuongSanXuat * muc * heSoNL) / spNL.heSoGoc;
-      spNL.tongTieuHao = (spNL.tongTieuHao || 0) + slTieuHao;
+      spNL.tongTieuHao = (spNL.tongTieuHao || 0) + soLuongSanXuat * muc;
     });
   });
 
-  // XUẤT KHO: bán theo Cặp/Bộ cũng phải trừ riêng sản phẩm chính và hàng đi kèm.
+  // XUẤT KHO: trừ mọi mặt hàng được bán, gồm cả thành phẩm và nguyên liệu.
+  // Không phụ thuộc mặt hàng đã từng xuất hiện trong phiếu mua/chấm khoán hay chưa.
+  // Bán theo Cặp/Bộ cũng trừ riêng sản phẩm chính và hàng đi kèm.
   hoaDonBan.forEach((hd) => {
     (hd.hangHoa || []).forEach((dong) => {
       const ma = String(dong.maHang || "").trim();
-      if (!ma) return;
-
-      const sp = map.get(chuanHoa(ma));
-      if (!sp) return;
-
       const sl = docSo(dong.soLuong);
-      if (sl <= 0) return;
+      if (!ma || sl <= 0) return;
 
+      const sp = taoHoacLayMatHang(map, ma, dong.tenHang);
       const factor = heSoDVT(ma, dong.donViTinh, dong.heSoQuyDoi);
       const qtyMain = (sl * factor) / sp.heSoGoc;
       sp.tongBan += qtyMain;
 
       const diKem = layThongTinDiKem(ma, dong.donViTinh);
       if (diKem) {
-        const spDiKem = map.get(chuanHoa(diKem.maDiKem));
-        if (spDiKem) {
-          spDiKem.tongBan += (sl * diKem.soLuongDiKem) / spDiKem.heSoGoc;
-        }
+        const spDiKem = taoHoacLayMatHang(map, diKem.maDiKem);
+        spDiKem.tongBan += (sl * diKem.soLuongDiKem) / spDiKem.heSoGoc;
       }
     });
   });
@@ -407,9 +434,11 @@ async function napTonKho() {
   danhSachTon = [...map.values()]
     .map((sp) => ({
       ...sp,
-      tonKho: sp.tongMua + (sp.tongSanXuat || 0) - sp.tongBan - (sp.tongTieuHao || 0),
+      // Thành phẩm được cộng từ Chấm khoán; nguyên liệu được trừ theo định mức.
+      // Mọi mặt hàng bán ra (thành phẩm hoặc nguyên liệu) đều được trừ tại tongBan.
+      tonKho: sp.tongMua + (sp.tongSanXuat || 0) - sp.tongTieuHao - sp.tongBan,
       giaTriTon:
-        (sp.tongMua + (sp.tongSanXuat || 0) - sp.tongBan - (sp.tongTieuHao || 0)) *
+        (sp.tongMua + (sp.tongSanXuat || 0) - sp.tongTieuHao - sp.tongBan) *
         sp.giaMuaGanNhatGoc,
     }))
     .sort((a, b) => a.tenHang.localeCompare(b.tenHang, "vi"));
@@ -447,6 +476,7 @@ function render() {
       "</span>";
     list.appendChild(empty);
   } else {
+    const fragment = document.createDocumentFragment();
     ds.forEach((sp, index) => {
       const row = document.createElement("article");
       row.className = "stock-item" + (sp.tonKho < 0 ? " stock-negative" : "");
@@ -491,18 +521,21 @@ function render() {
         taoChiTiet("Giá trị tồn", dinhDangTien(sp.giaTriTon)),
       );
       row.append(main, details);
-      list.appendChild(row);
+      fragment.appendChild(row);
     });
+    list.appendChild(fragment);
   }
 
+  let tongSoLuong = 0;
+  let tongGiaTri = 0;
+  for (const item of danhSachTon) {
+    tongSoLuong += item.tonKho;
+    tongGiaTri += item.giaTriTon;
+  }
   $("soMatHang").textContent = dinhDangSo(danhSachTon.length);
-  $("tongSoLuong").textContent = dinhDangSo(
-    danhSachTon.reduce((s, x) => s + x.tonKho, 0),
-  );
+  $("tongSoLuong").textContent = dinhDangSo(tongSoLuong);
   $("soKetQua").textContent = `${ds.length} sản phẩm`;
-  $("tongTienTon").textContent = dinhDangTien(
-    danhSachTon.reduce((s, x) => s + x.giaTriTon, 0),
-  );
+  $("tongTienTon").textContent = dinhDangTien(tongGiaTri);
 }
 
 function taoChiTiet(label, value) {
@@ -540,6 +573,7 @@ async function taiLai() {
     danhSachDVT = Array.isArray(dvt) ? dvt : [];
     danhMucNguon = Array.isArray(nguon) ? nguon : [];
     danhSachDinhMuc = Array.isArray(dinhMuc) ? dinhMuc : [];
+    taoChiMucTraCuu();
     await napTonKho();
   } catch (error) {
     console.error(error);
