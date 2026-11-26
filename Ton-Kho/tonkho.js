@@ -2,8 +2,8 @@
 
 /*
   BẢNG TỒN KHO
-  - Danh sách chỉ lấy từ các mặt hàng đã phát sinh trong hóa đơn mua.
-  - Nguon.json chỉ dùng tra tên sản phẩm.
+  - Hiển thị mặt hàng phát sinh từ mua hàng, sản xuất hoặc tiêu hao định mức.
+  - Nguon.json dùng tra tên và nhóm sản phẩm.
   - Số lượng tồn được quy đổi về ĐVT đầu tiên của từng MaSP trong DVT.json.
   - Khi mua Cặp/Bộ có hàng đi kèm: tự tách tồn thành sản phẩm chính và sản phẩm đi kèm.
   - Giá mua của Cặp/Bộ được phân bổ theo tỷ lệ khai báo bên dưới.
@@ -36,10 +36,16 @@ const DB_MUA = "LuuMuaHang";
 const STORE_MUA = "HoaDon";
 const DB_BAN = "LuuBanHang";
 const STORE_BAN = "HoaDonBan";
+const DB_CHAMCONG = "DONGDUONG_CHAMCONG_DB";
+const STORE_CHAMKHOAN = "chamKhoan";
+const DB_DINH_MUC = "QuanLyDinhMuc";
+const STORE_DINH_MUC = "DinhMuc";
 
 let danhSachTon = [];
 let danhSachDVT = [];
 let danhMucNguon = [];
+let danhSachDinhMuc = [];
+let canhBaoQuyDoiDinhMuc = [];
 let tuKhoaHienTai = "";
 
 const $ = (id) => document.getElementById(id);
@@ -133,10 +139,10 @@ function dvtGoc(maSP) {
 
 function heSoDVT(maSP, donViTinh, heSoDaLuu) {
   const dvt = timDVT(maSP, donViTinh);
-  const saved = Number(heSoDaLuu);
-  if (saved > 0) return saved;
   const factor = Number(dvt?.HeSoQuyDoi);
-  return factor > 0 ? factor : 1;
+  if (factor > 0) return factor;
+  const saved = Number(heSoDaLuu);
+  return saved > 0 ? saved : 1;
 }
 
 function tenTheoMa(maSP, tenDuPhong) {
@@ -148,6 +154,37 @@ function tenTheoMa(maSP, tenDuPhong) {
 
 function ngayHoaDonMua(hd) {
   return String(hd.ngayLap || hd.ngayLuu || "");
+}
+
+// Đọc định mức đã lưu trong IndexedDB nếu có; dữ liệu này được ưu tiên hơn JSON gốc.
+async function docDinhMucDaLuu() {
+  return docStoreNeuDaTonTai(DB_DINH_MUC, STORE_DINH_MUC);
+}
+
+function hopNhatDinhMuc(jsonRows, savedRows) {
+  const map = new Map();
+  (jsonRows || []).forEach((row) => {
+    const ma = String(row["Mã Thành Phẩm"] || "").trim();
+    if (!ma) return;
+    if (!map.has(chuanHoa(ma))) {
+      map.set(chuanHoa(ma), {
+        maThanhPham: ma,
+        tenThanhPham: String(row["Thành Phẩm"] || ""),
+        nguyenLieu: [],
+      });
+    }
+    map.get(chuanHoa(ma)).nguyenLieu.push({
+      maNL: String(row["Mã NL"] || "").trim(),
+      nguyenLieu: String(row["Nguyên Liệu"] || "").trim(),
+      dvt: String(row["ĐVT"] || "").trim(),
+      dinhMuc: docSo(row["Đ.Mức"]),
+    });
+  });
+  (savedRows || []).forEach((row) => {
+    const ma = String(row.maThanhPham || "").trim();
+    if (ma) map.set(chuanHoa(ma), row);
+  });
+  return map;
 }
 
 function taoHoacLayMatHang(map, maSP, tenDuPhong) {
@@ -163,6 +200,8 @@ function taoHoacLayMatHang(map, maSP, tenDuPhong) {
       donViGoc: String(goc?.DonViTinh || ""),
       heSoGoc: Number(goc?.HeSoQuyDoi) > 0 ? Number(goc.HeSoQuyDoi) : 1,
       tongMua: 0,
+      tongSanXuat: 0,
+      tongTieuHao: 0,
       tongBan: 0,
       giaMuaGanNhatGoc: 0,
       ngayMuaGanNhat: "",
@@ -203,12 +242,16 @@ function capNhatGiaMuaGanNhat(sp, giaDonViGoc, ngay) {
 }
 
 async function napTonKho() {
-  $("trangThai").textContent = "Đang đọc hóa đơn nhập và bán...";
-  const [hoaDonMua, hoaDonBan] = await Promise.all([
+  canhBaoQuyDoiDinhMuc = [];
+  $("trangThai").textContent = "Đang đọc mua hàng, sản xuất, bán hàng và định mức...";
+  const [hoaDonMua, hoaDonBan, phieuChamKhoan, dinhMucLuu] = await Promise.all([
     docStoreNeuDaTonTai(DB_MUA, STORE_MUA),
     docStoreNeuDaTonTai(DB_BAN, STORE_BAN),
+    docStoreNeuDaTonTai(DB_CHAMCONG, STORE_CHAMKHOAN),
+    docDinhMucDaLuu(),
   ]);
 
+  const dinhMucTheoMa = hopNhatDinhMuc(danhSachDinhMuc, dinhMucLuu);
   const map = new Map();
 
   // NHẬP KHO: tách sản phẩm chính và hàng đi kèm thành hai mã tồn riêng.
@@ -292,6 +335,49 @@ async function napTonKho() {
     }
   });
 
+  // SẢN XUẤT: lấy các dòng chấm khoán thuộc nhóm Thành phẩm.
+  // Số lượng sản xuất luôn được quy về ĐVT đầu tiên của thành phẩm.
+  phieuChamKhoan.forEach((dong) => {
+    const ma = String(dong.maSP || "").trim();
+    const sl = docSo(dong.soLuong);
+    if (!ma || sl <= 0) return;
+
+    // Chỉ tính các mã thuộc nhóm Thành phẩm trong Nguon.json.
+    const thongTinSP = danhMucNguon.find(
+      (x) => chuanHoa(x.MaSP) === chuanHoa(ma),
+    );
+    if (!thongTinSP || String(thongTinSP.Nhom || "").trim() !== "Thanh_Pham") {
+      return;
+    }
+
+    const sp = taoHoacLayMatHang(map, ma, dong.sanPham);
+    const factor = heSoDVT(ma, dong.donViTinh, dong.heSoQuyDoi);
+    const soLuongSanXuat = (sl * factor) / sp.heSoGoc;
+    sp.tongSanXuat = (sp.tongSanXuat || 0) + soLuongSanXuat;
+
+    // Trừ nguyên liệu theo định mức trên 1 ĐVT gốc thành phẩm.
+    const dinhMuc = dinhMucTheoMa.get(chuanHoa(ma));
+    (dinhMuc?.nguyenLieu || []).forEach((nl) => {
+      const maNL = String(nl.maNL || "").trim();
+      const muc = docSo(nl.dinhMuc);
+      if (!maNL || muc <= 0) return;
+
+      const dongDVTNguyenLieu = timDVT(maNL, nl.dvt);
+      if (!dongDVTNguyenLieu) {
+        // DVT.json không có đúng nhãn ĐVT trong định mức: tạm tính 1:1
+        // theo ĐVT gốc và cảnh báo để người dùng kiểm tra dữ liệu nguồn.
+        const key = `${ma} → ${maNL} (${nl.dvt || "chưa có ĐVT"})`;
+        if (!canhBaoQuyDoiDinhMuc.includes(key)) {
+          canhBaoQuyDoiDinhMuc.push(key);
+        }
+      }
+      const spNL = taoHoacLayMatHang(map, maNL, nl.nguyenLieu);
+      const heSoNL = heSoDVT(maNL, nl.dvt, null);
+      const slTieuHao = (soLuongSanXuat * muc * heSoNL) / spNL.heSoGoc;
+      spNL.tongTieuHao = (spNL.tongTieuHao || 0) + slTieuHao;
+    });
+  });
+
   // XUẤT KHO: bán theo Cặp/Bộ cũng phải trừ riêng sản phẩm chính và hàng đi kèm.
   hoaDonBan.forEach((hd) => {
     (hd.hangHoa || []).forEach((dong) => {
@@ -321,14 +407,19 @@ async function napTonKho() {
   danhSachTon = [...map.values()]
     .map((sp) => ({
       ...sp,
-      tonKho: sp.tongMua - sp.tongBan,
-      giaTriTon: (sp.tongMua - sp.tongBan) * sp.giaMuaGanNhatGoc,
+      tonKho: sp.tongMua + (sp.tongSanXuat || 0) - sp.tongBan - (sp.tongTieuHao || 0),
+      giaTriTon:
+        (sp.tongMua + (sp.tongSanXuat || 0) - sp.tongBan - (sp.tongTieuHao || 0)) *
+        sp.giaMuaGanNhatGoc,
     }))
     .sort((a, b) => a.tenHang.localeCompare(b.tenHang, "vi"));
 
   render();
   $("trangThai").textContent =
-    `Đã đọc ${hoaDonMua.length} phiếu mua · ${hoaDonBan.length} phiếu bán`;
+    `Đã đọc ${hoaDonMua.length} phiếu mua · ${phieuChamKhoan.length} dòng chấm khoán · ${hoaDonBan.length} phiếu bán` +
+    (canhBaoQuyDoiDinhMuc.length
+      ? ` · Cần kiểm tra ĐVT định mức: ${canhBaoQuyDoiDinhMuc.join("; ")}`
+      : "");
 }
 
 function render() {
@@ -352,7 +443,7 @@ function render() {
       "</strong><span>" +
       (danhSachTon.length
         ? "Thử tìm bằng tên hoặc mã sản phẩm khác."
-        : "Khi chưa có hóa đơn mua hàng được lưu, danh sách tồn kho sẽ để trống. Danh mục Nguon.json không tự đổ vào bảng.") +
+        : "Chưa có phát sinh mua hàng, sản xuất hoặc bán hàng để tính tồn kho.") +
       "</span>";
     list.appendChild(empty);
   } else {
@@ -388,8 +479,10 @@ function render() {
       const details = document.createElement("div");
       details.className = "stock-details";
       details.append(
-        taoChiTiet("Tổng nhập", dinhDangSo(sp.tongMua) + " " + sp.donViGoc),
-        taoChiTiet("Tổng bán", dinhDangSo(sp.tongBan) + " " + sp.donViGoc),
+        taoChiTiet("Mua hàng", dinhDangSo(sp.tongMua) + " " + sp.donViGoc),
+        taoChiTiet("Sản xuất", dinhDangSo(sp.tongSanXuat || 0) + " " + sp.donViGoc),
+        taoChiTiet("Bán hàng", dinhDangSo(sp.tongBan) + " " + sp.donViGoc),
+        taoChiTiet("Tiêu hao định mức", dinhDangSo(sp.tongTieuHao || 0) + " " + sp.donViGoc),
         taoChiTiet(
           "Giá mua gần nhất",
           dinhDangTien(sp.giaMuaGanNhatGoc) + " / " + (sp.donViGoc || "ĐVT"),
@@ -439,12 +532,14 @@ async function khoiTao() {
 async function taiLai() {
   try {
     $("trangThai").textContent = "Đang tải...";
-    const [dvt, nguon] = await Promise.all([
+    const [dvt, nguon, dinhMuc] = await Promise.all([
       taiJSON("../Bao-Gia/DVT.json"),
       taiJSON("../Bao-Gia/Nguon.json"),
+      taiJSON("./DinhMuc.json").catch(() => []),
     ]);
     danhSachDVT = Array.isArray(dvt) ? dvt : [];
     danhMucNguon = Array.isArray(nguon) ? nguon : [];
+    danhSachDinhMuc = Array.isArray(dinhMuc) ? dinhMuc : [];
     await napTonKho();
   } catch (error) {
     console.error(error);
