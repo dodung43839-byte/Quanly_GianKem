@@ -6,6 +6,10 @@ const STORE_HOADON = "HoaDonBan";
 const STORE_THUTIEN = "ThuTien";
 const DB_MUAHANG = "LuuMuaHang";
 const STORE_MUA_HOADON = "HoaDon";
+const DB_CHAMCONG = "DONGDUONG_CHAMCONG_DB";
+const STORE_CHAMKHOAN = "chamKhoan";
+const DB_DINH_MUC = "QuanLyDinhMuc";
+const STORE_DINH_MUC = "DinhMuc";
 
 let db;
 let danhSachHangMua = [];
@@ -98,6 +102,49 @@ function docTatCa(storeName) {
 
     req.onsuccess = () => resolve(req.result || []);
     req.onerror = () => reject(req.error);
+  });
+}
+
+// Đọc store của một database khác nếu database/store đã tồn tại; không tạo database rỗng.
+function docStoreNgoaiNeuCo(dbName, storeName) {
+  return new Promise((resolve, reject) => {
+    const moVaDoc = () => {
+      let vuaTao = false;
+      const req = indexedDB.open(dbName);
+      req.onupgradeneeded = () => {
+        vuaTao = true;
+        req.transaction.abort();
+      };
+      req.onsuccess = () => {
+        const database = req.result;
+        if (vuaTao || !database.objectStoreNames.contains(storeName)) {
+          database.close();
+          resolve([]);
+          return;
+        }
+        const tx = database.transaction(storeName, "readonly");
+        const get = tx.objectStore(storeName).getAll();
+        get.onsuccess = () => {
+          const rows = get.result || [];
+          database.close();
+          resolve(rows);
+        };
+        get.onerror = () => {
+          const error = get.error;
+          database.close();
+          reject(error);
+        };
+      };
+      req.onerror = () => resolve([]);
+    };
+    if (typeof indexedDB.databases === "function") {
+      indexedDB.databases().then((dbs) => {
+        if (!dbs.some((x) => x.name === dbName)) resolve([]);
+        else moVaDoc();
+      }).catch(reject);
+    } else {
+      moVaDoc();
+    }
   });
 }
 
@@ -236,10 +283,10 @@ function layDVTGoc(maHang) {
 
 function layHeSoDVT(maHang, donViTinh, heSoDaLuu) {
   const dongDVT = timDVTTheoMa(maHang, donViTinh);
-  const heSoLuu = Number(heSoDaLuu);
-  if (heSoLuu > 0) return heSoLuu;
   const heSo = Number(dongDVT?.HeSoQuyDoi);
-  return heSo > 0 ? heSo : 1;
+  if (heSo > 0) return heSo;
+  const heSoLuu = Number(heSoDaLuu);
+  return heSoLuu > 0 ? heSoLuu : 1;
 }
 
 function layTenHangTuNguon(maHang) {
@@ -272,6 +319,8 @@ function taoThongTinTon(map, maHang) {
       donViGoc: String(dvtGoc?.DonViTinh || ""),
       heSoGoc: Number(dvtGoc?.HeSoQuyDoi) > 0 ? Number(dvtGoc.HeSoQuyDoi) : 1,
       tongMua: 0,
+      tongSanXuat: 0,
+      tongTieuHao: 0,
       tongBan: 0,
       giaMuaTrucTiep: 0,
       ngayMuaTrucTiep: "",
@@ -295,25 +344,52 @@ function ngayMuaDeSoSanh(hoaDon) {
   return String(hoaDon.ngayLap || hoaDon.ngayLuu || "");
 }
 
+function hopNhatDinhMucBan(jsonRows, savedRows) {
+  const map = new Map();
+  (jsonRows || []).forEach((row) => {
+    const ma = String(row["Mã Thành Phẩm"] || "").trim();
+    if (!ma) return;
+    if (!map.has(chuanHoaMa(ma))) {
+      map.set(chuanHoaMa(ma), { maThanhPham: ma, nguyenLieu: [] });
+    }
+    map.get(chuanHoaMa(ma)).nguyenLieu.push({
+      maNL: String(row["Mã NL"] || "").trim(),
+      nguyenLieu: String(row["Nguyên Liệu"] || "").trim(),
+      dvt: String(row["ĐVT"] || "").trim(),
+      dinhMuc: docSoTon(row["Đ.Mức"]),
+    });
+  });
+  (savedRows || []).forEach((row) => {
+    const ma = String(row.maThanhPham || "").trim();
+    if (ma) map.set(chuanHoaMa(ma), row);
+  });
+  return map;
+}
+
 // Tính tồn theo cùng nguyên tắc với bảng Tồn Kho.
 // Tên hàng lấy từ Nguon.json, ĐVT lấy từ DVT.json.
 // Giá vốn Cặp/Bộ = giá Khung theo hệ số + giá Chéo theo số lượng đi kèm.
 async function napDanhSachHangTon() {
-  const [hoaDonMua, hoaDonBan, dvt, nguon] = await Promise.all([
-    docHoaDonMuaHang(),
-    docTatCa(STORE_HOADON),
-    fetch("../Bao-Gia/DVT.json", { cache: "no-store" }).then((r) => {
-      if (!r.ok) throw new Error("Không tải được DVT.json");
-      return r.json();
-    }),
-    fetch("../Bao-Gia/Nguon.json", { cache: "no-store" }).then((r) => {
-      if (!r.ok) throw new Error("Không tải được Nguon.json");
-      return r.json();
-    }),
-  ]);
+  const [hoaDonMua, hoaDonBan, dvt, nguon, phieuChamKhoan, dinhMucJson, dinhMucLuu] =
+    await Promise.all([
+      docHoaDonMuaHang(),
+      docTatCa(STORE_HOADON),
+      fetch("../Bao-Gia/DVT.json", { cache: "no-store" }).then((r) => {
+        if (!r.ok) throw new Error("Không tải được DVT.json");
+        return r.json();
+      }),
+      fetch("../Bao-Gia/Nguon.json", { cache: "no-store" }).then((r) => {
+        if (!r.ok) throw new Error("Không tải được Nguon.json");
+        return r.json();
+      }),
+      docStoreNgoaiNeuCo(DB_CHAMCONG, STORE_CHAMKHOAN),
+      fetch("./DinhMuc.json", { cache: "no-store" }).then((r) => r.ok ? r.json() : []).catch(() => []),
+      docStoreNgoaiNeuCo(DB_DINH_MUC, STORE_DINH_MUC),
+    ]);
 
   danhSachDVT = Array.isArray(dvt) ? dvt : [];
   danhMucNguon = Array.isArray(nguon) ? nguon : [];
+  const dinhMucTheoMa = hopNhatDinhMucBan(dinhMucJson, dinhMucLuu);
 
   const mapTon = new Map();
 
@@ -367,6 +443,34 @@ async function napDanhSachHangTon() {
     });
   });
 
+  // Sản xuất: cộng thành phẩm theo số lượng chấm khoán và trừ nguyên liệu theo định mức.
+  phieuChamKhoan.forEach((dong) => {
+    const ma = String(dong.maSP || "").trim();
+    const sl = docSoTon(dong.soLuong);
+    if (!ma || sl <= 0) return;
+    const thongTinSP = danhMucNguon.find(
+      (x) => chuanHoaMa(x.MaSP) === chuanHoaMa(ma),
+    );
+    if (!thongTinSP || String(thongTinSP.Nhom || "").trim() !== "Thanh_Pham") return;
+
+    const sp = taoThongTinTon(mapTon, ma);
+    const heSo = layHeSoDVT(ma, dong.donViTinh, dong.heSoQuyDoi);
+    const slSanXuatGoc = (sl * heSo) / sp.heSoGoc;
+    sp.tongSanXuat = (sp.tongSanXuat || 0) + slSanXuatGoc;
+
+    const dm = dinhMucTheoMa.get(chuanHoaMa(ma));
+    (dm?.nguyenLieu || []).forEach((nl) => {
+      const maNL = String(nl.maNL || "").trim();
+      const muc = docSoTon(nl.dinhMuc);
+      if (!maNL || muc <= 0) return;
+      // Nếu nhãn ĐVT trong định mức chưa có trong DVT.json, hệ số dự phòng là 1.
+      const spNL = taoThongTinTon(mapTon, maNL);
+      const heSoNL = layHeSoDVT(maNL, nl.dvt, null);
+      spNL.tongTieuHao = (spNL.tongTieuHao || 0) +
+        (slSanXuatGoc * muc * heSoNL) / spNL.heSoGoc;
+    });
+  });
+
   // Bán theo Cặp/Bộ: trừ cả hàng chính và hàng đi kèm.
   hoaDonBan.forEach((hd) => {
     (hd.hangHoa || []).forEach((dong) => {
@@ -393,7 +497,8 @@ async function napDanhSachHangTon() {
   // Chọn giá mua trực tiếp nếu có; nếu chưa có mới dùng giá phân bổ từ Cặp/Bộ.
   mapTon.forEach((sp) => {
     sp.giaVonGoc = sp.giaMuaTrucTiep > 0 ? sp.giaMuaTrucTiep : sp.giaPhanBo;
-    sp.tonKho = sp.tongMua - sp.tongBan;
+    sp.tonKho =
+      sp.tongMua + (sp.tongSanXuat || 0) - sp.tongBan - (sp.tongTieuHao || 0);
   });
 
   danhSachTonDayDu = [...mapTon.values()];
