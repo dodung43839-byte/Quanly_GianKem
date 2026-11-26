@@ -486,6 +486,15 @@
   }
 
   let danhSachKhoan = [];
+  let danhSachDVTKhoan = [];
+
+  function dvtGocKhoan(maSP) {
+    // Dòng đầu tiên trong DVT.json là đơn vị tính gốc của mã hàng.
+    return danhSachDVTKhoan.find(
+      (x) => String(x.MaSP || "").trim().toLowerCase() === String(maSP || "").trim().toLowerCase(),
+    ) || null;
+  }
+
   function khoanMonth() {
     return $("khoanThang").value || monthOf(today());
   }
@@ -498,14 +507,30 @@
   }
   async function loadDanhMucKhoan() {
     try {
-      const response = await fetch("../Bao-Gia/Nguon.json", {
-        cache: "no-store",
-      });
-      if (!response.ok) throw new Error("Không tìm thấy ../Bao-Gia/Nguon.json");
-      const data = await response.json();
-      danhSachKhoan = data.filter((x) =>
-        ["Thanh_Pham", "SP_Công"].includes(String(x.Nhom || "").trim()),
-      );
+      const [responseNguon, responseDVT] = await Promise.all([
+        fetch("../Bao-Gia/Nguon.json", { cache: "no-store" }),
+        fetch("../Bao-Gia/DVT.json", { cache: "no-store" }),
+      ]);
+      if (!responseNguon.ok) throw new Error("Không tìm thấy ../Bao-Gia/Nguon.json");
+      if (!responseDVT.ok) throw new Error("Không tìm thấy ../Bao-Gia/DVT.json");
+      const [data, dvt] = await Promise.all([
+        responseNguon.json(),
+        responseDVT.json(),
+      ]);
+      danhSachDVTKhoan = Array.isArray(dvt) ? dvt : [];
+      // Giữ nguyên cả hai nhóm đang dùng trong chấm khoán.
+      // Riêng Thành phẩm: nhập số lượng theo ĐVT đầu tiên trong DVT.json.
+      danhSachKhoan = data
+        .filter((x) => ["Thanh_Pham", "SP_Công"].includes(String(x.Nhom || "").trim()))
+        .map((x) => {
+          if (String(x.Nhom || "").trim() !== "Thanh_Pham") return x;
+          const base = dvtGocKhoan(x.MaSP);
+          return {
+            ...x,
+            DonViTinh: String(base?.DonViTinh || x.DonViTinh || ""),
+            HeSoQuyDoi: Number(base?.HeSoQuyDoi) || 1,
+          };
+        });
       renderDanhSachKhoan();
     } catch (e) {
       console.error(e);
@@ -566,7 +591,9 @@
           name,
           maSP: product.MaSP,
           sanPham: product.TenHang,
+          // Số lượng chấm khoán được nhập trực tiếp theo ĐVT đầu tiên của DVT.json.
           donViTinh: product.DonViTinh,
+          heSoQuyDoi: Number(product.HeSoQuyDoi) || 1,
           soLuong: 1,
           donGia: unitPrice,
           amount: unitPrice,
